@@ -35,6 +35,13 @@ La idea de nuestro sitio es apuntar a cualquier amante del gaming y la tecnolog√
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
 
+## √çconos
+Carrito <i class="fas fa-shopping-cart"></i>
+Corazon <i class="fas fa-heart"></i> 
+Lupa  <i class="fal fa-search"></i>
+menu hamburguesa <i class="fas fa-bars"></i>
+
+
 ### Integrantes
 
 Joaquin
