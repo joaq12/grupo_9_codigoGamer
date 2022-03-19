@@ -1,0 +1,10 @@
+La paleta de colores esta compuesta por:
+
+Rebecca purple #59359c 
+Purple mussel #9e1fac
+Jet # 313131
+Silver #c1c1c4
+Jazzberry jam #ac1b64
+
+
+En la carpeta esta adjunto la muestra de los colores en formato png (archivo paleta.png)
