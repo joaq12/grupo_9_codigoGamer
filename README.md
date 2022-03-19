@@ -40,3 +40,7 @@ Con respecto al grupo... somos 4 personas super comprometidas a cumplir todos lo
 Rodrigo
 
 Soy Rodrigo, tengo 34 años y me me metí en el mundo de la programación porque siempre me dio curiosidad y hoy no me arrepiento!!!
+
+Alejandro (amg201512)
+
+Siempre he sido un apasionado de la tecnologia, y espero que en este, mi primer proyecto grupal, logremos superar las expectativas.
