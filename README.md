@@ -2,11 +2,11 @@
 
 ## Productos y servicios que vamos a brindar
 
-En Codigo Gamer vas a encontrar todo lo que necesitas para tu consola o tu pc. Contamos con gran variedad de juegos para consolas, perifericos, hardware para pc, y muchas cosas mas relacionado a lo ultimo en tecnología. Tambien ofrecemos armado de pc y envio gratis.
+En Código Gamer vas a encontrar todo lo que necesitas para tu consola o tu pc. Contamos con gran variedad de juegos para consolas, periféricos, hardware para pc, y muchas cosas mas relacionado a lo último en tecnología. Tambien ofrecemos armado de pc y envío gratis.
 
 ## A que público apuntamos
 
-La idea de nuestro sitio es apuntar a cualquier amante del gaming y la tecnología.
+Código Gamer esta orientado a personas entre 18 y 45 años de edad con intereses en video juegos, consolas, periféricos, etc.
 
 ## Sitios de referencia
 
@@ -39,4 +39,4 @@ Con respecto al grupo... somos 4 personas super comprometidas a cumplir todos lo
 
 Rodrigo
 
-Soy Rodrigo, tengo 34 años y me me metí en el mundo de la programación porque siempre me dio curiosidad y hoy no me arrepiento. Buenos códigos!!!
+Soy Rodrigo, tengo 34 años y me me metí en el mundo de la programación porque siempre me dio curiosidad y hoy no me arrepiento!!!
