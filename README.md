@@ -1,4 +1,4 @@
-# Codigo Gamer
+# Código Gamer
 
 ## Productos y servicios que vamos a brindar
 
