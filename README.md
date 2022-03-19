@@ -32,8 +32,7 @@ La idea de nuestro sitio es apuntar a cualquier amante del gaming y la tecnolog√
 
 
 ## Tipografias
-<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E>
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
 
 ### Integrantes
