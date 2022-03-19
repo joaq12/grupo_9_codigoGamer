@@ -22,26 +22,6 @@ La idea de nuestro sitio es apuntar a cualquier amante del gaming y la tecnolog√
 
 [Logg](www.logg.com.ar) - Nos gusto el formato del carrusel
 
-## Wireframes
-
-![Home-Tienda](https://media.discordapp.net/attachments/950940935771017256/954075244912590898/HOME-TIENDA.jpeg?width=460&height=473)
-
-![Login-Register](https://images-ext-1.discordapp.net/external/hFL99SYK5eYKCyHfexcVSvm-vY2ifPP9MPpDOfbpvfQ/%3Fwidth%3D598%26height%3D473/https/media.discordapp.net/attachments/950940935771017256/954075245197815808/LOGIN-REGISTER.jpg)
-
-![Product-cart](https://images-ext-1.discordapp.net/external/XptrzuNEexNdJc2mVNKdriuhNFb15asp4poZYUJPmrE/%3Fwidth%3D1025%26height%3D313/https/media.discordapp.net/attachments/950940935771017256/954075245495590942/PRODUCT-CART.jpeg)
-
-
-## Tipografias
-
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
-
-## √çconos
-Carrito <i class="fas fa-shopping-cart"></i>
-Corazon <i class="fas fa-heart"></i> 
-Lupa  <i class="fal fa-search"></i>
-menu hamburguesa <i class="fas fa-bars"></i>
-
-
 ### Integrantes
 
 Joaquin
