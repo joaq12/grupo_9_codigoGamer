@@ -49,3 +49,7 @@ Hola, soy Marcos.
 Tengo 37 años y soy fanatico de la tecnología.
 Hace tiempo que queria incursionar en el mundo de JavaScript en profundidad. Este curso me ayudará a seguir desarrollandome en mi carrera profesional.
 Con respecto al grupo... somos 4 personas super comprometidas a cumplir todos los objetivos. 
+
+Rodrigo
+
+Soy Rodrigo, tengo 34 años y me me metí en el mundo de la programación porque siempre me dio curiosidad y hoy no me arrepiento. Buenos códigos!!!
