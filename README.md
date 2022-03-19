@@ -34,4 +34,13 @@ La idea de nuestro sitio es apuntar a cualquier amante del gaming y la tecnolog�
 
 Joaquin
 
-Hola soy joaquin, apasionado del basquet, me meti en programacion para buscar un cambio de aire en mi profesion laboral. Espero ser de ayuda en el grupo.
+Hola soy joaquin, apasionado del basquet, me meti en programación para buscar un cambio de aire en mi profesion laboral. Espero ser de ayuda en el grupo.
+
+
+Marcos
+
+Hola, soy Marcos.
+
+Tengo 37 años y soy fanatico de la tecnología.
+Hace tiempo que queria incursionar en el mundo de JavaScript en profundidad. Este curso me ayudará a seguir desarrollandome en mi carrera profesional.
+Con respecto al grupo... somos 4 personas super comprometidas a cumplir todos los objetivos. 
