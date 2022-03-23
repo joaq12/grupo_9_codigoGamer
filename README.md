@@ -44,3 +44,8 @@ Soy Rodrigo, tengo 34 años y me me metí en el mundo de la programación porque
 Alejandro (amg201512)
 
 Siempre he sido un apasionado de la tecnologia, y espero que en este, mi primer proyecto grupal, logremos superar las expectativas.
+
+
+##### Link al trello
+
+https://trello.com/b/gCPDs7Ao/proyecto-integrador
