@@ -24,3 +24,6 @@ app.get("/register", (req,res)=>{
 
 app.get("/store", (req,res)=>{
     res.sendFile(path.resolve(__dirname, "views/store.html"))});
+
+app.get("/checkout", (req,res)=>{
+    res.sendFile(path.resolve(__dirname, "views/checkout.html"))});
