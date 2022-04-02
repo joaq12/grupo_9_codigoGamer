@@ -31,3 +31,5 @@ app.get("/contact", (req,res)=>{
 app.get("/checkout-info", (req,res)=>{
     res.sendFile(path.resolve(__dirname, "views/checkout-info.html"))});
 
+app.get("/checkout", (req,res)=>{
+    res.sendFile(path.resolve(__dirname, "views/checkout.html"))});
