@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
+
+    <title>Contacto</title>
 </head>
 
 <body>
@@ -52,17 +54,18 @@
         </div>
     </header>
 
-    <section>
-        <form class="formulario">
-            <h4><b>¡Hola! Para seguir, ingresá tu correo electrónico y tu contraseña</b></h4>
-            <input class="controlador" type="email" name="email" id="email"
-                placeholder="nombre de usuario">
-            <input class="controlador" type="password" name="password" id="password" placeholder="contraseña">
-            <p><label><input type="checkbox" name="rememberAccount" id="rememberAccount"> Recordar Cuenta</label></p>
-            <input class="button" type="submit" value="Ingresar">
-            <p class="reg"><a href="/register"> ¿No tenes cuenta? Registráte</a></p>
+
+     <form class="formulario">
+            <h4><b>¡Dejános tu mensaje!</b></h4>
+            <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre">
+            <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido">
+            <input class="controlador" type="email" name="email" id="email1" placeholder="Correo Electrónico // mail@codigogammer.com">
+            <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero">
+            <textarea class="controlador" id="comentario" placeholder="Dejános tu mensaje y alguien del equipo de Codigo Gammer se contactará con vos..."></textarea>
+            <input class="button" type="submit" value="Enviar">
         </form>
-    </section>
+   
+
     <footer>
 
         <section class="foot">
@@ -142,7 +145,5 @@
 
     </socket>
 
-
-</body>
 
 </html>

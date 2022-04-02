@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static("public"));
 
-app.listen(3000, ()=>
+app.listen(3030, ()=>
 console.log("Servidor Corriendo"));
 
 app.get("/", (req,res)=>{
@@ -24,3 +24,10 @@ app.get("/register", (req,res)=>{
 
 app.get("/store", (req,res)=>{
     res.sendFile(path.resolve(__dirname, "views/store.html"))});
+
+app.get("/contact", (req,res)=>{
+    res.sendFile(path.resolve(__dirname, "views/contact.html"))});
+    
+app.get("/checkout-info", (req,res)=>{
+    res.sendFile(path.resolve(__dirname, "views/checkout-info.html"))});
+
