@@ -2,10 +2,11 @@ body{
     width: 100%;
     align-items: center;
     font-family:  'Prompt', sans-serif;
-    background-color: rgb(218, 218, 218);
+    background-color: whitesmoke;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 
 h3{
@@ -593,7 +594,36 @@ color: white;
     .sidebar {
         display: none;
     }  
-    
+    section.top-main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    section.top-main div.imagenes{
+        flex: 22%;
+        height: 275px;
+        width: 300px;
+        margin: 10px;
+        position: relative;
+        right: 90px;
+        
+    }
+    section.relacionados div.productos-relacionados{
+        text-align: center;
+    }
+    section.top-main div.info-producto h4{
+        margin: 11px;
+    display: flex;
+    flex-direction: column;
+    }
+section.top-main div.info-producto #añadir{
+    display: block;
+}
+section.checkout div.bill-container{
+    flex-direction: column;
+    align-items: center;
+}
 }
 
 /*desktop*/
@@ -628,7 +658,21 @@ color: white;
         display: flex;
         flex-wrap: wrap;
     }
-
+    section.top-main div.info-producto #añadir{
+        position: relative;
+    top: 82px;
+    right: 240px;
+    max-height: 35px;
+    }
+    section.relacionados div.productos-relacionados{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    table.checkout{
+        min-width: 700px;
+        min-height: 300px;
+    }
 }
 
 
@@ -802,7 +846,7 @@ section.top-main div.miniaturas{
 
 section.top-main div.info-producto{
      text-align: left;
-     flex:50%;
+     flex:40%;
      
 }
 section.top-main div.info-producto h4{
@@ -814,9 +858,7 @@ section.top-main span{
 }
 section.top-main div.info-producto #añadir{
     display: flex;
-    position: relative;
-    top: 82px;
-    right: 240px;
+   
     width: 190px;
     justify-content: center;
 }
@@ -831,6 +873,7 @@ section.relacionados{
 }
 h4#relacionados{
     text-align: center;
+    color:#59359c;
 }
 section.relacionados div.productos-relacionados img{
     height: 100px;
@@ -850,49 +893,20 @@ margin: 2px;
 
 
 /*checkout*/
-section#checkout{
+section.checkout{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: whitesmoke;
 
 }
-section#checkout div.box-container{
-    display: inline-flex;
-    height: 230px;
-    width: 600px;
-    border: solid 2px #9839b5;
-    border-radius: 20px;
-    padding: 2px;
-    margin-top: 25px;
-    border-collapse: collapse;
-}
-section#checkout div.box-container h3{
-    border-bottom: 1px #9839b5 solid;
-    justify-content: space-between;
-    margin: 0px;
-    border-collapse: collapse;
-}
-section#checkout div.box-container div.tabla-factura{
-    border-right: solid 1px #9839b5;
-    width: 100%;
-    text-align: center;
-} 
-section#checkout div.box-container div.tabla-factura-subtotal{
-    width: 100%;
-    text-align: center;
-}
 
-section#checkout div.box-container .imagen-tabla{
-    width: 70px;
-    margin: 15px;
-    align-items: center;
-}
-section#checkout div.bill-container{
+section.checkout div.bill-container{
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
-section#checkout div.bill-container input{
+section.checkout div.bill-container input{
     background-color: #FFF;
     border: 2px solid #9839b5;
     outline: none;
@@ -910,6 +924,35 @@ h1#checkout{
     justify-content: center;
 }
 
+table.checkout{
+    border: solid 2px #9839b5;
+    border-radius: 20px;
+    margin:auto;
+    width: auto;
+    table-layout: fixed;
+}
+tr,td{
+    
+    text-align: center;
+}
+table.checkout img{
+    width: 100px;
+   
+}
+th{
+    border-right:1px solid #9839b5;
+    border-bottom: 1px solid #9839b5;
+}
+td{
+    border-right: #9839b5 solid 1px;
+}
+td.subtotal{
+    border-right: 0px solid;
+}
+th.subtotal{
+    border-right:0px solid;
+
+}
 
 
 @media screen and (min-width:361px){
@@ -938,7 +981,6 @@ h1#checkout{
         max-height: 250px;
         
     }
-    
     }
 
 

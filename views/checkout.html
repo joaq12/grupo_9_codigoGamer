@@ -49,26 +49,21 @@
         <img class="hero-banner" src="images/banner.webp" alt="Banner Landscape">
     </section>
     <h1 id="checkout">Checkout</h1>
-       <section id="checkout">
-    <div class="box-container">
-        <div class="tabla-factura">
-            <h3>Producto</h3>
-            <img src="/images/conectividad.png" alt="imagen de producto" class="imagen-tabla">
-            <p>Nombre de producto</p>
-        </div>
-        <div class="tabla-factura">
-            <h3>Precio</h3>
-            <p>Precio de producto</p>
-        </div>
-        <div class="tabla-factura">
-            <h3>Cantidad</h3>
-            <input type="number" id="cantidad" min="1" max="5"placeholder="#" ></input>
-        </div>
-        <div class="tabla-factura-subtotal">
-            <h3>Subtotal</h3>
-            <p>Subtotal</p>
-        </div>
-    </div>
+    <section class="tabla">
+        <table class="checkout">
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th class="subtotal">Subtotal</th>
+         </tr>
+         <td><img src="/images/conectividad.png" alt="imagen de producto"><br>Nombre de producto</td>
+         <td>Precio de producto</td>
+         <td><input type="number" id="cantidad" min="1" max="5"placeholder="#" ></input></td>
+         <td class="subtotal">Subtotal</td>
+        </table>
+    </section>
+    <section class="checkout">
     <div class="bill-container">
         <div>
             <h3>cupon</h3>
