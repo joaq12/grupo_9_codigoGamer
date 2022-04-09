@@ -33,3 +33,6 @@ app.get("/checkout-info", (req,res)=>{
 
 app.get("/checkout", (req,res)=>{
     res.sendFile(path.resolve(__dirname, "views/checkout.html"))});
+
+app.get("/shipping", (req,res)=>{
+    res.sendFile(path.resolve(__dirname, "views/shipping.html"))});
