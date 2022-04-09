@@ -158,6 +158,7 @@ header{
     transition-duration: 0.4s;
     width: 100px;
     cursor: pointer;
+    margin:2px
 }
   
 .button:hover {
@@ -850,13 +851,14 @@ section.checkout div.bill-container{
 /* css Ale-------------------------------------------------------------*/
 /*product-detail*/
 section.top-main{
-    display: flex;
+    display: grid;
     margin-bottom:20px;
     padding:3px;
-    flex-wrap: wrap;
     justify-content: space-between;
     border-bottom: solid  1px #313131;
     background-color: whitesmoke;
+    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+    grid-template-rows: 1fr;
 }
 h2.product-detail{
     text-align:center;
@@ -864,13 +866,26 @@ h2.product-detail{
 
 }
 section.top-main div.imagenes{
-  flex: 22%;
+  flex-basis: 50%;
   height: 275px;
-  width: 100px;
+  min-width: 105px;
   margin: 10px;
   padding: 10px;
+  margin-left: auto;
+  max-width: 400px;
+  justify-content: center;
 }
 section.top-main div img.imagen-miniatura{
+    height: 60px;
+    width: 60px;
+    display: inline-flex;
+    margin: 5px;
+    justify-content: center;
+    flex-direction: column;
+    position:relative;
+    left: 40px;
+}
+section.top-main div.miniaturas{
     height: 60px;
     width: 60px;
     display: inline-flex;
@@ -880,22 +895,16 @@ section.top-main div img.imagen-miniatura{
 section.top-main div.imagen-ppal{
     display: flex;
     height: 220px;
-    width: 2500px;
+    width: 250px;
     align-content: space-around;
     margin-left: 30%;
     flex: 22%;
 }
-section.top-main div.miniaturas{
-    display: inline-flex;
-    justify-content: center;
-    margin-left: 30%;
-    margin-top: 5px;
-}
 
 section.top-main div.info-producto{
      text-align: left;
-     flex:40%;
-     
+     flex-basis: 40%;
+     justify-self: center;
 }
 section.top-main div.info-producto h4{
     margin:11px;
@@ -904,11 +913,13 @@ section.top-main div.info-producto h4{
 section.top-main span{
     color:#59359c;
 }
-section.top-main div.info-producto #añadir{
+section.top-main div.info-producto .botones #añadir{
     display: flex;
-   
     width: 190px;
     justify-content: center;
+    max-height: 35px;
+    min-height: 32px;
+    position: initial;
 }
 section.relacionados{
     display: flex;
@@ -1001,19 +1012,20 @@ th.subtotal{
     border-right:0px solid;
 
 }
+/* fin formularios -----------------------------------------------------------------------------------------------------------------------/
+/* display components on mobile */
+@media (min-width: 361px){
 
-
-@media screen and (min-width:361px){
-    
+    .top-bar{
+       display: none;
     }
-
-
-@media screen and (min-width:769px) { 
-    .formulario{
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 800px;
+    
+    .top-header .nav-section{
+        display: none;
+    }
+    
+    .sidebar {
+        display: none;    
     }
 
   
@@ -1021,9 +1033,148 @@ th.subtotal{
         max-width: 100%;
         min-height: 100px;
         max-height: 250px;
+    }
+    
+    section.top-main{
+        display: grid;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+    section.top-main div.imagenes{
+        position: relative;
+        right: 100px;
+    }
+    section.top-main div.imagenes div.miniaturas{
+        position: relative;
+        left:110px
+    }
+    
+    section.top-main div.info-producto .botones #añadir{
+        display: flex;
+        width: 190px;
+        max-height: 35px;
+        min-width: 32px;
+        justify-content: center;
         
+        }
+    }
+    
+    /*tablet*/
+    
+    @media ( min-width: 375px ) and ( max-width: 768px ) {
+    
+        .product_item { 
+           width:40%;
+        }   
+        
+        .nav-section{
+           display: none;
+        }
+    
+        .sidebar {
+            display: none;
+        }  
+     
+    
+        section.top-main div.miniaturas{
+            position: relative;
+            left: 110px;
+        }
+        section.relacionados div.productos-relacionados{
+            text-align: center;
+            justify-content: center;
+        }
+        section.top-main div.info-producto h4{
+            margin: 11px;
+        display: flex;
+        flex-direction: column;
+        }
+    section.top-main div.info-producto div.botones{
+        display: block;
+        min-height: 100px;
+    }
+    section.checkout div.bill-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    section.top-main div.info-producto .botones #añadir{
+        position: initial;
     }
     }
-
-
-/* fin formularios -----------------------------------------------------------------------------------------------------------------------/
+    
+    /*desktop*/
+    
+    @media screen and (min-width:769px) {
+        .product_item{ 
+           width:22%;
+        }
+    
+        .top-header .nav-section{
+            display: block;
+        }
+    
+        .top-bar{
+            display: inline-block;
+        }
+    
+       
+        .burger-menu{
+            display:none
+        }
+    
+        .sidebar{
+            display: flex
+        }
+    
+        .catg-store_container-products{
+            width: 80%;
+        }
+    
+        .main-store-catg_container .sidebar {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        section.top-main div.miniaturas{
+            position: relative;
+            left: 110px;
+        }
+    
+        section.top-main div.info-producto .botones #añadir{
+            position: initial;
+            top: 82px;
+            right: 240px;
+            max-height: 35px;
+        }
+        section.relacionados div.productos-relacionados{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
+        table.checkout{
+            min-width: 700px;
+            min-height: 300px;
+        }
+        .formulario{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 800px;
+        }
+    
+        .controlador{
+            height: 30px;
+            width: 48%;
+            padding: 18px ;
+        }
+    
+        .formulario textarea#comentario{
+            width: 98%;
+            max-width: 100%;
+            min-height: 100px;
+            max-height: 250px;
+            
+        }
+    }
+    

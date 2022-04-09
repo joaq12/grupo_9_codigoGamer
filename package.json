@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/joaq12/grupo_9_codigoGamer#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
     "nodemon": "^2.0.15"
   },
-  "devDependencies": {},
   "keywords": []
 }
