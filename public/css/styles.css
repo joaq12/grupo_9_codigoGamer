@@ -612,17 +612,7 @@ article.product_item{
 }
 
 /* display components on mobile */
-.top-bar{
-   display: none;
-}
 
-.top-header .nav-section{
-    display: none;
-}
-
-.sidebar {
-    display: none;
-}
 
 
 
@@ -641,21 +631,7 @@ article.product_item{
     .main-section-store .sidebar {
         display: none;
     }  
-    section.top-main{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    section.top-main div.imagenes{
-        flex: 22%;
-        height: 275px;
-        width: 300px;
-        margin: 10px;
-        position: relative;
-        right: 90px;
-        
-    }
+ 
     section.relacionados div.productos-relacionados{
         text-align: center;
     }
@@ -664,9 +640,7 @@ article.product_item{
     display: flex;
     flex-direction: column;
     }
-section.top-main div.info-producto #añadir{
-    display: block;
-}
+
 section.checkout div.bill-container{
     flex-direction: column;
     align-items: center;
@@ -707,12 +681,7 @@ section.checkout div.bill-container{
         display: flex;
         flex-wrap: wrap;
     }
-    section.top-main div.info-producto #añadir{
-        position: relative;
-    top: 82px;
-    right: 240px;
-    max-height: 35px;
-    }
+    
     section.relacionados div.productos-relacionados{
         display: flex;
         flex-wrap: wrap;
@@ -850,77 +819,123 @@ section.checkout div.bill-container{
 
 /* css Ale-------------------------------------------------------------*/
 /*product-detail*/
+
+
 section.top-main{
-    display: grid;
-    margin-bottom:20px;
-    padding:3px;
-    justify-content: space-between;
-    border-bottom: solid  1px #313131;
-    background-color: whitesmoke;
-    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
-    grid-template-rows: 1fr;
+    display: flex;
+    width: 100%; 
 }
-h2.product-detail{
-    text-align:center;
-    color: #59359c;
-
-}
-section.top-main div.imagenes{
-  flex-basis: 50%;
-  height: 275px;
-  min-width: 105px;
-  margin: 10px;
-  padding: 10px;
-  margin-left: auto;
-  max-width: 400px;
-  justify-content: center;
-}
-section.top-main div img.imagen-miniatura{
-    height: 60px;
-    width: 60px;
-    display: inline-flex;
-    margin: 5px;
+section.top-main div.description-container{
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin:auto;
+}
+div.description-container div.description-img{
+    display: flex;
     flex-direction: column;
-    position:relative;
-    left: 40px;
-}
-section.top-main div.miniaturas{
-    height: 60px;
-    width: 60px;
-    display: inline-flex;
-    margin: 5px;
-    justify-content: center;
-}
-section.top-main div.imagen-ppal{
-    display: flex;
-    height: 220px;
-    width: 250px;
-    align-content: space-around;
-    margin-left: 30%;
-    flex: 22%;
+    border:solid 0px #666666;
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 15px;
+    align-self: center;
+    margin-left: 20px;
+    width: auto;
+    height: 500px;
 }
 
-section.top-main div.info-producto{
-     text-align: left;
-     flex-basis: 40%;
-     justify-self: center;
-}
-section.top-main div.info-producto h4{
-    margin:11px;
-    display: flex;
-}
-section.top-main span{
+div.description-container div.description-img h2{
+    text-align: center;
     color:#59359c;
+
 }
-section.top-main div.info-producto .botones #añadir{
+
+div.description-container .imagen-principal img{
+    min-height: 415px;
+    min-width: 350px;
+}
+div.description-container .description-share{
     display: flex;
-    width: 190px;
-    justify-content: center;
-    max-height: 35px;
-    min-height: 32px;
-    position: initial;
+    flex-direction: row;
+    justify-content: space-between;
 }
+div.description-container div.description-share .img-mini img{
+    width: 40px;
+}
+
+div.description-img div.share-icons{
+    align-self: center;
+    color:#59359c;
+    font-size: 1.5rem;
+}
+
+div.info-producto{
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    border-radius: 8px;
+    margin-left: 20px;
+    align-self: center;
+    width: auto;
+    height: 500px;
+}
+div.info-producto div.info-precio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top:10px;
+}
+div.info-producto div.info-precio h2{
+    font-size: 35px;
+}
+div.info-producto div.info-precio .precio-detalles{
+ text-align: center;
+ margin-left: 10px;
+ font-weight: bolder;
+}
+
+div.info-producto h5{
+    text-align: center;
+    font-weight: bolder;
+    border-bottom: whitesmoke 2px solid;
+}
+div.info-producto div.info-cuotas{
+    display: flex;
+    flex-direction: column;
+}
+div.info-producto div.info-cuotas img{
+    width: 1.5rem;
+    margin-left: 20px;
+}
+div.info-producto div.info-cuotas div.info-text{
+display:flex;
+margin: auto;
+height: 70px;
+align-items: center;
+}
+div.info-producto div.info-icono{
+    align-self: center;
+}
+div.info-producto div.info-cuotas div.info-text i{
+    margin-left: 20px;
+    color: #59359c;
+}
+div.info-producto div.info-cuotas div.info-text p.negrita{
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+div.info-producto div.compra-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.info-producto div.compra-container button{
+min-width: 130px;
+}
+/* relacionados*/
 section.relacionados{
     display: flex;
     margin-top: 10px;
@@ -949,6 +964,9 @@ border: 8px rgb(5, 5, 5) ;
 border-radius: 10px;
 margin: 2px;
 }
+
+
+
 
 
 /*checkout*/
@@ -1014,7 +1032,7 @@ th.subtotal{
 }
 /* fin formularios -----------------------------------------------------------------------------------------------------------------------/
 /* display components on mobile */
-@media (min-width: 361px){
+@media (min-width: 360px){
 
     .top-bar{
        display: none;
@@ -1034,30 +1052,13 @@ th.subtotal{
         min-height: 100px;
         max-height: 250px;
     }
-    
-    section.top-main{
-        display: grid;
-        grid-template-rows: 1fr;
-        justify-content: center;
-        align-items: center;
+    div.description-container .imagen-principal img{
+        min-width:350px;
+        min-height: 350px;
     }
-    section.top-main div.imagenes{
-        position: relative;
-        right: 100px;
+    div.description-container div.description-img,div.info-producto{
+        min-width: 350px;    
     }
-    section.top-main div.imagenes div.miniaturas{
-        position: relative;
-        left:110px
-    }
-    
-    section.top-main div.info-producto .botones #añadir{
-        display: flex;
-        width: 190px;
-        max-height: 35px;
-        min-width: 32px;
-        justify-content: center;
-        
-        }
     }
     
     /*tablet*/
@@ -1076,11 +1077,6 @@ th.subtotal{
             display: none;
         }  
      
-    
-        section.top-main div.miniaturas{
-            position: relative;
-            left: 110px;
-        }
         section.relacionados div.productos-relacionados{
             text-align: center;
             justify-content: center;
@@ -1090,22 +1086,31 @@ th.subtotal{
         display: flex;
         flex-direction: column;
         }
-    section.top-main div.info-producto div.botones{
+        section.top-main div.info-producto div.botones{
         display: block;
         min-height: 100px;
     }
-    section.checkout div.bill-container{
+        section.checkout div.bill-container{
         flex-direction: column;
         align-items: center;
     }
     section.top-main div.info-producto .botones #añadir{
         position: initial;
     }
+    div.description-container div.description-img,div.info-producto{
+    max-width: 450px;
+    min-width: 370px;
+    }
+    div.description-container .imagen-principal img{
+        min-width:370px;
+        min-height: 370px;
+    }
+    
     }
     
     /*desktop*/
     
-    @media screen and (min-width:769px) {
+    @media (min-width:769px){
         .product_item{ 
            width:22%;
         }
@@ -1174,7 +1179,9 @@ th.subtotal{
             max-width: 100%;
             min-height: 100px;
             max-height: 250px;
-            
+        }
+        div.description-container div.description-img,div.info-producto{
+            min-width: 415px;
         }
     }
     
