@@ -1,227 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">
+<%- include('./partial/head')%>
 
-
-    <title>Código Gammer</title>
-</head>
 
 <body>
-    <header>
-    
-     <div class="top-bar">
-        
-        <div class="nav-menu">
-            <ul>
-                <li><a href="/login">Login/Register <i class="fas fa-id-card"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-     </div>    
-        <div class="top-header">
-          
-            <div class="logo"> 
-                <img src="images/codigo-gamer-logo.png"> 
-            </div>
 
-            <div class="nav-section">
-                    <div>
-                        <ul>
-                            <li><a href="#"> HOME </a></li>
-                            <li><a href="#"> TIENDA </a></li>
-                            <li><a href="#"> OFERTAS </a></li>
-                            <li><a href="#"> CONTACTO </a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-search"></i></a></li>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            <div class="burger-menu">
-                <i class="fa fa-bars burger"></i>
-            </div>
-
-        </div>
-    </header>
+<%- include('./partial/header')%>  
 
     <section class="hero">
         <img class="hero-banner" src="images/banner.webp" alt="Banner Landscape">
     </section>
+
+    <main class="main-section">
+        <section class="main-catg_container"> 
+            <h3 class="catg_container-title">Categories</h3>
     
-
-
-    <main class="main-section-store">
-
-     <section class="main-store-catg_container"> 
-
-
-       <div class="catg_container-products_container"> 
-         <section class="sidebar">
-                <h4 class="sidebar-title">Hardware</h4>
-                    <ul>
-                        <li><a href="#"> MOUSE </a></li>
-                        <li><a href="#"> TECLADOS </a></li>
-                        <li><a href="#"> MONITORES </a></li>
-                        <li><a href="#"> NOTEBOOKS </a></li>
-                       
-                    </ul>
-                <h4 class="sidebar-title">Consolas</h4>
-                    <ul>
-                    <li><a href="#"> PS5</a></li>
-                    <li><a href="#"> XBOX </a></li>
-                    <li><a href="#"> PSE </a></li>
-                    <li><a href="#"> NINTENDO </a></li>
-                 
-                    </ul>
-                    <h4 class="sidebar-title">Accesorios</h4>
-                    <ul>
-                    <li><a href="#"> Microfonos</a></li>
-                    <li><a href="#"> Lentes </a></li>
-                    <li><a href="#"> Mousepad </a></li>
-                    <li><a href="#"> Lámparas </a></li>
-                 
-                    </ul>
-                    <h4 class="sidebar-title">Ofertas</h4>
-                    <ul>
-                    <li><a href="#"> Hard</a></li>
-                    <li><a href="#"> Soft </a></li>
-                    </ul>
-                    
-            </section>   
-
-            
-
-
-            <div class="catg-store_container-products">
-                <h3 class="catg_container-title">Productos</h3>
-                <article class="product_item">
+            <div class="catg_container-products">
+                <article class="product_item" >
                     <img class="product_item-img" src="images/auriculares.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
-                        <input class="button" id="favourites" type="submit" value="Añadir a favoritos">
-                    </div> 
-                    <i class="fa fa-heart"></i>
+                        <p class="product_item-main_article-button button">Ver todo</p>
+                    </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/almacenamiento.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/gabinetes.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/fuentes.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/Joysticks.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/Memorias-Ram.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/microfonos.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/mouse.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/notebooks.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/parlantes.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/monitores.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/motherboards.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/sillasgamer.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/teclados.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/fan-coolers.jpeg" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 <article class="product_item" >
                     <img class="product_item-img" src="images/conectividad.png" alt="item name" >
                     <div class="product_item-main_article">
                         <p class="product_item-main_article-name">Item Name</p> 
-                        <input class="button" type="submit" value="Ver Todo">
+                        <p class="product_item-main_article-button button">Ver todo</p>
                     </div>
                 </article>
                 
             </div>
-          </div>   
         </section>
 
         <section class="section-slider">
@@ -286,82 +195,8 @@
        </section>
 
     </main>
-    <footer>
-        
-        <section class="foot">
 
-         <div class="foot-container">
-    
-            <div class="foot-container_item-nobk">
-                <div class="logo-foot"> 
-                    <img src="images/codigo-gamer-logo-blanco.png"> 
-                </div>
-            </div>
-
-            <div class="foot-container_item">
-                <div class="foot-nav_section" >
-                    <div>
-                        <ul>
-                            <li><a href="#"> HOME </a></li>
-                            <li><a href="#"> TIENDA </a></li>
-                            <li><a href="#"> OFERTAS </a></li>
-                            <li><a href="#"> CONTACTO </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="foot-container_item">
-                <div class="foot-nav_section">
-                    <div>
-                        <ul>
-                            <li><a href="#"> HOME </a></li>
-                            <li><a href="#"> TIENDA </a></li>
-                            <li><a href="#"> OFERTAS </a></li>
-                            <li><a href="#"> CONTACTO </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="foot-container_item">
-                <div class="foot-nav_section">
-                    <div>
-                        <ul>
-                            <li><a href="#"> HOME </a></li>
-                            <li><a href="#"> TIENDA </a></li>
-                            <li><a href="#"> OFERTAS </a></li>
-                            <li><a href="#"> CONTACTO </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    
-         </div>
-    
-           </section>
-    
-    </footer>
-
-    
-
-     <section class="socket">
-        
-        <div class="socket-container">
-            <div class="socket-container-text">
-                © Código Gamer 2022 | todos los derechos reservados.
-            </div>
-
-            <div class="socket-container-social">
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        
-     </section>
+<%- include('./partial/footer')%> 
 
 
 </body>
