@@ -850,7 +850,9 @@ div.description-container div.description-img h2{
     color:#59359c;
 
 }
-
+div.imagen-principal{
+    align-self: center;
+}
 div.description-container .imagen-principal img{
     min-height: 415px;
     min-width: 350px;
