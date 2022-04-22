@@ -52,4 +52,6 @@ https://trello.com/b/gCPDs7Ao/proyecto-integrador
 
  ##### Link al trello Sprint2
 
-https://trello.com/b/WHYRYJyi/proyecto-integrador-sprint-2-html-css
+https://trello.com/b/WHYRYJyi/proyecto-integrador-sprint-2-html-css\
+
+
