@@ -10,15 +10,13 @@ app.listen(3030, ()=>
 console.log("Servidor Corriendo"));
 
 app.use('/', mainRouter);
+app.use('/product-detail',mainRouter)
 
 // app.use("/login", (req,res)=>{
 //     res.sendFile(path.resolve(__dirname, "views/login"))});
 
 // app.get("/product-cart", (req,res)=>{
 //     res.sendFile(path.resolve(__dirname, "views/product-cart"))});
-
-// app.get("/product-detail", (req,res)=>{
-//     res.sendFile(path.resolve(__dirname, "views/product-detail"))});
 
 // app.get("/register", (req,res)=>{
 //     res.sendFile(path.resolve(__dirname, "views/register"))});
