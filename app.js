@@ -13,7 +13,7 @@ console.log("Servidor Corriendo"));
 
 app.use('/', mainRouter);
 app.use('/',productosRouter);
-app.use('/login',loginRouter);
+app.use('/',loginRouter);
 
 // app.use("/login", (req,res)=>{
 //     res.sendFile(path.resolve(__dirname, "views/login"))});
