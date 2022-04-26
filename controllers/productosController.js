@@ -1,6 +1,9 @@
 const productosController ={
-    description : (req, res) =>{
+    detail : (req, res) =>{
         res.render('product-detail');
+    },
+    cart:(req,res)=>{
+        res.render('cart')
     } 
 }
 
