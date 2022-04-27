@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('./partial/head')%>
+
+<body>
+
+    <%- include('./partial/header')%>
+
+
+    <section class="checkout-process">
+        <div class="checkout-process_container">
+            <div class="checkout-container_shipping-data">
+                <div class="checkout-container_progress">
+                    <div class="checkout-container_progress-desable">
+                        <a href="/cart"><i class="fas fa-shopping-cart"></i>
+                            <p>Carrito</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-shipping"><i class="fas fa-shipping-fast"></i>
+                            <p>Envio</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-data"><i class="fas fa-user-circle"></i>
+                            <p>Comprador</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-adress"><i class="fas fa-map-marker-alt"></i>
+                            <p>Dirección</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-payment"><i class="fas fa-hand-holding-usd"></i>
+                            <p>Pago</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-enable">
+                        <a href="chackout-confirm"><i class="fas fa-check-circle"></i>
+                            <p>Confirmá</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="checkout-container_confirm">
+                    <div class="checkout-container_confirm-info">
+                        <h1>¡Confirmá la información y termina tu compra!</h1>
+                        <div class="checkout-container_confirm-products">
+                            <h2>Productos</h2>
+                            <div class="checkout-container_confirm-products-product">
+                                <span class="span-product">Producto 1: Nombre del Producto</span>
+                                <span class="span-units">Unidades: 2 Unidades</span>
+                                <span class="span-unitPrice">Precio Unitario: $123</span>
+                                <span class="span-subtotalPrice">Precio Total: $456</span>
+                            </div>
+                            <div class="checkout-container_confirm-products-product">
+                                <span class="span-product">Producto 2: Nombre del Producto</span>
+                                <span class="span-units">Cantidad: 2 Unidades</span>
+                                <span class="span-unitPrice">Precio Unitario: $123</span>
+                                <span class="span-subtotalPrice">Precio Total: $456</span>
+                            </div>
+                            <div class="checkout-container_confirm-products-product">
+                                <span class="span-product">Producto 3: Nombre del Producto</span>
+                                <span class="span-units">Cantidad: 1 Unidades</span>
+                                <span class="span-unitPrice">Precio Unitario: $123</span>
+                                <span class="span-subtotalPrice">Precio Total: $456</span>
+                            </div>
+                            <button class="checkout-confirm_edit-button"><a href="/checkout"><i class="fas fa-pencil-alt"></i></a></button>
+                        </div>
+                        <div class="checkout-container_confirm-totalPrice">
+                            <h2>Precio total</h2>
+                            <span class="span-subtotal_final-price">Subtotal: $123.123</span>
+                            <span class="span-subtotal_shipping-price">Envio: $123.123</span>
+                            <span class="span-total_final-price">Total: $123.123</span>
+                        </div>
+                        <div class="checkout-container_confirm-shippingMethod">
+                            <h2>Forma de Envio</h2>
+                            <span class="span-shipping-method">Metodo de Envio: A domicilio</span>
+                            <button class="checkout-confirm_edit-button"><a href="/checkout-shipping"><i class="fas fa-pencil-alt"></i></a></button>
+                        </div>
+                        <div class="checkout-container_confirm-taxData">
+                            <h2>Informacion de Facturación</h2>
+                            <span class="span-taxData-name">Nombre: Cosme Fulanito</span>
+                            <span class="span-taxData-contribuyente-id">DNI/CUIL/CUIT: 23-45678910-1</span>
+                            <span class="span-taxData-fc">Tipo de Factura: B</span>
+                            <span class="span-taxData-contribuyente">Emisión: A Consumidor Final</span>
+                            <button class="checkout-confirm_edit-button"><a href="/checkout-data"><i class="fas fa-pencil-alt"></a></i></button>
+                        </div>
+                        <div class="checkout-container_confirm-shipping-data">
+                            <h2>Informacion de Envío</h2>
+                            <span class="span-shipping-name">Nombre: Cosme fulanito</span>
+                            <span class="span-shipping-adress">Comicilio: Calle Falsa 123</span>
+                            <span class="span-taxData-localidad">Localidad: Lujan</span>
+                            <span class="span-taxData-name">Codigo Postal: 6700</span>
+                            <span class="span-taxData-name">Privincia de Buenos Aires</span>
+                            <button class="checkout-confirm_edit-button"><a href="/checkout-adress"><i class="fas fa-pencil-alt"></a></i></button>
+                        </div>
+                        <div class="checkout-container_confirm-payMethod">
+                            <h2>Método de Pago</h2>
+                            <span class="span-taxData-pay-method">Transferencia Bancaria</span>
+                            <button class="checkout-confirm_edit-button"><a href="/checkout-payment"><i class="fas fa-pencil-alt"></i></a></button>
+                        </div>
+                        <div class="checkout-confirm_confitm-buttons">
+                            <input class="button-confirm" type="submit" value="Confirmar Compra">
+                            <span clas="span-checkout-confirm_confitm-message">¡Gracias por tu compra! Ya estamos preparando tu pedido y te avisaremos cuando sea despachado</span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <%- include('./partial/footer')%>
+
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+/*  carga de prod ----------------------------------------------------------------------------------------*/
+
+.section-product-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form h2{
+    text-align: center;
+    margin: 20px 30px 20px;
+    padding: 8px;
+    font-size: 18px;
+    border: solid 0.5px #b6b4b4;
+    border-radius: 5px;
+}
+label{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.product-form{
+    border: solid 2px #59359c;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgb(100,100,100);
+    border-radius: 5px;
+    margin: 50px 0;;
+}
+
+.product-controller{
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border : 1px solid #adabb0;
+    font-size: 12px;
+}
+
+.product-controller:focus-visible{
+    outline: none;
+    border : 3px solid #59359c;
+}
+
+
+.product-form{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+.images-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.form-product-img{
+    width: 16%;
+    margin: 5px;
+    padding: 5px;
+    background-color: #ffffff;
+    border: solid 0.5px #59359c;
+    border-radius: 5px;
+}
+
+.img-button-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+.upload-img-button{
+    color:white;
+    padding: 0 0 0 10px;
+    }
+
+.product-form span{
+    color:black;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.catg-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: solid 1px #59359c;
+    padding: 10px;
+}
+
+.catg-container_catg{
+    width: 100%;
+    padding: 10px;
+}
+
+.catg-container_subcatg{
+    width: 100%;
+    padding: 10px;
+}
+
+.product_name-container,
+.product-form-images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    border-bottom: solid 1px #59359c;
+    border-top: solid 1px #59359c;
+}
+
+.product_name-container_input{
+    width: 100%;
+    padding: 10px;
+}
+
+.product-description{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: solid 1px #59359c;
+    padding: 10px;
+    }
+
+.product-controller#product-description_description{
+    width: 95%;
+    max-width: 98%;
+    min-height: 100px;
+    padding: 10px ;
+    margin: 0;
+}
+
+.price-stock_container,
+.shipping-discount_container{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: solid 1px #59359c;
+    padding: 10px;
+}
+
+.product-shipping_container{
+    border-bottom: solid 1px #59359c;
+
+}
+
+.product_price-container_input{
+    width: 100%;
+
+}
+.product_stock-container_input{
+    width: 100%;
+}
+
+.product-price,
+.product-stock{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 10px 20px;
+}
+
+.product-stock{
+    border-bottom: solid 1px #59359c;
+
+}
+
+.product-shipping_container,
+.product-discount_container{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.free-shipping-container{
+    margin: 0 20px;
+    padding: 5px;
+}
+
+
+.discount-countainer{
+    width: 100%;
+    margin: 0 20px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product_name-container_input{
+    text-align: center;
+}
+
+#discount-per{
+    width: 25%;
+    padding: 5px;
+}
+
+.button-container-edit{
+    width: 95%;
+    flex-wrap: wrap;
+    margin: 35px 0 20px;
+    gap: 15px;
+}
+
+.button-container-edit#publish{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.button-container-edit .button{
+    width: 100%;
+    padding: 8px 0;
+    border-color: #59359c;
+    color:#59359c;
+}
+
+.button-container-edit .button:hover{
+    color: #f1f1f1;
+    background-color: #59359c;
+   }
+
+.button#publish-product{
+    width: 100%;
+    padding: 8px 0;
+    border: 2px solid #9839b5;
+    color:#9839b5;
+}
+
+.button#publish-product:hover {
+    background-color: #9839b5;
+    color: white;
+    }
+
+@media screen and (min-width:769px) {
+
+    .product_name-container,
+    .product-form-images{
+        width: 48%;
+        border: solid 0.5px #b6b4b4;
+        border-radius: 5px;
+    }
+
+    .name-images-container{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        border-bottom: solid 1px #59359c;
+        padding: 10px;
+
+    }
+      
+    .product-form{
+        max-width: 70%;
+        text-align: center;
+    }
+
+    .product-controller{
+        width: 40%;
+    }
+
+    .product-controller#name{
+        width: 90%;
+    }
+    
+    .product-controller#product-description_description{
+        width: 90%;
+        text-align: center;
+    }
+
+    .shipping-discount_container,
+    .price-stock_container{
+        justify-content: space-around;
+        }
+    
+    .product-shipping_container,
+    .product-discount_container{
+        width:48%;
+
+    }
+
+    .product-price,
+    .product-stock{
+        width: 48%;
+        border: solid 0.5px #b6b4b4;
+        border-radius: 5px;
+    }
+    
+    .price-stock_container{
+        border:none;
+    }
+
+    .button-container-edit{
+        flex-wrap: wrap;
+        width: 65%;
+        margin: 20px 0;
+        justify-content: space-around;
+    }
+
+    .button-container-edit#publish{
+        flex-wrap: nowrap;
+        width: 35%;
+        margin: 20px 0;
+
+    }
+    
+   .product-discount_container,
+    .product-shipping_container{
+        border: solid 0.5px #b6b4b4;
+        border-radius: 5px;
+        display: inline-block;
+        text-align: center;
+        
+    } .button-container-edit .button{
+        width: 40%;
+    }   
+
+    .button#publish-product{
+        width: 91%;
+    }
+
+    .catg-container_catg,
+    .catg-container_subcatg{
+        width: 48%;
+    }
+
+    .free-shipping-container,
+    .discount-container{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .free-shipping,
+    .apply-discount{
+        width: 50%;
+    }
+
+
+   
+}

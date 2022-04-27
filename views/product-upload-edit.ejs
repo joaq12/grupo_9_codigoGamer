@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partial/head')%>
+
+<body>
+
+    <%- include('./partial/header')%>  
+
+    <section class="section-product-form">
+
+        <form action="" method="POST" class="product-form">
+
+            <h2>Formulario para carga o edicion de Productos</h2>
+            <div class="name-images-container">
+                <div class="product_name-container">
+                    <span>Nombre de Producto</span><br>
+                    <div class="product_name-container_input">
+                        <label for="name" id="input-product_name">Ingrese el Nombre del Producto</label>
+                        <input type="text" name="name" id="name" class="product-controller">
+                    </div>
+                </div>
+                <div class="product-form-images">
+                    <span class="titulo-imagenes">Imágenes del Producto</span>
+                    <div class="img-button-container">
+                        <input class="upload-img-button" type="file" name="profile-photo" accept=".jpg" multiple>
+                    </div>
+                    <div class="images-container">
+                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
+                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
+                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
+                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
+                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="catg-container">
+                <span>Categoría del Producto</span>
+                <div class="catg-container_catg">
+                    <label for="catg" class="catg-label">Seleccione la Categoría</label>
+                    <select name="catg" id="categoria" placeholder="Categorías" class="product-controller">
+                        <option value="Hardware" class="catg-option">Hardware</option>
+                        <option value="Consolas" class="catg-option">Consolas</option>
+                        <option value="Accesorios" class="catg-option">Accesorios</option>
+                        <option value="Ofertas" class="catg-option">Ofertas</option>
+                    </select>
+                </div>
+                <div class="catg-container_subcatg">
+                    <label for="catg" class="sub-catg-label">Seleccione la Sub-Categoría</label>
+                    <select name="sub-catg" id="Sub-categoria" placeholder="Sub-Categorías" class="product-controller">
+                        <option value="Mouse" class="catg-option">Mouse</option>
+                        <option value="Teclados" class="catg-option">Teclados</option>
+                        <option value="monitores" class="catg-option">Monitores</option>
+                        <option value="Notebooks" class="catg-option">Notebooks</option>
+                        <option value="PS5" class="catg-option">PS5</option>
+                        <option value="XBOX" class="catg-option">XBOX</option>
+                        <option value="Microfonos" class="catg-option">PSE</option>
+                        <option value="Lentes" class="catg-option">Lentes</option>
+                        <option value="Mousepads" class="catg-option">Mousepads</option>
+                        <option value="Lámparas" class="catg-option">Lámparas</option>
+                        <option value="Ofertas-Hard" class="catg-option">Ofertas-Hard</option>
+                        <option value="Ofertas-Soft" class="catg-option">Ofertas-Soft</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-description">
+                <span>Descripción de Producto</span><br>
+                <textarea name="product-description_description" id="product-description_description"
+                    class="product-controller">Ingrese la descripción del producto....</textarea>
+            </div>
+            <section class="price-stock_container">
+                <div class="product-stock">
+                    <span>Stock de Producto</span><br>
+                    <div class="product_stock-container_input">
+                        <label for="product-stock">Ingrese cantidad en Stock </label>
+                        <input type="number" id="product-stock" name="prodduct-stock" min="1" max="100"
+                            class="product-controller" placeholder="0">
+                    </div>
+                </div>
+                <div class="product-price">
+                    <span>Precio de Producto</span><br>
+                    <div class="product_price-container_input">
+                        <label for="price">Ingrese precio del Producto</label>
+                        <input type="text" name="price" id="price" class="product-controller" placeholder=" $ 0">
+                    </div>
+            </section>
+            </div>
+            <section class="shipping-discount_container">
+                <div class="product-shipping_container">
+                    <span>Envio Gratis</span><br>
+                    <div class="free-shipping-container">
+                        <div class="free-shipping" id="yes">
+                            <input type="radio" name="free-shipping" id="free" value="free" /> Si
+                        </div>
+                        <div class="free-shipping" id="no">
+                            <input type="radio" name="free-shipping" id="non-free" value="non-free" /> No
+                        </div>
+                    </div>
+                </div>
+                <div class="product-discount_container">
+                    <span>Descuento</span><br>
+                    <div class="discount-container">
+                        <div class="apply-discount" id="yes">
+                            <input type="radio" name="discount" id="discount" value="discount" /> Si
+                        </div>
+                        <div class="apply-discount" id="no">
+                            <input type="radio" name="discount" id="non-discount" value="non-discount" /> No
+                        </div>
+                    </div>
+                    <div class="product_name-container_input">
+                        <label for="discount-per" id="product-discount-per">Porcentaje de Descuento</label>
+                        <input type="text" name="discount" id="discount-per" class="product-controller" placeholder="%">
+                    </div>
+                </div>
+            </section>
+            <div class="button-container-edit">
+                <input class="button" type="reset" value="Limpiar" />
+                <input class="button" type="submit" value="Guardar Producto" />
+            </div>
+            <div class="button-container-edit" id="publish">
+                <input class="button" type="submit" value="PUBLICAR" id="publish-product" />
+            </div>
+        </form>
+    </section>
+
+    <%- include('./partial/footer')%> 
+
+</body>
+
+</html>

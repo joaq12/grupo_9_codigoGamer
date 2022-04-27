@@ -1,47 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
+
     <%- include('./partial/head')%>
 
+<body>
 
-    <body>
+    <%- include('./partial/header')%> 
     
-    <%- include('./partial/header')%>  
+    <section class="cart">
+        <div class="cart_main-container">
+            <h1>Mi Carrito</h1>
+            <div class="cart_products-c">
+            <div class="cart_products-container">
+                <div class="products-container_images-description_row">
+                    <div class="cart_row-image-container">
+                        <img src="/images/monitores.jpeg" alt="monitor" clas="images-description_image">
+                    </div>
+                    <div class="cart_row-description-container">
+                        <span class="cart_row-description-description">
+                            Monitor gammer Gigabyte LED 25" AORUS KD25F-SA 240Hz
+                        </span>
+                    </div>
+                </div>
+                <div class="products-container_quantity-price_row">
+                    <div class="cart_unit-product-price">
+                        <p>Precio</p>
+                        <span class="span-cart_unit-product-price">
+                            $ 1.234
+                        </span>
+                    </div>
+                    <div class="cart-row_price-container">
+                        <p>Unidades</p>
+                        <input type="number" id="units-quantity" name="units-quantity" min="1" max="10">
+                    </div>
+                    <div class="cart_subtotal-product-price">
+                        <p>Subtotal</p>
+                        <span class="span-cart_subtotal-product-price">
+                            $ 1.234
+                        </span>
+                    </div>
+                    <div class="cart_product-trash" id="cart_prodduct-trash">
+                        <button class="cart_product-delete" value="submit"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart_products-container">
+                <div class="products-container_images-description_row">
+                    <div class="cart_row-image-container">
+                        <img src="/images/sillasgamer.jpeg" alt="monitor" clas="images-description_image">
+                    </div>
+                    <div class="cart_row-description-container">
+                        <span class="cart_row-description-description">
+                            Silla Gammer AEROCOOL BRON black Reclinable Ergonomica
+                        </span>
+                    </div>
+                </div>
+                <div class="products-container_quantity-price_row">
+                    <div class="cart_unit-product-price">
+                        <p>Precio</p>
+                        <span class="span-cart_unit-product-price">
+                            $ 3.456
+                        </span>
+                    </div>
+                    <div class="cart-row_price-container">
+                        <p>Unidades</p>
+                        <input type="number" id="units-quantity" name="units-quantity" min="1" max="10">
+                    </div>
+                    <div class="cart_subtotal-product-price">
+                        <p>Subtotal</p>
+                        <span class="span-cart_subtotal-product-price">
+                            $ 3.456
+                        </span>
+                    </div>
+                    <div class="cart_product-trash" id="cart_prodduct-trash">
+                        <button class="cart_product-delete" value="submit"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart_products-container">
+                <div class="products-container_images-description_row">
+                    <div class="cart_row-image-container">
+                        <img src="/images/auriculares.jpeg" alt="monitor" clas="images-description_image">
+                    </div>
+                    <div class="cart_row-description-container">
+                        <span class="cart_row-description-description">
+                            Auriculares Headset Hyperx Orbit S 7.1 Planar Head Tracking
+                        </span>
+                    </div>
+                </div>
+                <div class="products-container_quantity-price_row">
+                    <div class="cart_unit-product-price">
+                        <p>Precio</p>
+                        <span class="span-cart_unit-product-price">
+                            $ 2.345
+                        </span>
+                    </div>
+                    <div class="cart-row_price-container">
+                        <p>Unidades</p>
+                        <input type="number" id="units-quantity" name="units-quantity" min="1" max="10">
+                    </div>
+                    <div class="cart_subtotal-product-price">
+                        <p>Subtotal</p>
+                        <span class="span-cart_subtotal-product-price">
+                            $ 4.690
+                        </span>
+                    </div>
+                    <div class="cart_product-trash" id="cart_prodduct-trash">
+                        <button class="cart_product-delete" value="submit"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="cart_data-container">
+                <div class="cart_discount-shipp_container">
+                    <div class="cart_discount-container">
+                        <div class="dicount-aplly">
+                            <p>Cupón de Descuento</p>
+                            <input id="discount-cupon_form" placeholder="Ingresa un cupon válido">
+                        </div>
+                        <button class="button_discount-apply">Aplicar</button>
+                        </input>
+                        <span class="discount-cupon_apply">
+                            Se aplicó un descuento del 15%
+                        </span>
+                    </div>
+                    <div class="cart_shipp-container">
+                        <div class="shipping-cost">
+                            <p>Calcula Tu Envío</p>
+                            <input id="post-code" placeholder="Ingresa tu Código Postal">
+                        </div>
+                        <button class="button_calculate-shipping-cost">Calcular</button>
+                        </input>
+                        <span class="shipping-cost-message">
+                            Su envío tiene un costo de $1.987
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="cart_price-container">
+                <div class="cart_price-subtotal">
+                    <p>Subtotal</p>
+                    <span class="span-cart_subtotal-price">$12.345</span>
+                </div>
+                <div class="cart_price-shipping-cost">
+                    <p>Costo de Envío</p>
+                    <span class="span-cart_shipping-cost">$678</span>
+                </div>
+                <div class="cart_price-discount">
+                    <p>Descuento</p>
+                    <span class="span-cart_price-discount">$12.345</span>
+                </div>
+                <div class="cart_price-total">
+                    <p>TOTAL</p>
+                    <span class="span-cart_total-price">$12.345</span>
+                </div>
+            </div>
+            <div class="buttons_cart-container">
+                <a href="/store"><button class="button_cart-prev">Anterior</button></a>
+                <a href="/checkout-shipping"><button class="button_cart-buy">Siguiente</button></a>
+            </div>
+        </div>
 
-       <section class="hero">
-        <img class="hero-banner" src="images/banner.webp" alt="Banner Landscape">
     </section>
-    <h1 id="checkout">Checkout</h1>
-    <section class="tabla">
-        <table class="checkout">
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th class="subtotal">Subtotal</th>
-         </tr>
-         <td><img src="/images/conectividad.png" alt="imagen de producto"><br>Nombre de producto</td>
-         <td>Precio de producto</td>
-         <td><input type="number" id="cantidad" min="1" max="5"placeholder="#" ></input></td>
-         <td class="subtotal">Subtotal</td>
-        </table>
-    </section>
-    <section class="checkout">
-    <div class="bill-container">
-        <div>
-            <h3>cupon</h3>
-            <input id="cupon" placeholder="Ingresa cupon"><button class="button">Aplicar</button></input>
-        </div>
-        <div>
-            <h3>Subtotal</h3>
-            <h3>Impuestos</h3>
-            <h3 class="total">Total</h3>
-            <button class="button">Comprar</button>
-        </div>
-    </div> 
-   </section>
-   
-   <%- include('./partial/footer')%> 
+
+
+    <%- include('./partial/footer')%> 
 
 </body>
-</html>
 
+</html>

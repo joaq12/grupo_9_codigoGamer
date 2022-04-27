@@ -1,6 +1,0 @@
-Los links con los iconos que usaremos son:
-
-Carrito <i class="fas fa-shopping-cart"></i>
-Corazon <i class="fas fa-heart"></i> 
-Lupa  <i class="fal fa-search"></i>
-menu hamburguesa <i class="fas fa-bars"></i>
