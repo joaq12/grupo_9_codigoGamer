@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partial/head')%>
+
+
+<body>
+
+    <%- include('./partial/header')%>
+
+        <section class="checkout-process">
+            <div class="checkout-process_container">
+                <div class="checkout-container_shipping-data">
+                    <div class="checkout-container_progress">
+                        <div class="checkout-container_progress-desable">
+                            <a href="/cart"><i class="fas fa-shopping-cart"></i>
+                                <p>Carrito</p>
+                            </a>
+                        </div>
+                        <div class="checkout-container_progress-enable">
+                            <a href=""><i class="fas fa-shipping-fast"></i>
+                                <p>Envio</p>
+                            </a>
+                        </div>
+                        <div class="checkout-container_progress-desable">
+                            <a href="/checkout-data"><i class="fas fa-user-circle"></i>
+                                <p>Comprador</p>
+                            </a>
+                        </div>
+                        <div class="checkout-container_progress-desable">
+                            <a href="/checkout-adress"><i class="fas fa-map-marker-alt"></i>
+                                <p>Dirección</p>
+                            </a>
+                        </div>
+                        <div class="checkout-container_progress-desable">
+                            <a href="/checkout-payment"><i class="fas fa-hand-holding-usd"></i>
+                                <p>Pago</p>
+                            </a>
+                        </div>
+                        <div class="checkout-container_progress-desable">
+                            <a href="/checkout-confirm"><i class="fas fa-check-circle"></i>
+                                <p>Confirmá</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="checkout-container_shipping">
+                        <h1>Elegí un Método de Envio</h1>
+
+                        <div class="take-away">
+                            <i class="fas fa-store-alt"></i>
+                            <p>Retiro en Local</p>
+                            <input type="radio" name="shipping" id="take-away">
+                        </div>
+
+                        <div class="home-delivery">
+                            <i class="fas fa-home"></i>
+                            <p>Envio a Domicilio</p>
+                            <input type="radio" name="shipping" id="home-delivery">
+                        </div>
+                        <div id="checkout-buttons">
+                            <button id="button-next" class='button' type='button'><a href="/cart">Anterior</a></button>
+                            <button id="button-prev" class='button' type='button'><a
+                                    href="/checkout-data">Siguiente</a></button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <%- include('./partial/footer')%>
+
+</body>
+
+</html>

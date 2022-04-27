@@ -1,0 +1,248 @@
+
+.formulario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    background-color: rgba(248, 246, 246, 0.2);
+    padding: 40px 20px 40px 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom:20px;
+    border-radius: 10px;
+    color: #faf9f9; 
+    border: solid #59359c 2px;
+    box-shadow: 7px 13px 37px #313131;  
+}
+
+.formulario img.logo{
+    background-color:rgba(152, 57, 181, 0.2);
+    width: 95px;
+    padding: 8px;
+    position: relative;
+    border-radius: 15%;
+    border: solid #59359c 2px;
+    top: -10px;
+   
+
+}
+
+.formulario h4{
+    width: 70%;
+    text-align: center;
+    color:#313131;
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    }
+
+.formulario h4 b{
+    font-weight:bolder;
+}
+
+    
+.controlador{
+    width: 85%;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    border : 1px solid #adabb0;
+    font-size: 12px;
+}
+
+.controlador:focus-visible{
+    outline: none;
+    border : 3px solid #59359c;
+}
+
+
+.formulario p{
+    width: 100%;
+    height : 20px;
+    padding: 10px 0 30px 0;
+    margin: auto;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.formulario a{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color:#000000;
+   }
+
+.formulario a:hover{
+    text-decoration: none;
+    color:#9e1fac;
+    font-weight: bold;
+}
+
+
+.formulario .button{
+    color: #59359c;
+    display: inline-block;
+    text-align: center;
+    width : 30%;
+    background : white;
+    border: 2px solid #59359c;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    cursor:pointer;
+    }
+.formulario .button:hover {
+        background-color: #59359c;
+        color: white;
+        outline: none;
+        }
+#rememberAccount:checked{
+    color: #9839b5;
+}
+#acceptTerms:checked{
+    color: #9839b5;
+}
+
+.formulario textarea#comentario{
+    width: 85%;
+    min-height: 100px;
+    max-height: 250px;
+    
+}
+
+/* css Ale-------------------------------------------------------------*/
+/*product-detail*/
+section.top-main{
+    display: grid;
+    margin-bottom:20px;
+    padding:3px;
+    justify-content: space-between;
+    border-bottom: solid  1px #313131;
+    background-color: whitesmoke;
+    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+    grid-template-rows: 1fr;
+}
+h2.product-detail{
+    text-align:center;
+    color: #59359c;
+
+}
+section.top-main div.imagenes{
+  flex-basis: 50%;
+  height: 275px;
+  min-width: 105px;
+  margin: 10px;
+  padding: 10px;
+  margin-left: auto;
+  max-width: 400px;
+  justify-content: center;
+}
+section.top-main div img.imagen-miniatura{
+    height: 60px;
+    width: 60px;
+    display: inline-flex;
+    margin: 5px;
+    justify-content: center;
+    flex-direction: column;
+    position:relative;
+    left: 40px;
+}
+section.top-main div.miniaturas{
+    height: 60px;
+    width: 60px;
+    display: inline-flex;
+    margin: 5px;
+    justify-content: center;
+}
+section.top-main div.imagen-ppal{
+    display: flex;
+    height: 220px;
+    width: 250px;
+    align-content: space-around;
+    margin-left: 30%;
+    flex: 22%;
+}
+
+section.top-main div.info-producto{
+     text-align: left;
+     flex-basis: 40%;
+     justify-self: center;
+}
+section.top-main div.info-producto h4{
+    margin:11px;
+    display: flex;
+}
+section.top-main span{
+    color:#59359c;
+}
+section.top-main div.info-producto .botones #añadir{
+    display: flex;
+    width: 190px;
+    justify-content: center;
+    max-height: 35px;
+    min-height: 32px;
+    position: initial;
+}
+section.relacionados{
+    display: flex;
+    margin-top: 10px;
+    float: inline-start;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    background-color:whitesmoke;
+}
+h4#relacionados{
+    text-align: center;
+    color:#59359c;
+}
+section.relacionados div.productos-relacionados img{
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+}
+section.relacionados article.item_relacionado { 
+background-color: rgb(255, 255, 255);
+width:250px;
+min-width: 250px ;
+display: inline-flex;
+flex-direction: row;
+border: 8px rgb(5, 5, 5) ;        
+border-radius: 10px;
+margin: 2px;
+}
+
+@media (min-width: 361px){
+    .formulario textarea#comentario{
+        max-width: 100%;
+        min-height: 100px;
+        max-height: 250px;
+    }
+}
+
+
+@media screen and (min-width:769px) {
+.formulario{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 800px;
+    }
+
+.controlador{
+    height: 30px;
+    width: 48%;
+    padding: 18px ;
+    }
+
+.formulario textarea#comentario{
+    width: 98%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 250px;  
+    }
+}

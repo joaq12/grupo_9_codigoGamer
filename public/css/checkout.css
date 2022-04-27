@@ -1,0 +1,485 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    align-items: center;
+    font-family:  'Prompt', sans-serif;
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;  
+}
+
+.checkout-process a{
+    text-decoration: none;
+    color: black;
+}
+.checkout-process a:visited{
+    text-decoration: none;
+    color:black;
+}
+
+.checkout-process{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 20px;
+}
+
+.checkout-process_container{
+    width: 100%;
+}
+
+.checkout-container_shipping-data{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;    
+}
+
+.checkout-container_progress{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: none;
+}
+
+.checkout-container_shipping,
+.checkout-container_data,
+.checkout-container_adress,
+.checkout-container_payment{
+    width:100%;
+    border: solid #59359c 2px;
+    border-radius: 5px;
+    background-color: white;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.checkout-container_confirm{
+    width:100%;
+    border: solid #59359c 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: white;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.checkout-container_data-controllers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.checkout-container_data-controllers .controlador{
+    background-color: rgba(237, 237, 237, 0.786);
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.controlador-selected{
+    width: 85%;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    border : 1px solid #adabb0;
+    font-size: 12px;
+    color:#7e7e80;
+    background-color: rgba(237, 237, 237, 0.786);
+}
+
+
+.checkout-container_progress a{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    padding-bottom: 8px;
+    visibility: hidden;
+    }
+
+.checkout-container_progress a i{
+    width: 100%;
+    color: gray;
+    text-align:center;
+    font-size: 24px;    
+    visibility: visible;
+   }
+
+.checkout-container_progress a p{
+    display: none;
+}
+
+.checkout-container_progress-enable a i{
+    color:#9e1fac;
+}
+
+.checkout-container_progress-enable a{
+    color: #9e1fac;
+}
+
+.checkout-container_progress-desable{
+    display: flex;
+    justify-content: center;
+    width: 16%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 8px 5px 0;
+    gap:3px;
+}
+
+.checkout-container_progress-enable{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: solid #59359c 2px;
+    border-bottom: none;
+    background-color: rgb(255, 255, 255);
+    padding: 8px 5px 0;
+    gap: 3px;
+    }
+
+    h1{
+        width: 100%;
+        text-align: center;
+        margin: 20px 0 30px ;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .checkout-container_shipping,
+    .checkout-container_payment{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .take-away,
+    .home-delivery,
+    .bank-transfer-payment,
+    .mercado-pago-payment{
+        width: 90%;
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 8px;
+        margin: 5px;
+        justify-content: baseline;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        background-color: rgba(237, 237, 237, 0.786);
+    }
+
+    .fas.fa-store-alt{
+        font-size: 22px;
+    }
+
+    .fas.fa-home{
+        font-size: 26px;
+        color: #9e1fac;
+    }
+
+    .fas.fa-university{
+        font-size: 29px;
+        color: #9e1fac;
+    }
+
+    .take-away p,
+    .home-delivery p{
+        font-size: 18px;
+        padding: 0 5px;
+        width: 90%;
+        font-weight: bold;
+    }
+
+    .mercado-pago-payment p,
+    .bank-transfer-payment p{
+        font-size: 18px;
+        padding: 0 5px;
+        width: 89%;
+        font-weight: bold;
+
+    }
+
+    .take-away input,
+    .home-delivery input{
+        display: flex;
+        justify-content: right;
+        width: 10%;
+    }
+    .mercado-pago-input,
+    .bank-transfer-input{
+        display: flex;
+        justify-content: right;
+        width: 12%;
+    }
+
+    .take-away i,
+    .home-delivery i
+    .bank-transfer-payment i{
+        width: 10%;
+        color: #9e1fac;
+    }
+
+    .mercado-pago-img{
+        width:35px;
+    }
+
+    #checkout-buttons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    #checkout-buttons button{
+        padding: 8px ;
+        width: 85%;  
+        font-size: 16px;  
+        border-radius: 5px;
+        margin: 10px;
+        border-color: #9e1fac;
+    }
+
+    #checkout-buttons button:hover{
+        color:#9e1fac;
+    }
+    
+    #checkout-buttons button a{
+        color: #9e1fac;
+        padding: 0;
+        visibility: visible;
+    }
+
+    #checkout-buttons button:hover a{
+        color:white;
+        font-weight:bold ;
+    }
+
+    .checkout-container_confirm-info{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         width: 100%;
+    }
+
+    .checkout-container_confirm-info h1{
+        margin: 30px 10px 20px;
+    }
+
+
+    .checkout-container_confirm-info h2{
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        font-size: 18px;
+        padding: 0 0 10px;
+        color: black;
+    }
+    .checkout-container_confirm-info span{
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .checkout-confirm_edit-button{
+        border-radius: 50%;
+        color:#464646;
+        border: 1px solid #464646;
+        position:absolute;
+        top: 15px;
+        right: 15px;
+        ;
+
+    }
+    .fas.fa-pencil-alt{
+        padding: 8px;
+        color:#464646;
+        font-size: 16px;
+    }
+
+    .checkout-confirm_edit-button:hover{
+        border:solid 2px #9e1fac;
+        background-color: #9e1fac0c;
+    }
+    .checkout-confirm_edit-button:hover .fas.fa-pencil-alt{
+        color:#9e1fac;
+    }
+
+
+    .checkout-container_confirm-products,
+    .checkout-container_confirm-totalPrice,
+    .checkout-container_confirm-shippingMethod,
+    .checkout-container_confirm-taxData,
+    .checkout-container_confirm-shipping-data,
+    .checkout-container_confirm-payMethod{
+        position: relative;
+        width: 90%;
+        padding: 20px 30px;
+        margin: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color:rgba(237, 237, 237, 0.786);
+        color:#464646;
+        border-radius: 5px;
+    }
+
+    .checkout-container_confirm-products-product{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    .checkout-confirm_confitm-buttons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        Width:50%;
+        margin: 30px;
+    }
+
+    .checkout-confirm_confitm-buttons span{
+        display:none;
+    }
+
+    .checkout-confirm_confitm-buttons .button-confirm{
+        width: 100%;
+        background-color: white; 
+        border-radius: 10px;
+        border: 2px solid #9e1fac;
+        color: #9e1fac; 
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 5px;
+        text-align: center;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        margin:2px
+    }
+    .button-confirm:hover {
+        background-color: #9e1fac;
+        color: white;
+        font-weight: bold;
+    }
+    
+
+@media screen and (min-width: 600px){
+    .checkout-container_progress a{
+        padding-bottom: 8px ;
+    }
+
+    .checkout-container_progress a{
+        visibility:visible;
+    }
+
+    .checkout-process_container{
+        max-width: 75%;
+        min-width: 500px;
+    }
+
+    .take-away i,
+    .home-delivery i{
+        width: 9%;
+        color: #9e1fac;
+        text-align: left;
+    }
+
+    .bank-transfer-payment i{
+        width: 5%;
+        color: #9e1fac;
+        text-align: left;
+    }
+
+    .mercado-pago-img{
+        width:35.5px;
+    }
+
+    .mercado-pago-payment p{
+        text-align: left;
+        width: 90%;
+        padding-left: 12px;
+        padding-right: 0;
+    }
+            
+    #checkout-buttons button{
+        padding: 8px ;
+        width: 40%;  
+        font-size: 16px;  
+        border-radius: 5px;
+        margin: 10px;
+    }
+
+    .checkout-container_data-controllers .controlador{
+        width: 90%;
+        background-color: rgba(237, 237, 237, 0.786);      
+    }
+
+    .controlador-selected{
+        width: 90%;
+    }
+}
+
+@media screen and ( min-width: 769px ){
+    .checkout-container_progress a{
+        padding-bottom: 0px ;
+    }
+
+    .take-away i,
+    .home-delivery i{
+        width: 8%;
+        color: #9e1fac;
+        text-align: center;
+    }
+
+    .take-away p,
+    .home-delivery p{
+        text-align: left;
+    }
+
+
+    .checkout-container_progress a p{
+        display: flex;
+    }
+
+    .checkout-process_container{
+        max-width: 55%;
+        min-width: 600px;
+    }
+    
+    .checkout-container_progress{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: none;        
+    }
+
+    .checkout-container_shipping-data{
+        justify-content: center;
+        
+    }
+
+    .checkout-container_data-controllers .controlador{
+        width: 46%;
+    }
+
+    .controlador-selected{
+        width: 46%;
+    }
+
+
+
+}

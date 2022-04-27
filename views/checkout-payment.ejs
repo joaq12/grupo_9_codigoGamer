@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partial/head')%>
+
+
+<body>
+
+    <%- include('./partial/header')%>
+
+    <section class="checkout-process">
+        <div class="checkout-process_container">
+            <div class="checkout-container_shipping-payment">
+                <div class="checkout-container_progress">
+                    <div class="checkout-container_progress-desable">
+                        <a href="/cart"><i class="fas fa-shopping-cart"></i>
+                            <p>Carrito</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-shipping"><i class="fas fa-shipping-fast"></i>
+                            <p>Envio</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-data"><i class="fas fa-user-circle"></i>
+                            <p>Comprador</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-adress"><i class="fas fa-map-marker-alt"></i>
+                            <p>Dirección</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-enable">
+                        <a href="/checkout-payment"><i class="fas fa-hand-holding-usd"></i>
+                            <p>Pago</p>
+                        </a>
+                    </div>
+                    <div class="checkout-container_progress-desable">
+                        <a href="/checkout-confirm"><i class="fas fa-check-circle"></i>
+                            <p>Confirmá</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="checkout-container_payment">
+                    <h1>Elegí por que medio querés realizar el pago</h1>
+
+                    <div class="bank-transfer-payment">
+                        <i class="fas fa-university"></i>                        
+                        <p> Transferencia Bancaria</p>
+                        <input type="radio" name="pay-data" id="bank-transfer">
+                    </div>
+
+                    <div class="mercado-pago-payment">
+                        <img class="mercado-pago-img" src="images/mercado-pago.png" alt="item name">
+                        <p> Mercado Pago (PROXIMAMENTE)</p>
+                        <input type="radio" name="pay-data" id="mercado-pago" disabled>
+                    </div>
+                    <div id="checkout-buttons">
+                    <button id="button-next" class='button' type='button'><a href="/checkout-adress">Anterior</a> </button>                 
+                    <button id="button-prev" class='button' type='button'><a href="/checkout-confirm">Siguiente</a></button>
+                    </div>
+                </div>
+                
+            </div>
+
+
+        </div>
+    </section>
+
+    <%- include('./partial/footer')%>
+
+    <section class="socket">
+
+        <div class="socket-container">
+            <div class="socket-container-text">
+                © Código Gamer 2022 | todos los derechos reservados.
+            </div>
+
+            <div class="socket-container-social">
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
