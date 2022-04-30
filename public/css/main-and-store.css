@@ -60,15 +60,12 @@ article.product_item{
     padding: 5px;
 }
 
-
-
 .catg_container-title{
     margin: 30px 0 30px 0;
     width: 100%;
     display:block;
  
 }
-
 
 .main-section .product_item-main_article{
     padding: 3px;
@@ -85,6 +82,7 @@ article.product_item{
     font-size: 18px;
     font-weight: bolder;
     flex: 100%;
+    color: white;
 }
 
 .main_categories-button{
@@ -99,15 +97,17 @@ article.product_item{
 
 .product_item-main_article a{
     text-decoration: none;
-    color:#ab39b5;
+    color:#171313 ;
     font-size: 17px;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
+    font-weight: bold;
 }
 
 .product_item-main_article a:hover {
     font-size: 18px;
     font-weight: bold;
+    color:#ab39b5;
 }
 
 /* ----------------------------------------------------------------------------------------Slider best sellers*/
@@ -176,7 +176,7 @@ article.product_item{
     border-color: #59359c;
     color:#59359c;
     display: none;
-    margin: 15px 2px;
+    margin: 10px 3px;
     padding: 10px 0;
     font-size: 13.5px;
     font-weight: bold;
@@ -266,9 +266,24 @@ article.product_item{
     width:100%;
     min-width: 280px ;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     border-radius: 10px;
     transition: linear 200ms;
+}
+
+.poduct-store_main-link {
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: inherit;
+}
+
+.product-categorie_main-link{
+    justify-content: center;
 }
 
 .product_item:hover{
@@ -280,7 +295,6 @@ article.product_item{
 
 .main-section-store .product_item-img{
     width: 90%;
-    margin: auto;
 }
 
 .fa.fa-heart{
@@ -306,6 +320,7 @@ article.product_item{
     font-weight: bold;
     text-align: left;
     margin: 10px 0 5px 0;
+    color: #171313;
 }
 
 .discount{
@@ -323,6 +338,7 @@ article.product_item{
     text-align: left;
     margin: 5px 5px 10px 5px;
     display: none;
+    color: #171313;
 }
 
 .product_item-main_article-name{
@@ -330,6 +346,7 @@ article.product_item{
     font-size: 22px;
     font-weight:bolder;
     flex:100%;
+    color: #171313;
 }
 
 
@@ -396,7 +413,8 @@ article.product_item{
     transition: 1.5s;
 }
 
-.envio{
+.envio,
+.categorie{
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
@@ -514,7 +532,6 @@ article.product_item .store_product-edit-button:hover{
 
     article.product_item{ 
         width:15%;
-        margin: 0 20px 30px 0
        }
     
     .nav-section{

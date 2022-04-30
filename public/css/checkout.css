@@ -341,6 +341,7 @@ body{
         flex-wrap: wrap;
         margin: 10px 0;
         text-align: left;
+        width: 100%;
     }
 
     .checkout-confirm_confitm-buttons{
