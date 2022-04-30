@@ -1,0 +1,147 @@
+.nav-section{
+    width: 75%;
+}
+
+.nav-section-list{
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    }
+
+.nav-section-list-links,
+.nav-section-list-icons{
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.nav-section-list-links{
+    width: 100%;
+}
+
+
+
+.nav-section_item{
+    display: flex;
+    align-items: baseline;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    margin: 0 5px;
+}
+
+.nav-section_item a{
+    color: #59359c;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 10px;
+    transition: 0.3s;
+}
+
+.nav-section_item a:hover{
+    color: white;
+    background-color: #59359c;
+    border-radius: 5px;
+  }
+
+.nav-section-list a{
+    text-decoration: inherit;
+}
+.nav-section-list a:active{
+    text-decoration: inherit;
+    color: #59359c;
+}
+
+#search-bar{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+#search-bar input{
+    width: 0px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    outline: 16px;
+    border-radius: 5px;
+    transform: translate(-0%,-0%);
+    transition: all 0.3s ease;
+    }
+
+.serch-input{
+    border: 3px solid #59359c;
+    color:#9839b5;
+    font-size: 13px;
+    font-weight: bold;  
+}
+
+
+
+.search-btn{
+    position: absolute;
+    width: 40px;
+    height: 39px;
+    line-height: 20px;
+    right: 0;
+    top: 0px;
+    background:white ;
+    color: #59359c;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    }
+
+    .search-btn:hover{
+        color:white;
+        background-color: #59359c;
+    }
+
+    #search-bar:hover input{
+        width: 250px;
+    }
+
+    #search-bar input:focus{
+        width:250px;
+    }
+
+    #search-bar input:focus + .search-btn{
+        color:white;
+        background-color: #59359c;
+
+    }
+    
+    input:hover + .search-btn{
+        color:white;
+        background-color: #59359c;
+    }
+
+   
+    .icon{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 18px;
+    }
+    .nav-section-list .fas.fa-heart{
+        font-size: 18px;
+    }
+
+    .nav-section-list .fas.fa-shopping-cart{
+        font-size: 18px;
+    }
+    
+@media screen and (min-width: 1010px){
+    .nav-section-list-links{
+    width: 55%;    
+    } 
+}
+

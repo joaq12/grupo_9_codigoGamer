@@ -294,6 +294,7 @@ span.detail-text{
     margin-bottom: 6px;
     line-height: 20px;
     text-align: justify;
+    font-size: 14px;
 }
 
 #product-detail_favoutitr-item{
@@ -427,7 +428,8 @@ span.detail-text{
         margin: 5px;
         font-size: 9px;
         color: #ab39b5;
-        font-weight: bold;  
+        font-weight: bold;
+        text-align: inherit;
     }
 
     .product_detail-main_article .description{
@@ -445,11 +447,17 @@ span.detail-text{
 
     }
 
+    .short-detail_title{
+        font-size: 15px;
+        line-height: 16px;
+        margin: 0 0 5px 0;    }
+
     .short-product-detail_list{
         display: flex;
         flex-wrap: wrap;
         justify-content: left;
-        font-size: 10px;
+        font-size: 11px;
+        line-height: 15px;
         padding: 0 0 0 20px;
     }
 
