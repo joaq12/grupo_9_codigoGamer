@@ -331,6 +331,9 @@ body{
         color:#464646;
         border-radius: 5px;
     }
+    .checkout-container_confirm-products div{
+        float: left;
+    }
 
     .checkout-container_confirm-products-product{
         display: flex;
