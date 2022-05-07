@@ -2,169 +2,165 @@
 <html lang="en">
 <%- include('./partial/head')%>
 
-<body>
-        
-<%- include('./partial/header')%> 
+    <body>
 
-<main class="product-detail_root">
-    <section class="product-detail-container">
-        <section class="product-detail_image-container">
-            <div class="image-carrusel">
-                <p class="product-detail_image-container_product-title">Auriculares gamer inalámbricos HyperX Cloud Flight negros</p>
-                <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
-                <div class="image-carrusel_main-img">
-                    <img src="/images/auriculares.jpeg" alt="">
-                </div>
-                <div class="image-carrusel_others-imgs">
-                    <div class="image-carrusel_others-imgs_img">
-                        <img src="/images/auriculares.jpeg" alt="">
+        <%- include('./partial/header')%>
+
+            <main class="product-detail_root">
+                <a href="store" class="back-to-store"> <<< Voler al listado </a>
+                <section class="product-detail-container">
+                    <section class="product-detail_image-container">
+                        <div class="image-carrusel">
+                            <p class="product-detail_image-container_product-title">Auriculares gamer inalámbricos
+                                HyperX Cloud Flight negros</p>
+                            <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
+                            <div class="image-carrusel_main-img">
+                                <img src="/images/auriculares.jpeg" alt="">
+                            </div>
+                            <div class="image-carrusel_others-imgs">
+                                <div class="image-carrusel_others-imgs_img">
+                                    <img src="/images/auriculares.jpeg" alt="">
+                                </div>
+                                <div class="image-carrusel_others-imgs_img"><img src="/images/auriculares.jpeg" alt="">
+                                </div>
+                                <div class="image-carrusel_others-imgs_img"><img src="/images/auriculares.jpeg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <div class="product-detail_buy-data">
+                        <div class="product-detail_product-info">
+                            <span class="product-detail_product-name_title">Auriculares gamer inalámbricos HyperX Cloud
+                                Flight negros</span>
+                                <p class="product-detail_price">
+                                    $ 33.999
+                                </p>
+                            <span class="product-detail_pay-methods">
+                                Hasta 6 cuotas sin interés
+                            </span>
+                        </div>
+
+                        <div class="product-detail_buy-data-general-info">
+                            <div>
+                                <div><i class="fas fa-shipping-fast"></i></div><span>Envíos a todo el Pais</span>
+                            </div>
+                            <div>
+                                <div><i class="fas fa-store-alt"></i></div><span>Retiro en Sucursal (Microcento
+                                    -CABA)</span>
+                            </div>
+                            <div>
+                                <div><i class="fas fa-shield-alt"></i></div><span>Producto con Garantía</span>
+                            </div>
+                            <div>
+                                <div><i class="fas fa-check"></i></div><span>Stock Disponible</span>
+                            </div>
+                            <div>
+                                <div><i class="fas fa-undo"></i></div><span>Devolución Gratis (tenés 30 dias desde
+                                    recibido)</span>
+                            </div>
+                            <i class="fa fa-heart" id="product-detail_favoutite-item"></i>
+                        </div>
+                        <div class="product-detail_buy-data-shipping-cost">
+                            <div class="product-detail_cart_shipp-container">
+                                
+                                    <p>Calcula el costo de tu Envío</p>
+                                    <input id="pd-post-code" placeholder="Ingresa tu Código Postal">
+                                    <button class="product-detail_button_calculate-shipping-cost">Calcular</button>
+                                    <span>
+                                        Su envío tiene un costo de $1.987
+                                    </span>
+                                
+                            </div>
+                        </div>
+                        <div class="product-detail_buy-data_button-container">
+                            <a href="product-detail"><button class="button_product-detail_add">Añadir al
+                                    Carro</button></a>
+                            <a href="cart"><button class="button_product-detail_buy">Comprar</button></a>
+                        </div>
+                        <div class="favourites-container">
+                            <div class="favourites">
+                                <i class="far fa-heart" id="fav"></i> <a href=""> Añadir a Favoritos</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="image-carrusel_others-imgs_img"><img src="/images/auriculares.jpeg" alt=""></div>
-                    <div class="image-carrusel_others-imgs_img"><img src="/images/auriculares.jpeg" alt=""></div>
-                </div>
-            </div>
-        </section>
+                
 
-        <div class="product-detail_product-info">
-            <div class="product-detail_product-name">
-                <span class="product-detail_product-name_title">Auriculares gamer inalámbricos HyperX Cloud Flight negros</span>
-            </div>
-            <div class="product-detail_product-price">
-                <p class="product-detail_price">
-                    $ 33.999
-                </p>
-                <span class="product-detail_pay-methods">
-                    Hasta 6 cuotas sin interés
-                </span>
-            </div>
-            <div class="product-detail_short-detail">
-                <p class="short-detail_title">Los que tenés que saber de este producto</p>
-                <ul class="short-product-detail_list">
-                    <li>Alcance inalámbrico de 20 m.</li>
-                    <li>La batería dura 30 h.</li>
-                    <li>Modo manos libres incluido.</li>
-                    <li>Con cancelación de ruido.</li>
-                    <li>Micrófono flexible incorporado.</li>
-                    <li>Tipo de conector: Jack 3.5 mm.</li>
-                    <li>El largo del cable es de 1.3 m.</li>
-                    <li>Uso apto para estudio, oficina.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="product-detail_buy-data">
-            <div class="product-detail_buy-data-general-info">
-                <div>
-                    <div><i class="fas fa-shipping-fast"></i></div><span>Envíos a todo el Pais</span>
-                </div>
-                <div>
-                    <div><i class="fas fa-store-alt"></i></div><span>Retiro en Sucursal (Microcento -CABA)</span>
-                </div>
-                <div>
-                    <div><i class="fas fa-shield-alt"></i></div><span>Producto con Garantía</span>
-                </div>
-                <div>
-                    <div><i class="fas fa-check"></i></div><span>Stock Disponible</span>
-                </div>
-                <div>
-                    <div><i class="fas fa-undo"></i></div><span>Devolución Gratis (tenés 30 dias desde recibido)</span>
-                </div>
-                <i class="fa fa-heart" id="product-detail_favoutite-item"></i>
-            </div>
-            <div class="product-detail_buy-data-shipping-cost">
-                <div class="cart_shipp-container">
-                    <div class="shipping-cost">
-                        <p>Calcula Tu Envío</p>
-                        <input id="post-code" placeholder="Ingresa tu Código Postal">
-                        <button class="button_calculate-shipping-cost">Calcular</button>
-                        <span>
-                            Su envío tiene un costo de $1.987
-                        </span>
+
+
+                </section>
+                <div class="product-detail_section_slider-container">
+                    <h5 class="section_container-title">Productos Relacionados</h5>
+                    <div class="product-detail_slider-section">
+                        <article class="product-detail_product_item" id="p-item">
+                            <a class="poduct-detail_main-link" href="">
+                                <img class="product-detail_item-img" src="images/teclados.jpeg" alt="item name">
+                                <div class="product_detail-main_article">
+                                    <p class="product_detail-main_article-name">Nombre del Producto</p>
+                                    <p class="price">$ 12.345</p>
+                                    <p class="discount">20% off</p>
+                                    <h4 class="description">Descripcion del Producto</h4>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="product-detail_product_item" id="p-item">
+                            <a class="poduct-detail_main-link" href="">
+                                <img class="product-detail_item-img" src="images/mouse.jpeg" alt="item name">
+                                <div class="product_detail-main_article">
+                                    <p class="product_detail-main_article-name">Nombre del Producto</p>
+                                    <p class="price">$ 12.345</p>
+                                    <p class="discount">20% off</p>
+                                    <h4 class="description">Descripcion del Producto</h4>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="product-detail_product_item" id="p-item">
+                            <a class="poduct-detail_main-link" href="">
+                                <img class="product-detail_item-img" src="images/parlantes.jpeg" alt="item name">
+                                <div class="product_detail-main_article">
+                                    <p class="product_detail-main_article-name">Nombre del Producto</p>
+                                    <p class="price">$ 12.345</p>
+                                    <p class="discount">20% off</p>
+                                    <h4 class="description">Descripcion del Producto</h4>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="product-detail_product_item" id="p-item">
+                            <a class="poduct-detail_main-link" href="">
+                                <img class="product-detail_item-img" src="images/sillasgamer.jpeg" alt="item name">
+                                <div class="product_detail-main_article">
+                                    <p class="product_detail-main_article-name">Nombre del Producto</p>
+                                    <p class="price">$ 12.345</p>
+                                    <p class="discount">20% off</p>
+                                    <h4 class="description">Descripcion del Producto</h4>
+                                </div>
+                            </a>
+                        </article>
                     </div>
                 </div>
-            </div>
-            <div class="product-detail_buy-data_button-container">
-                <a href="store"><button class="button_product-detail_add">Añadir al Carro</button></a>
-                <a href="cart"><button class="button_product-detail_buy">Comprar</button></a>
-            </div>
-            <div class="favourites-container">
-                <div class="favourites">
-                    <i class="far fa-heart" id="fav"></i> <a href="" > Añadir a Favoritos</a>
+                <div class="product-detail_detail-complete">
+                    <div class="detail-complete_text">
+                        <span class="detail-text">Detalle del Producto</span>
+                        <p>Ideado para los gamers más exigentes, el HyperX Cloud Flight tiene todo lo que un jugador
+                            busca. Su conectividad inalámbrica permite moverte de un
+                            lugar a otro sin cables. A su vez, su batería de larga duración te dará horas interminables
+                            de sonidos envolventes en tus partidas. Sus orejeras
+                            son sinónimo de comodidad, ya que pueden rotar en un ángulo de 90 grados y reposar de forma
+                            suave en tu cuello. Y como si esto fuera poco, en estas
+                            vas a controlar los efectos de luz LED, silenciar o encender el micrófono con cancelación de
+                            ruido y regular el volumen.</p>
+                        <p>El formato perfecto para vos
+                            El diseño over-ear brinda una comodidad insuperable gracias a sus suaves almohadillas. Al
+                            mismo tiempo, su sonido envolvente del más alto nivel se
+                            convierte en el protagonista de la escena.</p>
+                    </div>
                 </div>
 
-            </div>
+            </main>
 
-        </div>
+            <%- include('./partial/footer')%>
 
-    </section>
-    <div class="product-detail_section_slider-container">
-        <h5 class="section_container-title">Productos Relacionados</h5>
-        <div class="product-detail_slider-section">
-            <article class="product-detail_product_item" id="p-item">
-                <a class="" href="">
-                    <a class="poduct-detail_main-link" href=""></a>
-                    <img class="product-detail_item-img" src="images/teclados.jpeg" alt="item name">
-                        <div class="product_detail-main_article">
-                            <p class="product_detail-main_article-name">Nombre del Producto</p>
-                            <p class="price">$ 12.345</p>
-                            <p class="discount">20% off</p>
-                            <h4 class="description">Descripcion del Producto</h4>
-                        </div>
-                    </a>
-            </article>
-            <article class="product-detail_product_item" id="p-item">
-                <a class="" href="">
-                    <a class="poduct-detail_main-link" href=""></a>
-                    <img class="product-detail_item-img" src="images/mouse.jpeg" alt="item name">
-                        <div class="product_detail-main_article">
-                            <p class="product_detail-main_article-name">Nombre del Producto</p>
-                            <p class="price">$ 12.345</p>
-                            <p class="discount">20% off</p>
-                            <h4 class="description">Descripcion del Producto</h4>
-                        </div>
-                    </a>
-            </article>
-            <article class="product-detail_product_item" id="p-item">
-                <a class="" href="">
-                    <a class="poduct-detail_main-link" href=""></a>
-                    <img class="product-detail_item-img" src="images/parlantes.jpeg" alt="item name">
-                        <div class="product_detail-main_article">
-                            <p class="product_detail-main_article-name">Nombre del Producto</p>
-                            <p class="price">$ 12.345</p>
-                            <p class="discount">20% off</p>
-                            <h4 class="description">Descripcion del Producto</h4>
-                        </div>
-                    </a>
-            </article>
-            <article class="product-detail_product_item" id="p-item">
-                <a class="" href="">
-                    <a class="poduct-detail_main-link" href=""></a>
-                    <img class="product-detail_item-img" src="images/sillasgamer.jpeg" alt="item name">
-                        <div class="product_detail-main_article">
-                            <p class="product_detail-main_article-name">Nombre del Producto</p>
-                            <p class="price">$ 12.345</p>
-                            <p class="discount">20% off</p>
-                            <h4 class="description">Descripcion del Producto</h4>
-                        </div>
-                    </a>
-            </article>
-        </div>
-    </div>
-    <div class="product-detail_detail-complete">
-        <div class="detail-complete_text">
-            <span class="detail-text">Detalle del Producto</span>
-            <p>Ideado para los gamers más exigentes, el HyperX Cloud Flight tiene todo lo que un jugador busca. Su conectividad inalámbrica permite moverte de un 
-                lugar a otro sin cables. A su vez, su batería de larga duración te dará horas interminables de sonidos envolventes en tus partidas. Sus orejeras 
-                son sinónimo de comodidad, ya que pueden rotar en un ángulo de 90 grados y reposar de forma suave en tu cuello. Y como si esto fuera poco, en estas 
-                vas a controlar los efectos de luz LED, silenciar o encender el micrófono con cancelación de ruido y regular el volumen.</p>
-            <p>El formato perfecto para vos
-                El diseño over-ear brinda una comodidad insuperable gracias a sus suaves almohadillas. Al mismo tiempo, su sonido envolvente del más alto nivel se 
-                convierte en el protagonista de la escena.</p>
-        </div>
-    </div>
+    </body>
 
-</main>
-
-    <%- include('./partial/footer')%> 
-    
-</body>
 </html>

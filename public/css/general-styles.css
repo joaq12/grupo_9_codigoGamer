@@ -4,6 +4,19 @@
     padding: 0;
 }
 
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-track{
+    background: #855ad4;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #59359c;
+    border-radius: 5px;
+}
+
 body{
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +107,7 @@ header{
 }
 
 .top-header .logo img{
-    width: 150px;
+    width: 110px;
     padding: 10px;
     object-position: right;
     z-index: 1;
@@ -154,9 +167,9 @@ header{
 
 .button{
     background-color: white; 
-    border-radius: 10px;
-    border: 2px solid #9839b5;
-    color: black; 
+    border-radius: 5px;
+    border: 2px solid #59359c;
+    color:#59359c;
     display: inline-block;
     font-size: 16px;
     padding: 5px 5px;
@@ -169,8 +182,9 @@ header{
 }
   
 .button:hover {
-background-color: #9839b5;
+background-color: #59359c;
 color: white;
+font-weight: bold;
 }
 
 /* hero */
@@ -406,32 +420,6 @@ span.footer-info{
         display: none;    
     }
   
-    section.top-main{
-        display: grid;
-        grid-template-rows: 1fr;
-        justify-content: center;
-        align-items: center;
-    }
-    section.top-main div.imagenes{
-        position: relative;
-        right: 100px;
-    }
-    section.top-main div.imagenes div.miniaturas{
-        position: relative;
-        left:110px
-    }
-    
-    section.top-main div.info-producto .botones #añadir{
-        display: flex;
-        width: 190px;
-        max-height: 35px;
-        min-width: 32px;
-        justify-content: center;
-        
-        }
-    }
-
-    
     .newsletter-container{
         display: flex;
         flex-wrap: wrap;
@@ -454,7 +442,6 @@ span.footer-info{
         color: #59359c;
         font-weight: bold;
     }
-
 
     .icon-container{
         width: 10%;
@@ -505,8 +492,8 @@ span.footer-info{
         font-size: 14px;
         color:#59359c;
         font-weight: bolder;
-        border-top-right-radius:8px;
-        border-bottom-right-radius: 8px;
+        border-top-right-radius:5px;
+        border-bottom-right-radius: 5px;
         ;
     }
 
@@ -525,7 +512,7 @@ span.footer-info{
             position: relative;
             left: 110px;
         }
-        
+            
         .sidebar {
             display: none;
         }          
@@ -536,6 +523,10 @@ span.footer-info{
         
         .top-header .nav-section{
             display: block;
+        }
+
+        .top-header .logo img{
+            width: 135px;
         }
     
         .top-bar{
@@ -563,17 +554,8 @@ span.footer-info{
        
        
     }
+}
     
-
-
-
-
-
-
-
-
-
-
 
 
 

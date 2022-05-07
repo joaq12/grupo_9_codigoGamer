@@ -38,7 +38,7 @@ body{
     padding: 8px;
     font-size: 24px;
     border-radius: 5px;
-    color :#59359c;
+    color :#313131;
     font-weight: bolder;
 }
 
@@ -213,7 +213,7 @@ button.cart_product-delete:hover .fas.fa-trash-alt{
     text-align: center;
     background : white;
     border: 1px solid #9e1fac;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 6px;
     font-size: 14px;
     cursor:pointer;
@@ -229,13 +229,21 @@ button.cart_product-delete:hover .fas.fa-trash-alt{
     outline: none;
 }
 
+.button_cart-prev:hover,
+.button_cart-buy:hover {
+    background-color: #59359c;
+    color: white;
+    font-weight: bold;
+    outline: none;
+}
+
 .discount-cupon_apply,
 .shipping-cost-message{
     display: block;
     font-size: 14px;
     color: #59359c;
     font-weight: bold;
-    padding: 10px;
+    padding: 5px;
     border: 2px solid #59359c;
     text-align: center;
 }
@@ -304,7 +312,7 @@ button.cart_product-delete:hover .fas.fa-trash-alt{
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
-    padding: 10px;
+    padding: 5px;
     width: 100%;
     text-align: center;
 }
@@ -312,11 +320,11 @@ button.cart_product-delete:hover .fas.fa-trash-alt{
 .button_cart-prev,
 .button_cart-buy{
     width: 90%;
-    color: #9e1fac;
+    color: #59359c;
     text-align: center;
     background : white;
-    border: 2px solid #9e1fac;
-    border-radius: 8px;
+    border: 2px solid #59359c;
+    border-radius: 5px;
     padding: 10px;
     margin: 10px;
     font-size: 14px;
@@ -328,16 +336,17 @@ button.cart_product-delete:hover .fas.fa-trash-alt{
 .button_cart-buy a{
     text-decoration: none;
     font-weight: bold;
-    color:#9e1fac;
+    color:#59359c;
 }
 
 .buttons_cart-container a{
     text-decoration: none;
-    color: #9e1fac;
+    color: #59359c;
     font-weight: bold;
     width: 100%;
     height: 100%;
 }
+
 
 .button_cart-prev:hover a,
 .button_cart-buy:hover a{
@@ -382,7 +391,7 @@ button.cart_product-delete:hover .fas.fa-trash-alt{
 
     .button_cart-prev,
     .button_cart-buy{
-    width: 35%;
+    width: 45%;
     justify-content: center;
     }
 
