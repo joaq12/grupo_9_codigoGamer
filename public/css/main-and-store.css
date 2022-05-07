@@ -24,6 +24,13 @@
     margin: 15px;
 }
 
+.poduct-caregorie_main-link{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 
 .catg_container-products{
     display: flex;
@@ -113,7 +120,6 @@ article.product_item{
 
 .section-slider .product_item-main_article{
     width: 100%;
-    margin: 5px 4px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -168,6 +174,7 @@ article.product_item{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin:0 3px;
 }
 .section-slider .button{
     flex: 40%;
