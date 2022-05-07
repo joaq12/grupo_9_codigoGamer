@@ -4,6 +4,19 @@
     padding: 0;
 }
 
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-track{
+    background: #855ad4;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #59359c;
+    border-radius: 5px;
+}
+
 body{
     display: flex;
     flex-wrap: wrap;

@@ -222,6 +222,7 @@
 @media (min-width: 361px){
     .formulario textarea#comentario{
         max-width: 100%;
+        min-width: 79.5%;
         min-height: 100px;
         max-height: 250px;
     }
