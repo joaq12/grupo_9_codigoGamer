@@ -7,18 +7,32 @@
 
         <%- include('./partial/header')%>
 
-            <section>
-                <form class="formulario">
-                    <h4><b>¡Hola! Para seguir, ingresá tu correo electrónico y tu contraseña</b></h4>
-                    <input class="controlador" type="email" name="email" id="email" placeholder="nombre de usuario">
-                    <input class="controlador" type="password" name="password" id="password" placeholder="contraseña">
-                    <p><label><input type="checkbox" name="rememberAccount" id="rememberAccount"> Recordar
-                            Cuenta</label></p>
-                    <input class="button" type="submit" value="Ingresar">
-                    <p class="reg"><a href="register"> ¿No tenes cuenta? Registráte</a></p>
-                </form>
-            </section>
-
+        <section class="login_form">
+            <form class="login-container_form">
+                <h4><b>¡Hola! Para seguir, ingresá tu correo electrónico y tu contraseña</b></h4>
+                <div class="user-name_controller" id="email_cont">
+                    <div class="login_item-container">
+                        <i class="fas fa-user-alt" id="login_item"></i>
+                    </div>
+                    <div class="login_controller-container">
+                        <input class="login-controlador" type="email" name="email" id="email"
+                            placeholder="Correo Electrónico">
+                    </div>
+                </div>
+                <div class="user-name_controller" id="pass_cont">
+                    <div class="login_item-container">
+                        <i class="fas fa-lock" id="login_item"></i>
+                    </div>
+                    <div class="login_controller-container">
+                        <input class="login-controlador" type="password" name="password" id="password"
+                            placeholder="Contraseña">
+                    </div>
+                </div>
+                <p><label><input type="checkbox" name="rememberAccount" id="rememberAccount"> Recordar Cuenta</label></p>
+                <input class="button" type="submit" value="Ingresar" id="login-button">
+                <p class="reg"><a href="/register"> ¿No tenes cuenta? Registráte</a></p>
+            </form>
+        </section>
 
 
             <%- include('./partial/footer')%>
