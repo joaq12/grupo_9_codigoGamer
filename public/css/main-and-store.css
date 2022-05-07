@@ -60,12 +60,15 @@ article.product_item{
     padding: 5px;
 }
 
+
+
 .catg_container-title{
     margin: 30px 0 30px 0;
     width: 100%;
     display:block;
  
 }
+
 
 .main-section .product_item-main_article{
     padding: 3px;
@@ -82,32 +85,27 @@ article.product_item{
     font-size: 18px;
     font-weight: bolder;
     flex: 100%;
-    color: white;
 }
 
 .main_categories-button{
-    color:#ab39b5;
     font-size: 18px;
     font-weight: bold;
     border-radius: 8px;
-    border: #ab39b5 solid 2px;
     width: 40%;
 }
 
 
 .product_item-main_article a{
     text-decoration: none;
-    color:#171313 ;
+    color:#ab39b5;
     font-size: 17px;
     text-align: center;
-    padding: 5px;
-    font-weight: bold;
+    padding: 10px;
 }
 
 .product_item-main_article a:hover {
     font-size: 18px;
     font-weight: bold;
-    color:#ab39b5;
 }
 
 /* ----------------------------------------------------------------------------------------Slider best sellers*/
@@ -176,7 +174,7 @@ article.product_item{
     border-color: #59359c;
     color:#59359c;
     display: none;
-    margin: 10px 3px;
+    margin: 15px 2px;
     padding: 10px 0;
     font-size: 13.5px;
     font-weight: bold;
@@ -224,6 +222,11 @@ article.product_item{
 
 /*----------------------------------------------------------------------------------*Store Section*/
 
+.poduct-store_main-link{
+    text-decoration: none;
+    color: inherit;
+}
+
 .main-section-store{
     width: 100%;
     display: flex;
@@ -249,6 +252,9 @@ article.product_item{
 .catg_container-title{
     margin: 0;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .main-section-store .catg-store_container-products{
@@ -266,24 +272,9 @@ article.product_item{
     width:100%;
     min-width: 280px ;
     display: flex;
-    justify-content: center;
     flex-direction: row;
     border-radius: 10px;
     transition: linear 200ms;
-}
-
-.poduct-store_main-link {
-    text-decoration: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    color: inherit;
-}
-
-.product-categorie_main-link{
-    justify-content: center;
 }
 
 .product_item:hover{
@@ -295,6 +286,7 @@ article.product_item{
 
 .main-section-store .product_item-img{
     width: 90%;
+    margin: auto;
 }
 
 .fa.fa-heart{
@@ -320,7 +312,6 @@ article.product_item{
     font-weight: bold;
     text-align: left;
     margin: 10px 0 5px 0;
-    color: #171313;
 }
 
 .discount{
@@ -338,20 +329,16 @@ article.product_item{
     text-align: left;
     margin: 5px 5px 10px 5px;
     display: none;
-    color: #171313;
 }
 
 .product_item-main_article-name{
-    margin: 5px 5px 10px;
     font-size: 22px;
     font-weight:bolder;
     flex:100%;
-    color: #171313;
 }
 
 
 .main-section-store .product_item-main_article{
-    width: 100%;
     margin: 5px 4px;
     display: flex;
     flex-wrap: wrap;
@@ -359,21 +346,36 @@ article.product_item{
     align-items: baseline;
 }
 
-.main-section-store .button-container{
+.main-store-catg_container .button-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
-.main-section-store .button{
-    flex: 40%;
+.store_cart-link{
+    width: 50%;
+    padding: 0px 4px;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.store_cart-link .button{
+    flex: 100%;
     border-color: #59359c;
     color:#59359c;
     display: none;
     margin: 15px 2px;
     padding: 10px 0;
-    font-size: 13.5px;
     font-weight: bold;
     text-align: center;
+    background-color: white; 
+    border-radius: 5px;
+    border: 2px solid #59359c;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .main-section-store .button:hover{
@@ -413,8 +415,7 @@ article.product_item{
     transition: 1.5s;
 }
 
-.envio,
-.categorie{
+.envio{
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
@@ -519,6 +520,7 @@ article.product_item .store_product-edit-button:hover{
 .sidebar {
     display: none;
 }
+
 
 
 

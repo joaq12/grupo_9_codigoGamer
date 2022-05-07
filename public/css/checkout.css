@@ -239,30 +239,26 @@ body{
     #checkout-buttons{
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
         width: 100%;
         margin: 20px 0;
     }
 
-    #checkout-buttons button{
+    #checkout-buttons a{
+        width: 90%; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+    }
+
+    #checkout-buttons  a button{
         padding: 8px ;
-        width: 85%;  
+        width: 100%;  
         font-size: 16px;  
         border-radius: 5px;
-        margin: 10px;
-        border-color: #9e1fac;
     }
 
-    #checkout-buttons button:hover{
-        color:#9e1fac;
-    }
-    
-    #checkout-buttons button a{
-        color: #9e1fac;
-        padding: 0;
-        visibility: visible;
-    }
-
+   
     #checkout-buttons button:hover a{
         color:white;
         font-weight:bold ;
@@ -311,8 +307,8 @@ body{
 
     .checkout-confirm_edit-button:hover{
         border:solid 2px #9e1fac;
-        background-color: #9e1fac0c;
     }
+
     .checkout-confirm_edit-button:hover .fas.fa-pencil-alt{
         color:#9e1fac;
     }
@@ -341,7 +337,6 @@ body{
         flex-wrap: wrap;
         margin: 10px 0;
         text-align: left;
-        width: 100%;
     }
 
     .checkout-confirm_confitm-buttons{
@@ -360,9 +355,9 @@ body{
     .checkout-confirm_confitm-buttons .button-confirm{
         width: 100%;
         background-color: white; 
-        border-radius: 10px;
-        border: 2px solid #9e1fac;
-        color: #9e1fac; 
+        border-radius: 5px;
+        border: 2px solid #59359c;
+        color: #59359c; 
         display: inline-block;
         font-size: 16px;
         padding: 10px 5px;
@@ -373,7 +368,7 @@ body{
         margin:2px
     }
     .button-confirm:hover {
-        background-color: #9e1fac;
+        background-color: #59359c;
         color: white;
         font-weight: bold;
     }
@@ -417,12 +412,9 @@ body{
         padding-right: 0;
     }
             
-    #checkout-buttons button{
-        padding: 8px ;
+    #checkout-buttons a {
+        padding: 12px ;
         width: 40%;  
-        font-size: 16px;  
-        border-radius: 5px;
-        margin: 10px;
     }
 
     .checkout-container_data-controllers .controlador{
