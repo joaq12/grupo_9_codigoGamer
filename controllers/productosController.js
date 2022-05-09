@@ -1,34 +1,84 @@
-const productosController ={
-    detail : (req, res) =>{
-        res.render('product-detail');
-    },
-    cart:(req,res)=>{
-        res.render('cart')
-    },
-     
-    checkoutAdress:(req,res)=>{
-        res.render('checkout-adress')
-    },
+const fs = require("fs");
+const path = require("path");
+const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+var products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-    checkoutConfirm:(req,res)=>{
-        res.render('checkout-confirm')
-    },
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-    checkoutData:(req,res)=>{
-        res.render('checkout-data')
-    },
+const productosController = {
+  detail: (req, res) => {
+    if (req.params.id - 1 < products.length) {
+      res.render("product-detail", { sproduct: products[req.params.id - 1] });
+    }
+  },
 
-    checkoutPayment:(req,res)=>{
-        res.render('checkout-payment')
-    },
+  cart: (req, res) => {
+    res.render("cart");
+  },
 
-    checkoutShipping:(req,res)=>{
-        res.render('Checkout-shipping')
-    },
+  checkoutAdress: (req, res) => {
+    res.render("checkout-adress");
+  },
 
-    productUpload:(req,res)=>{
-        res.render('product-upload-edit')
-    },
-}
+  checkoutConfirm: (req, res) => {
+    res.render("checkout-confirm");
+  },
+
+  checkoutData: (req, res) => {
+    res.render("checkout-data");
+  },
+
+  checkoutPayment: (req, res) => {
+    res.render("checkout-payment");
+  },
+
+  checkoutShipping: (req, res) => {
+    res.render("Checkout-shipping");
+  },
+
+  productCreate: (req, res) => {
+    res.render("product-create");
+  },
+
+  createConfirm: (req, res) => {
+    let newProduct = {
+      id: null,
+      name: null,
+      photo1: null,
+      photo2: null,
+      photo3: null,
+      photo4: null,
+      catg: null,
+      description: null,
+      stock: null,
+      price: null,
+      shipping: null,
+      discount: null,
+    };
+
+    (newProduct.name = req.body.name),
+      (newProduct.description = req.body.description),
+      (newProduct.discount = req.body.discount),
+      (newProduct.catg = req.body.catg),
+      (newProduct.price = req.body.price),
+      (newProduct.shipping = req.body.shipping),
+      (newProduct.stock = req.body.stock),
+      (newProduct.id = products.length + 1);
+   
+     if(req.files){
+      req.files.forEach(imagen => {
+          newProduct[imagen.fieldname]=imagen.filename
+      });
+    }
+
+    products.push(newProduct);
+    let newData = JSON.stringify(products);
+    fs.writeFileSync(productsFilePath, newData);
+    res.redirect("/");
+  },
+  productEdit: (req, res) => {
+    res.render("product-edit");
+  },
+};
 
 module.exports = productosController;

@@ -15,15 +15,14 @@
                                 HyperX Cloud Flight negros</p>
                             <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
                             <div class="image-carrusel_main-img">
-                                <img src="/images/auriculares.jpeg" alt="">
+                                <img src="/images/<%= sproduct.photo1%>" alt="">
                             </div>
                             <div class="image-carrusel_others-imgs">
-                                <div class="image-carrusel_others-imgs_img">
-                                    <img src="/images/auriculares.jpeg" alt="">
+                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo2%>" alt="">
                                 </div>
-                                <div class="image-carrusel_others-imgs_img"><img src="/images/auriculares.jpeg" alt="">
+                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo3%>" alt="">
                                 </div>
-                                <div class="image-carrusel_others-imgs_img"><img src="/images/auriculares.jpeg" alt="">
+                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo4%>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -32,13 +31,16 @@
 
                     <div class="product-detail_buy-data">
                         <div class="product-detail_product-info">
-                            <span class="product-detail_product-name_title">Auriculares gamer inalámbricos HyperX Cloud
-                                Flight negros</span>
+                            <span class="product-detail_product-name_title"><%= sproduct.name%></span>
                                 <p class="product-detail_price">
-                                    $ 33.999
+                                    $<%= sproduct.price%>
                                 </p>
                             <span class="product-detail_pay-methods">
-                                Hasta 6 cuotas sin interés
+                                Hasta 6 cuotas sin interés<br>
+                            </span>
+                             
+                            <span class="product-detail_discount">
+                                <%= sproduct.discount%>% OFF  
                             </span>
                         </div>
 
@@ -142,18 +144,8 @@
                 <div class="product-detail_detail-complete">
                     <div class="detail-complete_text">
                         <span class="detail-text">Detalle del Producto</span>
-                        <p>Ideado para los gamers más exigentes, el HyperX Cloud Flight tiene todo lo que un jugador
-                            busca. Su conectividad inalámbrica permite moverte de un
-                            lugar a otro sin cables. A su vez, su batería de larga duración te dará horas interminables
-                            de sonidos envolventes en tus partidas. Sus orejeras
-                            son sinónimo de comodidad, ya que pueden rotar en un ángulo de 90 grados y reposar de forma
-                            suave en tu cuello. Y como si esto fuera poco, en estas
-                            vas a controlar los efectos de luz LED, silenciar o encender el micrófono con cancelación de
-                            ruido y regular el volumen.</p>
-                        <p>El formato perfecto para vos
-                            El diseño over-ear brinda una comodidad insuperable gracias a sus suaves almohadillas. Al
-                            mismo tiempo, su sonido envolvente del más alto nivel se
-                            convierte en el protagonista de la escena.</p>
+                        <p><%= sproduct.description%></p>
+                       
                     </div>
                 </div>
 
