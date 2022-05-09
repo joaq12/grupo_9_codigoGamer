@@ -145,6 +145,12 @@ span .product-detail_product-name_title{
     font-weight: bold;
    }
 
+.product-detail_discount{
+width: 100%;
+color: #e45e05;
+font-size: 14px;
+font-weight: bold;
+}
 .product-detail_short-detail{
     display: none;
 }
