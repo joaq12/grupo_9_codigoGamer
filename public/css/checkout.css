@@ -326,7 +326,6 @@ body{
         margin: 10px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         background-color:rgba(237, 237, 237, 0.786);
         color:#464646;
         border-radius: 5px;

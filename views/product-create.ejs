@@ -9,7 +9,7 @@
 
     <section class="section-product-form">
 
-        <form action="/product-create" method="POST" enctype="multipart/form-data">
+        <form action="/product-create" method="POST" enctype="multipart/form-data" class="product-form">
  
             <h2>Carga / Edición de Productos</h2>
             <div class="name-images-container">
@@ -27,9 +27,6 @@
                         <input class="upload-img-button" type="file" name="photo2" accept=".jpg" multiple>
                         <input class="upload-img-button" type="file" name="photo3" accept=".jpg" multiple>
                         <input class="upload-img-button" type="file" name="photo4" accept=".jpg" multiple>
-                    </div>
-                    <div class="images-container">
-                        
                     </div>
                 </div>
             </div>
@@ -84,8 +81,8 @@
                         <label for="price">Ingrese precio del Producto</label>
                         <input type="text" name="price" id="price" class="product-controller" placeholder=" $ 0">
                     </div>
+                </div>
             </section>
-            </div>
             <section class="shipping-discount_container">
                 <div class="product-shipping_container">
                     <span>Envio Gratis</span><br>
@@ -102,10 +99,10 @@
                     <span>Descuento</span><br>
                     <div class="discount-container">
                         <div class="apply-discount" id="yes">
-                            <input type="radio" name="discount" id="discount" value="discount" /> Si
+                            <input type="radio" name="discount" id="discount" value="true" /> Si
                         </div>
                         <div class="apply-discount" id="no">
-                            <input type="radio" name="discount" id="non-discount" value="non-discount" /> No
+                            <input type="radio" name="discount" id="non-discount" value="false" /> No
                         </div>
                     </div>
                     <div class="product_name-container_input">

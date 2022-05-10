@@ -7,7 +7,7 @@
         <%- include('./partial/header')%>
 
             <main class="product-detail_root">
-                <a href="store" class="back-to-store"> <<< Voler al listado </a>
+                <a href="/store" class="back-to-store"> <<< Voler al listado </a>
                 <section class="product-detail-container">
                     <section class="product-detail_image-container">
                         <div class="image-carrusel">
@@ -66,20 +66,24 @@
                         </div>
                         <div class="product-detail_buy-data-shipping-cost">
                             <div class="product-detail_cart_shipp-container">
-                                
                                     <p>Calcula el costo de tu Envío</p>
                                     <input id="pd-post-code" placeholder="Ingresa tu Código Postal">
                                     <button class="product-detail_button_calculate-shipping-cost">Calcular</button>
                                     <span>
                                         Su envío tiene un costo de $1.987
-                                    </span>
-                                
+                                    </span> 
                             </div>
                         </div>
                         <div class="product-detail_buy-data_button-container">
                             <a href="product-detail"><button class="button_product-detail_add">Añadir al
                                     Carro</button></a>
                             <a href="cart"><button class="button_product-detail_buy">Comprar</button></a>
+                            <form class="produt-delete_form" method="POST" action="/product-detail/<%=sproduct.id %>?_method=DELETE"_method=DELETE">
+                                    <button class="product-detail_product-delete" value="submit">
+                                        <i class="fas fa-trash-alt" id="delete-product-trash"></i>
+                                        Elimiar Producto
+                                    </button>
+                            </form>
                         </div>
                         <div class="favourites-container">
                             <div class="favourites">
