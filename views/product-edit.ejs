@@ -9,27 +9,24 @@
 
     <section class="section-product-form">
 
-        <form action="" method="POST" class="product-form">
+        <form action="/product-edit/<%=productToEdit%>?_method=PUT" method="POST" class="product-form">
 
             <h2>Carga / Edición de Productos</h2>
             <div class="name-images-container">
                 <div class="product_name-container">
                     <span>Nombre de Producto</span><br>
                     <div class="product_name-container_input">
-                        <label for="name" id="input-product_name">Ingrese el Nombre del Producto</label>
+                        <label for="name" id="input-product_name" >Ingrese el Nombre del Producto</label>
                         <input type="text" name="name" id="name" class="product-controller">
                     </div>
                 </div>
                 <div class="product-form-images">
                     <span class="titulo-imagenes">Imágenes del Producto</span>
                     <div class="img-button-container">
-                        <input class="upload-img-button" type="file" name="profile-photo" accept=".jpg" multiple>
-                    </div>
-                    <div class="images-container">
-                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
-                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
-                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
-                        <img src="/images/monitores.jpeg" alt="imagen" class="form-product-img">
+                        <input class="upload-img-button" type="file" name="photo1" accept=".jpg" multiple>
+                        <input class="upload-img-button" type="file" name="photo2" accept=".jpg" multiple>
+                        <input class="upload-img-button" type="file" name="photo3" accept=".jpg" multiple>
+                        <input class="upload-img-button" type="file" name="photo4" accept=".jpg" multiple>
                     </div>
                 </div>
             </div>
@@ -47,7 +44,7 @@
                 </div>
                 <div class="catg-container_subcatg">
                     <label for="catg" class="sub-catg-label">Seleccione la Sub-Categoría</label>
-                    <select name="sub-catg" id="Sub-categoria" placeholder="Sub-Categorías" class="product-controller">
+                    <select name="sub-catg" id="Sub-categoria" placeholder="Sub-Categorías" class="product-controller" disabled>
                         <option value="Mouse" class="catg-option">Mouse</option>
                         <option value="Teclados" class="catg-option">Teclados</option>
                         <option value="monitores" class="catg-option">Monitores</option>
@@ -66,7 +63,7 @@
 
             <div class="product-description">
                 <span>Descripción de Producto</span><br>
-                <textarea name="product-description_description" id="product-description_description"
+                <textarea name="description" id="product-description_description"
                     class="product-controller">Ingrese la descripción del producto....</textarea>
             </div>
             <section class="price-stock_container">
@@ -74,7 +71,7 @@
                     <span>Stock de Producto</span><br>
                     <div class="product_stock-container_input">
                         <label for="product-stock">Ingrese cantidad en Stock </label>
-                        <input type="number" id="product-stock" name="prodduct-stock" min="1" max="100"
+                        <input type="number" id="product-stock" name="stock" min="1" max="100"
                             class="product-controller" placeholder="0">
                     </div>
                 </div>
@@ -84,17 +81,17 @@
                         <label for="price">Ingrese precio del Producto</label>
                         <input type="text" name="price" id="price" class="product-controller" placeholder=" $ 0">
                     </div>
+                </div>
             </section>
-            </div>
             <section class="shipping-discount_container">
                 <div class="product-shipping_container">
                     <span>Envio Gratis</span><br>
                     <div class="free-shipping-container">
                         <div class="free-shipping" id="yes">
-                            <input type="radio" name="free-shipping" id="free" value="free" /> Si
+                            <input type="radio" name="shipping" id="free" value="true" /> Si
                         </div>
                         <div class="free-shipping" id="no">
-                            <input type="radio" name="free-shipping" id="non-free" value="non-free" /> No
+                            <input type="radio" name="shipping" id="non-free" value="false" /> No
                         </div>
                     </div>
                 </div>
@@ -102,10 +99,10 @@
                     <span>Descuento</span><br>
                     <div class="discount-container">
                         <div class="apply-discount" id="yes">
-                            <input type="radio" name="discount" id="discount" value="discount" /> Si
+                            <input type="radio" name="discount" id="discount" value="true" /> Si
                         </div>
                         <div class="apply-discount" id="no">
-                            <input type="radio" name="discount" id="non-discount" value="non-discount" /> No
+                            <input type="radio" name="discount" id="non-discount" value="false" /> No
                         </div>
                     </div>
                     <div class="product_name-container_input">
@@ -116,11 +113,11 @@
             </section>
             <div class="button-container-edit">
                 <input class="button" type="reset" value="Limpiar" />
-                <input class="button" type="submit" value="Guardar Producto" />
+                
             </div>
-            <div class="button-container-edit" id="publish">
+           <div class="button-container-edit" id="publish">
                 <input class="button" type="submit" value="PUBLICAR" id="publish-product" />
-            </div>
+            </div> 
         </form>
     </section>
 

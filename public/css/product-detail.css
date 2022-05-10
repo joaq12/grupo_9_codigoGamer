@@ -8,6 +8,7 @@
     width: 100%;
     justify-content: center; 
     margin: 50px 0px;
+    background-color: white;
 }
 
 .product-detail-container{
@@ -146,12 +147,13 @@ span .product-detail_product-name_title{
    }
 
 .product-detail_discount{
-width: 100%;
-color: #e45e05;
-font-size: 14px;
-font-weight: bold;
-}
-.product-detail_short-detail{
+    width: 100%;
+    color: #59359c;
+    font-size: 16px;
+    font-weight: bold;
+    }
+
+    .product-detail_short-detail{
     display: none;
 }
 
@@ -220,6 +222,7 @@ font-weight: bold;
 
 
 .button_product-detail_add{
+    background-color: white;
     width: 90%;
     border-radius: 5px;
     padding: 10px;
@@ -229,6 +232,7 @@ font-weight: bold;
 }
 
 .button_product-detail_buy{
+    background-color: white;
     width: 90%;
     border-radius: 5px;
     padding: 10px;
@@ -312,6 +316,54 @@ span.detail-text{
 
 #product-detail_favoutitr-item{
     display:none;
+}
+
+.produt-delete_form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.product-detail_product-delete{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    color:rgb(167,26,26) ;
+    border: solid 1px rgb(167,26,26);
+    border-radius: 5px;
+    font-size: 18px;
+    align-items: baseline;
+    background-color: white;
+    margin: 10px 0 0 0;
+}
+
+
+button #delete-product-trash{
+    text-align: left;
+    color: rgb(167, 26, 26);
+    font-size: 20px;
+    background-color: none;
+    border-radius: none;
+    border: none;
+    outline: none;
+    transition: none;
+}
+
+.product-detail_product-delete:hover i#delete-product-trash{
+    background-color: rgb(167,26,26);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: none;
+}
+
+.product-detail_product-delete:hover {
+    background-color: rgb(167,26,26);
+    color: white;
+    font-weight: bolder;
 }
 
 
@@ -621,6 +673,10 @@ span.detail-text{
         font-size: 18px;
     }
     
+    .product-detail_product-delete{
+        width: 100%;
+    }
+
     .favourites-container{
         display: none;
     }

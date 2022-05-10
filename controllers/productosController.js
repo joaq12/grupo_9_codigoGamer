@@ -40,6 +40,8 @@ const productosController = {
     res.render("product-create");
   },
 
+  
+
   createConfirm: (req, res) => {
     let newProduct = {
       id: null,
@@ -76,9 +78,46 @@ const productosController = {
     fs.writeFileSync(productsFilePath, newData);
     res.redirect("/");
   },
+
   productEdit: (req, res) => {
-    res.render("product-edit");
+    if (req.params.id - 1 < products.length) {
+    res.render("product-edit", {
+      productToEdit: products[req.params.id -1],
+  })}},
+
+  productUpdate:(req,res)=>{
+    console.log(req.body)
+    console.log(req.params)
+    let productToEdit=products.find(
+      (product)=>product.id == req.params.id);
+      console.log(productToEdit)
+      products.forEach(product=>{if(product.id==req.params.id){
+        (product.name=req.body.name),
+        (product.description=req.body.description),
+        (product.discount=req.body.discount),
+        (product.catg=req.body.catg),
+        (product.price=req.body.price),
+        (product.shipping=req.body.shipping),
+        (product.stock=req.body.stock)
+      }})
+      let newData= JSON.stringify(products);
+      fs.writeFileSync(productsFilePath, newData);
+      res.redirect("/store")
+
   },
+
+
+  delete: (req,res)=>{
+    let productToDelete=(product)=>{
+      if(product.id != req.params.id){
+        return product}}                                          
+    products=products.filter((productToDelete))                         
+    let newDataBase = JSON.stringify(products);
+    fs.writeFileSync(productsFilePath, newDataBase);
+    res.redirect("/store");
+  },
+
+  
 };
 
 module.exports = productosController;
