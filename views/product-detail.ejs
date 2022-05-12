@@ -11,11 +11,13 @@
                 <section class="product-detail-container">
                     <section class="product-detail_image-container">
                         <div class="image-carrusel">
-                            <p class="product-detail_image-container_product-title">Auriculares gamer inalámbricos
-                                HyperX Cloud Flight negros</p>
+                            <p class="product-detail_image-container_product-title"><%= sproduct.name%></p>
                             <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
                             <div class="image-carrusel_main-img">
                                 <img src="/images/<%= sproduct.photo1%>" alt="">
+                                <i class="fa fa-heart"></i>
+                            <button class="product-detail_product-edit-button"><a href="/product-edit/<%=sproduct.id %>"><i
+                                        class="fas fa-pencil-alt"></i></a></button>
                             </div>
                             <div class="image-carrusel_others-imgs">
                                 <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo2%>" alt="">
@@ -40,7 +42,7 @@
                             </span>
                              
                             <span class="product-detail_discount">
-                                <%= sproduct.discount%>% OFF  
+                                <%= sproduct.discountAply%>% OFF  
                             </span>
                         </div>
 

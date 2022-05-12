@@ -56,11 +56,13 @@ const productosController = {
       price: null,
       shipping: null,
       discount: null,
+      discountAply:null
     };
 
     (newProduct.name = req.body.name),
       (newProduct.description = req.body.description),
       (newProduct.discount = req.body.discount),
+      (newProduct.discountAply = req.body.discountAply),
       (newProduct.catg = req.body.catg),
       (newProduct.price = req.body.price),
       (newProduct.shipping = req.body.shipping),
@@ -86,20 +88,26 @@ const productosController = {
   })}},
 
   productUpdate:(req,res)=>{
-    console.log(req.body)
-    console.log(req.params)
     let productToEdit=products.find(
       (product)=>product.id == req.params.id);
-      console.log(productToEdit)
       products.forEach(product=>{if(product.id==req.params.id){
         (product.name=req.body.name),
         (product.description=req.body.description),
         (product.discount=req.body.discount),
+        (product.discountAply = req.body.discountAply),
         (product.catg=req.body.catg),
         (product.price=req.body.price),
         (product.shipping=req.body.shipping),
         (product.stock=req.body.stock)
+        if(req.files){
+            req.files.forEach(imagen => {
+            productToEdit[imagen.fieldname]=imagen.filename
+            })};
+
       }})
+
+      
+
       let newData= JSON.stringify(products);
       fs.writeFileSync(productsFilePath, newData);
       res.redirect("/store")
