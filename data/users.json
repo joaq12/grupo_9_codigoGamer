@@ -1,0 +1,67 @@
+[
+    {
+        "id":1,
+        "nombre":"pepe",
+        "apellido":"argento",
+        "dni":20444555,
+        "sexo":"masculino",
+        "fechaNac":"23/04/69",
+        "nacionalidad":"argentino",
+        "provincia":"buenos aires",
+        "tel":4522836,
+        "email":"pepe_argento@gmail.com",
+        "user-class":"cliente"
+    },
+    {
+        "id":2,
+        "nombre":"pepe",
+        "apellido":"argento",
+        "dni":20444555,
+        "sexo":"masculino",
+        "fechaNac":"23/04/69",
+        "nacionalidad":"argentino",
+        "provincia":"buenos aires",
+        "tel":4522836,
+        "email":"pepe_argento@gmail.com",
+        "user-class":"cliente"
+    },
+    {
+        "id":3,
+        "nombre":"pepe",
+        "apellido":"argento",
+        "dni":20444555,
+        "sexo":"masculino",
+        "fechaNac":"23/04/69",
+        "nacionalidad":"argentino",
+        "provincia":"buenos aires",
+        "tel":4522836,
+        "email":"pepe_argento@gmail.com",
+        "user-class":"cliente"
+    },
+    {
+        "id":4,
+        "nombre":"pepe",
+        "apellido":"argento",
+        "dni":20444555,
+        "sexo":"masculino",
+        "fechaNac":"23/04/69",
+        "nacionalidad":"argentino",
+        "provincia":"buenos aires",
+        "tel":4522836,
+        "email":"pepe_argento@gmail.com",
+        "user-class":"cliente"
+    },
+    {
+        "id":5,
+        "nombre":"pepe",
+        "apellido":"argento",
+        "dni":20444555,
+        "sexo":"masculino",
+        "fechaNac":"23/04/69",
+        "nacionalidad":"argentino",
+        "provincia":"buenos aires",
+        "tel":4522836,
+        "email":"pepe_argento@gmail.com",
+        "user-class":"cliente"
+    }
+ ]
