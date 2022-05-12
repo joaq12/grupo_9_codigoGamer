@@ -64,7 +64,33 @@
     border: solid 1px #59359c;
     border-radius: 5px;
     background-color: white;
+    position: relative;
 }
+.product-detail_product-edit-button{
+    border-radius: 50%;
+    color:#b9b0b0;
+    border: 1px solid #b9b0b0;
+    background-color: white;
+    position:absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.product-detail_product-edit-button .fas.fa-pencil-alt{
+    padding: 8px;
+    color:#b9b0b0;
+    font-size: 25px;
+}
+
+.product-detail_product-edit-button:hover{
+    border:solid 2px #9e1fac;
+    background-color: white;
+}
+
+.product-detail_product-edit-button:hover .fas.fa-pencil-alt{
+    color:#9e1fac;
+}
+
 
 .image-carrusel_main-img img{
     width: 75%;
@@ -364,6 +390,7 @@ button #delete-product-trash{
     background-color: rgb(167,26,26);
     color: white;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 

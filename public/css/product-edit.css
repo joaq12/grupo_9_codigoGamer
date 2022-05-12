@@ -4,6 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 90%;
 }
 
 form h2{
@@ -12,6 +13,10 @@ form h2{
     padding: 8px;
     font-size: 18px;
     border-radius: 5px;
+}
+
+.name-images-container{
+    width: 100%;
 }
 label{
     font-size: 13px;
@@ -33,11 +38,13 @@ label{
     border-radius: 5px;
     border : 1px solid #adabb0;
     font-size: 12px;
+    font-family:  'Prompt', sans-serif;
 }
 
 .product-controller:focus-visible{
     outline: none;
     border : 3px solid #59359c;
+    font-family:  'Prompt', sans-serif;
 }
 
 
@@ -70,13 +77,13 @@ label{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: center;
     padding-left: 10px;
 }
 
 .upload-img-button{
     color:white;
-    padding: 0 0 0 10px;
+    padding: 10px 0 10px 10px;
     }
 
 .product-form span{
@@ -95,8 +102,8 @@ label{
     width:100%;
     display: flex;
     flex-wrap: wrap;
-    border-bottom: solid 1px #59359c;
     padding: 10px;
+    border-bottom: solid 1px #59359c;
 }
 
 .catg-container_catg{
@@ -115,7 +122,6 @@ label{
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    border-bottom: solid 1px #59359c;
     border-top: solid 1px #59359c;
 }
 
@@ -139,6 +145,7 @@ label{
     min-height: 100px;
     padding: 10px ;
     margin: 0;
+    font-family:  'Prompt', sans-serif;
 }
 
 .price-stock_container,
@@ -271,15 +278,17 @@ label{
 
     .product-controller{
         width: 40%;
+        font-family:  'Prompt', sans-serif;
     }
 
     .product-controller#name{
         width: 90%;
+        font-family:  'Prompt', sans-serif;
     }
     
     .product-controller#product-description_description{
         width: 90%;
-        text-align: center;
+        font-family:  'Prompt', sans-serif;
     }
 
     .shipping-discount_container,
@@ -306,14 +315,13 @@ label{
 
     .button-container-edit{
         flex-wrap: wrap;
-        width: 65%;
+        width: 50%;
         margin: 20px 0;
-        justify-content: space-around;
     }
 
     .button-container-edit#publish{
-        flex-wrap: nowrap;
-        width: 35%;
+        flex-wrap: wrap;
+        width:50%;
         margin: 20px 0;
 
     }
@@ -326,11 +334,11 @@ label{
         text-align: center;
         
     } .button-container-edit .button{
-        width: 40%;
+        width: 60%;
     }   
 
     .button#publish-product{
-        width: 91%;
+        width: 60%;
     }
 
     .catg-container_catg,
