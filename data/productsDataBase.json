@@ -55,7 +55,6 @@
     "shipping": false,
     "discount": 80
   },
- 
   {
     "id": 5,
     "name": "Teclado",
@@ -68,6 +67,7 @@
     "stock": "25",
     "price": "35",
     "shipping": "true",
-    "discount": ["discount", ""]
+    "discount": 80
   }
 ]
+

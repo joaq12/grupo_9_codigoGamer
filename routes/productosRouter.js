@@ -21,7 +21,7 @@ const multerDiskStorage = multer.diskStorage({
 const fileUpload = multer({storage:multerDiskStorage})
 
 
-/*** GET ONE PRODUCT ***/ 
+
 router.get('/product-detail/:id', productosController.detail); 
 router.get('/cart',productosController.cart);
 router.get('/checkout-adress',productosController.checkoutAdress);
@@ -31,6 +31,9 @@ router.get('/checkout-payment',productosController.checkoutPayment);
 router.get('/checkout-shipping',productosController.checkoutShipping);
 router.get('/product-create',productosController.productCreate);
 router.post('/product-create',fileUpload.any(),productosController.createConfirm); 
-router.get('/product-edit',productosController.productEdit);
+router.get('/product-edit/:id',productosController.productEdit);
+router.put('/product-edit/:id',productosController.productUpdate);
+router.delete('/product-detail/:id', productosController.delete); 
+
 
 module.exports = router;
