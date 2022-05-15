@@ -219,6 +219,76 @@
     color: #9839b5,
 }
 
+div#user-img_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div#user-img_container.controlador{
+    background-color: white;
+}
+
+div#user-img_container.controlador label{
+    font-family: 'Prompt', sans-serif;
+    font-size:14px ;
+    color :#949494;
+    font-weight: bold;
+}
+
+div#user-img_container.controlador input{
+    color: white;
+    width: 48%;
+    margin: 0px 0px 0px 20px;
+}
+
+#file-upload-button{
+    font-size: 20px;
+    color: #9839b5;
+}
+
+div#birth-date_container{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+div#birth-date_container label{
+    font-family: 'Prompt', sans-serif;
+    font-size:14px ;
+    color :#949494;
+    font-weight: bold;
+}
+
+div#birth-date_container input{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color :#949494;
+    width: 40%;
+    padding: 2px 3px;
+    margin: 0px 0px 0px 20px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div#birth-date_container input:focus-visible{
+    color: none;
+    border:none
+}
+
+
+
+
+
+
+
 @media (min-width: 361px){
     .formulario textarea#comentario{
         max-width: 100%;

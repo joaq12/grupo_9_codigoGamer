@@ -65,13 +65,20 @@
                                 <img class="product_item-img" src="/images/<%= products[i].photo1%>" alt="item name">
                                 <div class="product_item-main_article">
                                     <p class="product_item-main_article-name"><%= products[i].name %></p>
+
                                     
                                     <div class="envio">
+                                    <% if(products[i].shipping){%>
                                         <i class="fas fa-truck"></i>
-                                        <span></i> Envio Gratis</span>
+                                        <span> Envio Gratis</span>
+                                     <%}%>
                                     </div>
+                                   
                                     <p class="price">$ <%= products[i].price %></p>
-                                    <p class="discount"><%= products[i].discountAply %>% OFF</p>
+                                    <% if(products[i].discount){%>
+                                        <p class="discount"><%= products[i].discountAply %>% OFF</p>
+                                    <%}%>
+
                                 </div>
                                 
                             </a>
