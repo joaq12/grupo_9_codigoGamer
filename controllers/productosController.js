@@ -5,6 +5,7 @@ var products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
 const productosController = {
   detail: (req, res) => {
     if (req.params.id - 1 < products.length) {
@@ -88,25 +89,26 @@ const productosController = {
   })}},
 
   productUpdate:(req,res)=>{
+    console.log(req.file)
+    
     let productToEdit=products.find(
       (product)=>product.id == req.params.id);
       products.forEach(product=>{if(product.id==req.params.id){
         (product.name=req.body.name),
-        (product.description=req.body.description),
-        (product.discount=req.body.discount),
+        (product.description=req.body.description ),
+        (product.discount=req.body.discount === undefined ? false:true),
         (product.discountAply = req.body.discountAply),
         (product.catg=req.body.catg),
         (product.price=req.body.price),
-        (product.shipping=req.body.shipping),
+        (product.shipping=req.body.shipping === undefined ? false:true),
         (product.stock=req.body.stock)
+
         if(req.files){
             req.files.forEach(imagen => {
             productToEdit[imagen.fieldname]=imagen.filename
             })};
 
       }})
-
-      
 
       let newData= JSON.stringify(products);
       fs.writeFileSync(productsFilePath, newData);
