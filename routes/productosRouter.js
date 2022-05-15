@@ -8,6 +8,7 @@ var products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 
 const productosController = require('../controllers/productosController');
+
 const multerDiskStorage = multer.diskStorage({
     destination:(req,file,cb)=>{
     const folder = path.join(__dirname,'../public/images')
@@ -32,7 +33,7 @@ router.get('/checkout-shipping',productosController.checkoutShipping);
 router.get('/product-create',productosController.productCreate);
 router.post('/product-create',fileUpload.any(),productosController.createConfirm); 
 router.get('/product-edit/:id',productosController.productEdit);
-router.put('/product-edit/:id',productosController.productUpdate);
+router.put('/product-edit/:id', fileUpload.any(), productosController.productUpdate);
 router.delete('/product-detail/:id', productosController.delete); 
 
 

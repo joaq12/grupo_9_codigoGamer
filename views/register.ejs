@@ -13,12 +13,21 @@
             <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido">
             <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI">
             <input class="controlador" type="text" name="sexo" id="sexo" placeholder="Femenino/Masculino">
-            <input class="controlador" type="text" name="fechaNac" id="fechaNac" placeholder="Nacimiento - dd/mm/aaaa">
+            <div class="controlador" id="birth-date_container" >
+                <label for="birth-date" id="birth-date">Nacimiento</label>
+                <input type="date" name="birth-date" id="birth-date" plceholder="Nacimiento">
+            </div>
             <input class="controlador" type="text" name="nacionalidad" id="nac" placeholder="Nacionalidad">
             <input class="controlador" type="text" name="provincia" id="prov" placeholder="Provincia">
             <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero">
             <input class="controlador" type="email" name="email" id="email" placeholder="Correo Electrónico // mail@codigogammer.com">
-            <input class="controlador" type="email" name="email2" id="email2" placeholder="Confirmá Correo Electrónico">
+            <input class="controlador" type="email" name="email" id="email2" placeholder="Confirmá Correo Electrónico">
+            <input class="controlador" type="password" name="pass1" id="pass1" placeholder="Elegí una Contraseña">
+            <input class="controlador" type="password" name="pass2" id="pass2" placeholder="Confirmá Contraseña">
+            <div class="controlador" id="user-img_container">
+            <label for="user-img">Imagen de Perfil</label>
+            <input type="file" name="user-img" id="user-img"> 
+            </div >
             <select name="user-class" id="user-class" placeholder="Tipo de Usuario" class="controlador">
                 <option value="" class="catg-option" hidden selected>Tipo de usuario</option>
                 <option value="adm-user" class="catg-option">Administrador</option>

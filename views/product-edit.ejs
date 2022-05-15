@@ -9,7 +9,7 @@
 
     <section class="section-product-form">
 
-        <form action="/product-edit/<%=productToEdit.id%>?_method=PUT" method="POST" class="product-form">
+        <form action="/product-edit/<%=productToEdit.id%>?_method=PUT" enctype="multipart/form-data" method="POST" class="product-form">
 
             <h2>Edición de Productos</h2>
             <div class="name-images-container">
@@ -23,10 +23,10 @@
                 <div class="product-form-images">
                     <span class="titulo-imagenes">Imágenes del Producto</span>
                     <div class="img-button-container">
-                        <input class="upload-img-button" type="file" name="<%=productToEdit.photo1%>" accept=".jpg" value="<%=productToEdit.photo1%>" multiple>
-                        <input class="upload-img-button" type="file" name="<%=productToEdit.photo2%>" accept=".jpg" value="<%=productToEdit.photo2%>" multiple>
-                        <input class="upload-img-button" type="file" name="<%=productToEdit.photo3%>" accept=".jpg" value="<%=productToEdit.photo3%>" multiple>
-                        <input class="upload-img-button" type="file" name="<%=productToEdit.photo4%>" accept=".jpg" value="<%=productToEdit.photo4%>" multiple>
+                        <input class="upload-img-button" type="file" name="photo1" accept=".jpg"  multiple>
+                        <input class="upload-img-button" type="file" name="photo2" accept=".jpg"  multiple>
+                        <input class="upload-img-button" type="file" name="photo3" accept=".jpg"  multiple>
+                        <input class="upload-img-button" type="file" name="photo4" accept=".jpg"  multiple>
                     </div>
                 </div>
             </div>
@@ -89,22 +89,22 @@
                     <span>Envio Gratis</span><br>
                     <div class="free-shipping-container">
                         <div class="free-shipping" id="yes" >
-                            <input type="radio" name="shipping" id="free" value="<%=productToEdit.shipping%>"/> Si
+                            <input type="checkbox" name="shipping" id="free" value=true/> Si
                         </div>
-                        <div class="free-shipping" id="no">
-                            <input type="radio" name="shipping" id="non-free" value="<%=productToEdit.shipping%>" /> No
-                        </div>
+                        <!-- <div class="free-shipping" id="no"> -->
+                            <!-- <input type="radio" name="shipping" id="non-free" value="" /> No -->
+                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="product-discount_container">
                     <span>Descuento</span><br>
                     <div class="discount-container">
                         <div class="apply-discount" id="yes">
-                            <input type="radio" name="discount" id="discount"  value="<%=productToEdit.discount%>"/> Si
+                            <input type="checkbox" name="discount" id="discount" /> Si
                         </div>
-                        <div class="apply-discount" id="no">
-                            <input type="radio" name="discount" id="non-discount" value="<%=productToEdit.discount%>"  /> No
-                        </div>
+                        <!-- <div class="apply-discount" id="no">
+                            <input type="radio" name="discount" id="non-discount" /> No
+                        </div> -->
                     </div>
                     <div class="product_name-container_input">
                         <label for="discount-per" id="product-discount-per">Porcentaje de Descuento</label>
