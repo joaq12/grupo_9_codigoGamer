@@ -8,16 +8,17 @@ const bcrypt=require('bcryptjs');
 
 const usersController={
     
-  
+  registerProcess:(req,res)=>{
+    const errores=validationResult(req)
+    console.log(errores)
+    if(errores.length > 0){
+        res.render('user-register',{errors:errores.mapped(),old:req.body})
+        }
+  },
+      
   usersCreate: (req, res) => {
     let hash=bcrypt.hashSync('req.body.password',10);
-    let validation=validationResult(req)
-    if(validation.errors.length>0){
-        res.render('user-register',{errors:validation.mapped(),old:req.body})
-        }else{ 
-            res.redirect('/store')
-    };
-      // console.log(resultValidation)
+    
         let newUser = {
           id: null,
           name: null,
@@ -76,7 +77,6 @@ const usersController={
           users.forEach(user=>{if(user.id==req.params.id){
             (user.name = req.body.nombre),
             (user.lastName=req.body.apellido)
-            (user.dni = req.body.dni),
             (user.gender = req.body.sexo),
             (user.birthDay = req.body.fechaNac),
             (user.password = hash),
@@ -108,7 +108,8 @@ const usersController={
       register :(req,res)=>{
         
          res.render('user-register')
-      }
+      },
+
     };
 
 module.exports=usersController;

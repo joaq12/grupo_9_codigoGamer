@@ -1,25 +1,10 @@
-const fs = require("fs");
-const path = require("path");
-const multer = require('multer');
 const express = require('express');
 const router = express.Router();
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-var products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
-
+//controllers
 const productosController = require('../controllers/productosController');
-
-const multerDiskStorage = multer.diskStorage({
-    destination:(req,file,cb)=>{
-    const folder = path.join(__dirname,'../public/images')
-    cb(null,folder)
-    },
-    filename:(req,file,cb)=>{
-        const filename = Date.now() + path.extname(file.originalname)
-        cb(null,filename)
-        },
-})
-const fileUpload = multer({storage:multerDiskStorage})
+//middleWares
+const uploadFile=require('../middlewares/productsMulter')
 
 
 
@@ -31,9 +16,9 @@ router.get('/checkout-data',productosController.checkoutData);
 router.get('/checkout-payment',productosController.checkoutPayment);
 router.get('/checkout-shipping',productosController.checkoutShipping);
 router.get('/product-create',productosController.productCreate);
-router.post('/product-create',fileUpload.any(),productosController.createConfirm); 
+router.post('/product-create',uploadFile.any(),productosController.createConfirm); 
 router.get('/product-edit/:id',productosController.productEdit);
-router.put('/product-edit/:id', fileUpload.any(), productosController.productUpdate);
+router.put('/product-edit/:id', uploadFile.any(), productosController.productUpdate);
 router.delete('/product-detail/:id', productosController.delete); 
 
 
