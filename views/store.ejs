@@ -14,9 +14,13 @@
 
 
             <main class="main-section-store">
+                    <div class="product-create_button-container">
+                        <a href="/product-create"><button class="button_product-add"><i class="fas fa-plus"></i>Añadir Producto</button></a>
+                    </div>
 
                 <section class="main-store-catg_container">
 
+                   
 
                     <div class="sidebar">
                         <div class="sidebar-list">
@@ -61,28 +65,33 @@
                                 <img class="product_item-img" src="/images/<%= products[i].photo1%>" alt="item name">
                                 <div class="product_item-main_article">
                                     <p class="product_item-main_article-name"><%= products[i].name %></p>
+
                                     
                                     <div class="envio">
+                                    <% if(products[i].shipping){%>
                                         <i class="fas fa-truck"></i>
-                                        <span></i> Envio Gratis</span>
+                                        <span> Envio Gratis</span>
+                                     <%}%>
                                     </div>
+                                   
                                     <p class="price">$ <%= products[i].price %></p>
-                                    <p class="discount"><%= products[i].discount %>% OFF</p>
-                                    <h4 class="description"><%= products[i].description %></h4>
+                                    <% if(products[i].discount){%>
+                                        <p class="discount"><%= products[i].discountAply %>% OFF</p>
+                                    <%}%>
+
                                 </div>
                                 
                             </a>
                             <div class="button-container">
-                                <span class="button-span"> </span>
                                 <a href="cart" class="store_cart-link">
-                                    <input class="button" type="submit" value="Agregar al Carro">
+                                    <input class="button" type="submit" value="Añadir al Carro">
                                 </a>
                                 <a href="cart" class="store_cart-link">
                                     <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
                                 </a>
                             </div>
                             <i class="fa fa-heart"></i>
-                            <button class="store_product-edit-button"><a href="/product-create"><i
+                            <button class="store_product-edit-button"><a href="/product-edit/<%= products[i].id %>"><i
                                         class="fas fa-pencil-alt"></i></a></button>
                                         
                         </article>
