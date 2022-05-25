@@ -9,58 +9,47 @@ const bcrypt=require('bcryptjs');
 const usersController={
     
   registerProcess:(req,res)=>{
-    const errores=validationResult(req)
-    console.log(errores)
-    if(errores.length > 0){
-        res.render('user-register',{errors:errores.mapped(),old:req.body})
-        }
-  },
-      
-  usersCreate: (req, res) => {
-    let hash=bcrypt.hashSync('req.body.password',10);
+    const errors=validationResult(req);
+    let newUser = {
+        id: null,
+        name: null,
+        lastName:null,
+        dni:null,
+        gender:null,
+        birthDay:null,
+        password1:null,
+        password2:null,
+        contactNumber:null,
+        email:null,
+        profilePhoto:null,
+        userClass:null,          
+      };
+     
+        (newUser.name = req.body.nombre),
+        (newUser.lastName=req.body.apellido),
+        (newUser.dni = req.body.dni),
+        (newUser.gender = req.body.sexo),
+        (newUser.birthDay = req.body.fechaNac),
+        (newUser.password1 = bcrypt.hashSync(req.body.password1,10)),
+        (newUser.password2 = bcrypt.hashSync(req.body.password2,10)),
+        (newUser.contactNumber = req.body.tel),
+        (newUser.email=req.body.email),
+        (newUser.userClass=req.body.userClass),
+        (newUser.profilePhoto=req.file),
+        (newUser.id = users.length + 1);
     
-        let newUser = {
-          id: null,
-          name: null,
-          lastName:null,
-          dni:null,
-          gender:null,
-          birthDay:null,
-          password:null,
-          contactNumber:null,
-          email:null,
-          profilePhoto:null,
-          userClass:null,          
-        };
-       
-          (newUser.name = req.body.nombre),
-          (newUser.lastName=req.body.apellido),
-          (newUser.dni = req.body.dni),
-          (newUser.gender = req.body.sexo),
-          (newUser.birthDay = req.body.fechaNac),
-          (newUser.password = hash),
-          (newUser.contactNumber = req.body.tel),
-          (newUser.email=req.body.email),
-          (newUser.userClass=req.body.userClass),
-          (newUser.profilePhoto=req.file),
-          (newUser.id = users.length + 1);
-       
-         if(req.files){
-          req.files.forEach(imagen => {
-              newUser[imagen.fieldname]=imagen.filename
-          });
-          
-        };
     
-             
-        
-    
+    if(errors.isEmpty()){
+
         users.push(newUser);
-        let newData = JSON.stringify(users,null,' ');
-        fs.writeFileSync(usersFilePath, newData);
-        res.redirect("/"); 
-      },
-    
+          let newData = JSON.stringify(users,null,' ');
+          fs.writeFileSync(usersFilePath, newData);
+          res.redirect("/"); }else{
+        
+          res.render('user-register',{errors:errors.mapped(),old:req.body})
+          }
+  },
+          
       userEdit: (req, res) => {
         if (req.params.id - 1 < users.length) {
         res.render("user-edit", {

@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser());
-app.use (session({secret:"codigo gamer secret code"}));
+app.use(session({secret: "Shhh, It's a secret",resave: false,saveUninitialized: false,}));
 
 
 app.use('/', mainRouter);

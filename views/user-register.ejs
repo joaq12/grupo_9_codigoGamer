@@ -9,20 +9,13 @@
     <section> 
         <form action="/user-register" method="POST" enctype="multipart/form-data"class="formulario">
             <h4><b> Para crear tu cuenta en Código Gamer ¡Ingresá estos datos!</b></h4>
-            <% if(locals.errors && errors.name) { %>
-                <p><%errors.name.msg%></p>
-                <%}%>
-                <% if(locals.errors && errors.name) { %>
-            
-                <p class="text-danger"><%errors.name.msg%></p>
-                <%}%>
+            <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                    <%= errors.name.msg %> 
+                </div>
+            <% } %>
             <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%=locals.old&&old.nombre%>">
-            <% if(locals.errors && errors.name) { %>
-            
-                <p class="text-danger"><%errors.name.msg%></p>
-                <%}%>
             <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"value="<%=locals.old&&old.apellido%>" >
-            <p>hola</p>
             <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"value="<%=locals.old&&old.dni%>">
             <input class="controlador" type="text" name="sexo" id="sexo" placeholder="Femenino/Masculino"value="<%=locals.old&&old.sexo%>">
             <input class="controlador" type="date" name="fechaNac" id="fechaNac" placeholder="Nacimiento - dd/mm/aaaa"value="<%=locals.old&&old.fechaNac%>">
