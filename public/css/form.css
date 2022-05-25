@@ -46,6 +46,8 @@
     margin-top: 8px;
     border : 1px solid #adabb0;
     font-size: 12px;
+    background-color: white;
+
 }
 
 .controlador:focus-visible{
@@ -219,6 +221,10 @@
     color: #9839b5,
 }
 
+::-webkit-file-upload-button#profilePhoto{
+    display: none;
+}
+
 @media (min-width: 361px){
     .formulario textarea#comentario{
         max-width: 100%;
@@ -262,6 +268,7 @@
     width: 48%;
     padding: 10px ;
     font-family:  'Prompt', sans-serif;
+    background-color: white;
     }
 
 .user-name_controller{

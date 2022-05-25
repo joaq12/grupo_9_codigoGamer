@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partial/head')%>
+
+    <body>
+        
+    <%- include('./partial/header')%>
+    <section> 
+        <form action="/user-register" method="POST" enctype="multipart/form-data"class="formulario">
+            <h4><b> Para crear tu cuenta en Código Gammer ¡Ingresá estos datos!</b></h4>
+            <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%=locals.old&&old.nombre%>">
+            <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"value="<%=locals.old&&old.apellido%>" >
+            <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"value="<%=locals.old&&old.dni%>">
+            <input class="controlador" type="text" name="sexo" id="sexo" placeholder="Femenino/Masculino"value="<%=locals.old&&old.sexo%>">
+            <input class="controlador" type="date" name="fechaNac" id="fechaNac" placeholder="Nacimiento - dd/mm/aaaa"value="<%=locals.old&&old.fechaNac%>">
+            <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero"value="<%=locals.old&&old.tel%>">
+            <input class="controlador" type="password" name="password" id="nac" placeholder="Introduzca contraseña">
+            <input class="controlador" type="password" name="password" id="prov" placeholder="Verifique contraseña">
+            <input class="controlador" type="email" name="email" id="email" placeholder="Correo Electrónico // mail@codigogammer.com"value="<%=locals.old&&old.email1%>">
+            <input class="controlador" type="email" name="email" id="email2" placeholder="Confirmá Correo Electrónico">
+            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil">
+            <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador"value="<%=locals.old&&old.userClass%>">
+                <option value="" class="catg-option" hidden selected>Tipo de usuario</option>
+                <option value="adm-user" class="catg-option">Administrador</option>
+                <option value="client-user" class="catg-option">Cliente</option>
+            </select>
+            <p><label><input type="checkbox" name="acceptTerms" id="acceptTerms"required> Acepto <a href="#">Términos y Condiciones</a>
+            </label></p>
+            <input class="button" type="submit" value="Registrarse">
+            <p><a href="/login">¿Ya tenes cuenta? Ingresá</a></p>
+            <div class="ejs">
+                <% if (locals.errors && errors.email) { %>
+                    <p class="text-danger">
+                        <%= errors.email.msg %>
+                    </p>
+                <% } %>
+                <% if (locals.errors && errors.name) { %>
+                    <p class="text-danger">
+                        <%= errors.name.msg %>
+                    </p>
+                <% } %>
+            </div>
+        </form>
+        
+    </section>
+   
+<%- include('./partial/footer')%> 
+
+
+</body>
+
+</html>
