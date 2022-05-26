@@ -25,12 +25,19 @@
             <input class="controlador" type="email" name="email1" id="email" placeholder="Correo Electrónico // mail@codigoGamer.com"value="<%=locals.old&&old.email1%>">
             <input class="controlador" type="email" name="email2" id="email" placeholder="Confirmá Correo Electrónico">
             <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil">
-            <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador"value="<%=locals.old&&old.userClass%>">
-                <option value="" class="catg-option" hidden selected>Tipo de usuario</option>
-                <option value="adm-user" class="catg-option">Administrador</option>
-                <option value="client-user" class="catg-option">Cliente</option>
-            </select>
-            <p><label><input type="checkbox" name="acceptTerms" id="acceptTerms"> Acepto <a href="#">Términos y Condiciones</a>
+            <select name="userClass" class="controlador">
+									<option value="">elegí una clase</option>
+									<%  
+										let userClass = ['Administrador','Cliente'];
+									%>
+									<% for (const oneClass of userClass) { %>
+										<option 
+											value="<%= oneClass %>"
+											<%= locals.oldData && (oneClass === oldData.userClass) ? 'selected' : null %> 
+										> <%= oneClass %> </option>
+									<% } %>
+								</select>
+            <p><label><input type="checkbox" name="acceptTerms" id="acceptTerms"required> Acepto <a href="#">Términos y Condiciones</a>
             </label></p>
             <input class="button" type="submit" value="Registrarse">
             <p><a href="/login">¿Ya tenes cuenta? Ingresá</a></p>

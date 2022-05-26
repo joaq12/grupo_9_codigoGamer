@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partial/head')%>
+<body>
+    <%- include('../partial/header')%>
+    <section>
+      <div class="catg-store_container-products">
+        <% for (let i = 0; i < users.length; i++) {%>
+        <article class="product_item">
+           
+            <a href="/user-profile/<%= users.id %>"></a>
+            <a class="poduct-store_main-link" href="/user-edit/<%= users[i].id %>">
+                <img class="product_item-img" src="/public/images/users/<%=users[i]%>" alt="item name">
+
+                
+                <div class="product_item-main_article">
+                    
+                    <p class="user-profile-info">Nombre completo:   <%= users[i].name %> <%= users[i].lastName %></p>
+                    <p class="user-profile-info">Mail: <%= users[i].email1 %></p>
+                    <p class="user-profile-info">Permisos: <%= users[i].userClass %></p>
+                </div>
+            </a>
+            </div>
+            
+                        
+        </article>
+     <% } %>   
+    </div>
+    </section>
+    <%- include('../partial/footer')%>
+</body>
+</html>

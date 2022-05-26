@@ -9,7 +9,7 @@ const bcrypt=require('bcryptjs');
 const usersController={
  
   userDetails:(req,res)=>{
-    res.render('user-profile',{users})
+    res.render('user-profiles',{users})
   },
   registerProcess:(req,res)=>{
     const errors=validationResult(req);

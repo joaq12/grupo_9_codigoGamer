@@ -19,7 +19,7 @@
             <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero"value="<%=userToEdit.contactNumber%>">
             <input class="controlador" type="email" name="email1" id="email" placeholder="Correo Electrónico // mail@codigogamer.com"value="<%=userToEdit.email1%>"disabled>
             <input class="controlador" type="email" name="email2" id="email2" placeholder="<%=userToEdit.email2%>"value="<%=userToEdit.email2%>"disabled>
-            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil"value="<%=userToEdit.profilePhoto%>">
+            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil"value="<%=userToEdit.profilePhoto.filename%>">
             <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador"value="<%=userToEdit.userClass%>">
                 <option value="" class="catg-option" hidden selected>Tipo de usuario</option>
                 <option value="adm-user" class="catg-option">Administrador</option>
@@ -32,14 +32,14 @@
                     Editar usuario
                 </button>
         
-            <form class="produt-delete_form" method="POST" action="/user-edit/<%=users.id%>_method=DELETE">
-                <button class="product-detail_product-delete" value="submit">
-                    <i class="fas fa-trash-alt" id="delete-product-trash"></i>
-                    Eliminar usuario
-                </button>
-            </form>
+                <form class="produt-delete_form" method="POST" action="/user-edit/<%=users.id%>_method=DELETE">
+                    <button class="product-detail_product-delete" value="submit">
+                        <i class="fas fa-trash-alt" id="delete-product-trash"></i>
+                        Eliminar usuario
+                    </button>
+                </form>
         </form>
-        
+       
             
     </section>
    
