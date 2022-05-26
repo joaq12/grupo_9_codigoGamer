@@ -1,1 +1,17 @@
-[{"id":1,"name":"nuevo","lastName":"segundo","dni":"1","gender":"mas","birthDay":"1999-11-11","password1":"$2a$10$R8f6PLo3WRp8Qw/pyXYfFuSiUa77tgPzebxQikLjzigWExEBqpz56","password2":"$2a$10$1pPdLYd1wDDzDnfIkvG3z.uQzk/67M.FfjcYYcECBZTs6meSNzwLK","contactNumber":"123","email1":"ab@cd.com","email2":"ab@cd.com","userClass":""},{"id":2,"name":"prueba 2","lastName":"prueba","dni":"123454","gender":"femenino","birthDay":"1999-11-11","password1":"$2a$10$DfEHMFwZmp14OXMbuK66x.ZAC9icV/MhEFZqbVY.wphgfPSHm4Iie","password2":"$2a$10$axJJtyY/rKIcE2Mleae4h.P9YjzhF9RK5JqljhJEUvLvYdW3TGhBq","contactNumber":"654321","email1":"ab@cd.com","email2":"ab@cd.com","profilePhoto":{"fieldname":"profilePhoto","originalname":"1652019684245.jpg","encoding":"7bit","mimetype":"image/jpeg","destination":"/Users/alejandromartinez/grupo_9_codigoGamer/public/images/users","filename":"1653539216994_img.jpg","path":"/Users/alejandromartinez/grupo_9_codigoGamer/public/images/users/1653539216994_img.jpg","size":25023},"userClass":"adm-user"},{"id":3,"name":"alejandro","lastName":"martinez","dni":"12345","gender":"masculino","birthDay":"1999-11-11","password1":"$2a$10$Xaoo1xWrnmWzlN5qiSk3EOG2UpuOjIws5LuZZGQf3HqerzH1JOtsi","password2":"$2a$10$T/ZG3bMyySDZRNuImGEOi.4QypBnog2rAgcnAGlCIFZqTfn./u8DC","contactNumber":"1234567","email1":"ab@cd.com","email2":"ab@cd.com","profilePhoto":{"fieldname":"profilePhoto","originalname":"1652018332460.jpg","encoding":"7bit","mimetype":"image/jpeg","destination":"/Users/alejandromartinez/grupo_9_codigoGamer/public/images/users","filename":"1653544660299.jpg","path":"/Users/alejandromartinez/grupo_9_codigoGamer/public/images/users/1653544660299.jpg","size":335802},"userClass":"adm-user"}]
+[
+ {
+  "id": 1,
+  "name": "Pepito",
+  "lastName": "Perez",
+  "dni": "1",
+  "gender": "masculino",
+  "birthDay": "1999-11-11",
+  "password1": "$2a$10$FwF4xiNdfKq5Q67NIVPu3.SeZp0ZpIyocluxdygPjE0mGs5VKp.ly",
+  "password2": "$2a$10$7Fg2Ndj/anVlNnge7JGHD.Fuf/boggxF9J/eft93Vu7wlqSypM01a",
+  "contactNumber": "1234",
+  "email1": "ab@cd.com",
+  "email2": "ab@cd.com",
+  "profilePhoto": "1653548533278.jpg",
+  "userClass": "Administrador"
+ }
+]

@@ -40,10 +40,9 @@ const usersController={
         (newUser.email1=req.body.email1),
         (newUser.email2=req.body.email2),
         (newUser.userClass=req.body.userClass),
-        (newUser.profilePhoto=req.file),
-        (newUser.id = users.length + 1);
-    
-    
+        (newUser.id = users.length + 1),
+        (newUser.profilePhoto=req.file.filename)
+        
     if(errors.isEmpty()){
 
         users.push(newUser);
@@ -86,8 +85,12 @@ const usersController={
            // (user.password = hash),
             (user.contactNumber = req.body.tel),
             //(user.email=req.body.email),
-            (user.userClass=req.body.userClass),
-            (user.profilePhoto=req.file)
+            (user.userClass=req.body.userClass)
+            
+            if(req.files){
+              req.files.forEach(imagen => {
+              userToEdit[imagen.fieldname]=imagen.filename
+              })};
           }})
           let newData= JSON.stringify(users);
           fs.writeFileSync(usersFilePath, newData);
