@@ -4,7 +4,47 @@
 <body>
     <%- include('./partial/header')%>
     <section>
-  <h1></h1>
+      <div class="catg-store_container-products">
+        <% for (let i = 0; i < users.length; i++) {%>
+        <article class="product_item">
+           
+            <a href="/user-profile/<%= users.id %>"></a>
+            <a class="poduct-store_main-link" href="/user-edit/<%= users[i].id %>">
+                <img class="product_item-img" src="/public/images/users/<%=users[i].profilePhoto%>" alt="item name">
+                <div class="product_item-main_article">
+                    <p class="product_item-main_article-name"><%= users[i].name %></p>
+
+                    
+                    <div class="envio">
+                    <% if(users[i].sexo){%>
+                        <i class="fas fa-truck"></i>
+                        <span> Envio Gratis</span>
+                     <%}%>
+                    </div>
+                   
+                    <p class="price">$ <%= users[i].fechaNac %></p>
+                    <% if(users[i].userClass){%>
+                        <p class="discount">% OFF</p>
+                    <%}%>
+
+                </div>
+                
+            </a>
+            <div class="button-container">
+                <a href="cart" class="store_cart-link">
+                    <input class="button" type="submit" value="Añadir al Carro">
+                </a>
+                <a href="cart" class="store_cart-link">
+                    <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
+                </a>
+            </div>
+            <i class="fa fa-heart"></i>
+            <button class="store_product-edit-button"><a href="/user-edit/<%= users[i].id %>"><i
+                        class="fas fa-pencil-alt"></i></a></button>
+                        
+        </article>
+     <% } %>   
+    </div>
     </section>
     <%- include('./partial/footer')%>
 </body>

@@ -7,7 +7,10 @@ const bcrypt=require('bcryptjs');
 
 
 const usersController={
-    
+ 
+  userDetails:(req,res)=>{
+    res.render('user-profile',{users})
+  },
   registerProcess:(req,res)=>{
     const errors=validationResult(req);
     let newUser = {
@@ -20,7 +23,8 @@ const usersController={
         password1:null,
         password2:null,
         contactNumber:null,
-        email:null,
+        email1:null,
+        email2:null,
         profilePhoto:null,
         userClass:null,          
       };
@@ -33,7 +37,8 @@ const usersController={
         (newUser.password1 = bcrypt.hashSync(req.body.password1,10)),
         (newUser.password2 = bcrypt.hashSync(req.body.password2,10)),
         (newUser.contactNumber = req.body.tel),
-        (newUser.email=req.body.email),
+        (newUser.email1=req.body.email1),
+        (newUser.email2=req.body.email2),
         (newUser.userClass=req.body.userClass),
         (newUser.profilePhoto=req.file),
         (newUser.id = users.length + 1);
@@ -44,9 +49,11 @@ const usersController={
         users.push(newUser);
           let newData = JSON.stringify(users,null,' ');
           fs.writeFileSync(usersFilePath, newData);
-          res.redirect("/"); }else{
+          res.redirect("/"); 
+        }
+          else{
         
-          res.render('user-register',{errors:errors.mapped(),old:req.body})
+          res.render('user-register',{errors,old:req.body})
           }
   },
           
@@ -65,18 +72,18 @@ const usersController={
           console.log(userToEdit)
           users.forEach(user=>{if(user.id==req.params.id){
             (user.name = req.body.nombre),
-            (user.lastName=req.body.apellido)
+            (user.lastName=req.body.apellido),
             (user.gender = req.body.sexo),
             (user.birthDay = req.body.fechaNac),
-            (user.password = hash),
+           // (user.password = hash),
             (user.contactNumber = req.body.tel),
-            (user.email=req.body.email),
+            //(user.email=req.body.email),
             (user.userClass=req.body.userClass),
             (user.profilePhoto=req.file)
           }})
           let newData= JSON.stringify(users);
           fs.writeFileSync(usersFilePath, newData);
-          res.redirect("/")
+          res.redirect("/");
     
       },
     
@@ -98,7 +105,11 @@ const usersController={
         
          res.render('user-register')
       },
-
+      allUsers:(req,res)=>{
+        res.render('users')
+          },
     };
 
+    
+  
 module.exports=usersController;

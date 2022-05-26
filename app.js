@@ -7,7 +7,7 @@ const usersRouter= require("./routes/usersRouter");
 const methodOverride =  require('method-override');
 const cookieParser = require("cookie-parser");
 const session=require('express-session');
-const bcrypt=require('bcryptjs')
+const bcrypt=require('bcryptjs');
 app.use(express.static("public"));
 
 app.set('view engine', 'ejs');

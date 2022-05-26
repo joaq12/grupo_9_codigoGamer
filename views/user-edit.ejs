@@ -7,38 +7,39 @@
         
     <%- include('./partial/header')%>
     <section>
-        <form action="/user-edit/<%=userToEdit%>?_method=PUT" method="POST" enctype="multipart/form-data"class="formulario">
+        <form action="/user-edit/<%=userToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data"class="formulario" >
             <h4><b> Para editar tu cuenta en Código Gamer ¡Ingresá estos datos!</b></h4>
-            <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre">
-            <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido">
-            <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI">
-            <input class="controlador" type="text" name="sexo" id="sexo" placeholder="Femenino/Masculino">
-            <input class="controlador" type="date" name="fechaNac" id="fechaNac" placeholder="Nacimiento - dd/mm/aaaa">
-            <input class="controlador" type="password" name="password" id="nac" placeholder="Introduzca contraseña">
-            <input class="controlador" type="password" name="password" id="prov" placeholder="Verifique contraseña">
-            <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero">
-            <input class="controlador" type="email" name="email" id="email" placeholder="Correo Electrónico // mail@codigogamer.com">
-            <input class="controlador" type="email" name="email" id="email2" placeholder="Confirmá Correo Electrónico">
-            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil">
-            <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador">
+            <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre"value="<%=userToEdit.name%>">
+            <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"value="<%=userToEdit.lastName%>">
+            <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"value="<%=userToEdit.dni%>">
+            <input class="controlador" type="text" name="sexo" id="sexo" placeholder="Femenino/Masculino"value="<%=userToEdit.gender%>">
+            <input class="controlador" type="date" name="fechaNac" id="fechaNac" placeholder="Nacimiento - dd/mm/aaaa"value="<%=userToEdit.birthDay%>">
+            <input class="controlador" type="password" name="password" id="nac" placeholder="Introduzca contraseña"disabled>
+            <input class="controlador" type="password" name="password" id="prov" placeholder="Verifique contraseña"disabled>
+            <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero"value="<%=userToEdit.contactNumber%>">
+            <input class="controlador" type="email" name="email1" id="email" placeholder="Correo Electrónico // mail@codigogamer.com"value="<%=userToEdit.email1%>"disabled>
+            <input class="controlador" type="email" name="email2" id="email2" placeholder="<%=userToEdit.email2%>"value="<%=userToEdit.email2%>"disabled>
+            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil"value="<%=userToEdit.profilePhoto%>">
+            <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador"value="<%=userToEdit.userClass%>">
                 <option value="" class="catg-option" hidden selected>Tipo de usuario</option>
                 <option value="adm-user" class="catg-option">Administrador</option>
                 <option value="client-user" class="catg-option">Cliente</option>
             </select>
             
-            <form class="produt-delete_form" method="POST" action="/user-edit/0?_method=PUT">
+            
                 <button class="user-edit-button" value="submit">
                     <i class="fas fa-user-edit"id="edit-pencil"></i> 
                     Editar usuario
                 </button>
-        </form>
-            <form class="produt-delete_form" method="POST" action="/user-edit/0?_method=DELETE">
+        
+            <!-- <form class="produt-delete_form" method="POST" action="/user-edit/0?_method=DELETE">
                 <button class="product-detail_product-delete" value="submit">
                     <i class="fas fa-trash-alt" id="delete-product-trash"></i>
                     Eliminar usuario
                 </button>
+            </form> -->
         </form>
-        </form>
+        
             
     </section>
    
