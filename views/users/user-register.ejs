@@ -10,9 +10,9 @@
         <form action="/user-register" method="POST" enctype="multipart/form-data"class="formulario">
             <h4><b> Para crear tu cuenta en Código Gamer ¡Ingresá estos datos!</b></h4>
             <% if (locals.errors && errors.name) { %>
-                <div class="text-danger">
+                <p class="text-danger">
                     <%= errors.name.msg %> 
-                </div>
+                </p>
             <% } %>
             <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%=locals.old&&old.nombre%>">
             <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"value="<%=locals.old&&old.apellido%>" >
@@ -24,7 +24,7 @@
             <input class="controlador" type="password" name="password2" id="prov" placeholder="Verifique contraseña">
             <input class="controlador" type="email" name="email1" id="email" placeholder="Correo Electrónico // mail@codigoGamer.com"value="<%=locals.old&&old.email1%>">
             <input class="controlador" type="email" name="email2" id="email" placeholder="Confirmá Correo Electrónico">
-            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil">
+            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil"required>
             <select name="userClass" class="controlador">
 									<option value="">elegí una clase</option>
 									<%  
@@ -33,7 +33,7 @@
 									<% for (const oneClass of userClass) { %>
 										<option 
 											value="<%= oneClass %>"
-											<%= locals.oldData && (oneClass === oldData.userClass) ? 'selected' : null %> 
+											<%= locals.old && (oneClass === old.userClass) ? 'selected' : null %> 
 										> <%= oneClass %> </option>
 									<% } %>
 								</select>

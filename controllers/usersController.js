@@ -52,7 +52,7 @@ const usersController={
         }
           else{
         
-          res.render('user-register',{errors,old:req.body})
+          res.render('user-register',({errors,old:req.body}))
           }
   },
   userDelete: (req,res)=>{
