@@ -10,9 +10,10 @@ const session=require('express-session');
 const bcrypt=require('bcryptjs');
 app.use(express.static("public"));
 
+// config de ejs  ** en los renglones 15,16 se indica dentro del array las carpetas en las cuales se deben buscar las vistas
 app.set('view engine', 'ejs');
-app.set('views', [path.join(__dirname, '/views','/views/users'),
-                  path.join(__dirname, '/views/users'),
+app.set('views', [path.join(__dirname, '/views'),
+                 path.join(__dirname, '/views/users'),
 ]);
 
 app.listen(3030, ()=>console.log("Servidor Corriendo"));
