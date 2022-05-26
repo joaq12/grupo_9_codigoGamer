@@ -21,7 +21,8 @@ router.get('/user-register',usersController.register);
 router.post('/user-register',uploadFile.single('profilePhoto'),validateRegister,usersController.registerProcess);
 //edicion de usuarios
 router.get('/user-edit/:id',usersController.userEdit);
-router.put('/user-edit/:id',uploadFile.single('profilePhoto'),validateRegister,usersController.userUpdate);
 router.delete('user-edit/:id',usersController.userDelete);
+router.put('/user-edit/:id',uploadFile.single('profilePhoto'),validateRegister,usersController.userUpdate);
+
 
 module.exports= router;

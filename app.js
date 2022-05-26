@@ -11,7 +11,9 @@ const bcrypt=require('bcryptjs');
 app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', [path.join(__dirname, '/views','/views/users'),
+                  path.join(__dirname, '/views/users'),
+]);
 
 app.listen(3030, ()=>console.log("Servidor Corriendo"));
 app.use(express.urlencoded({ extended: false }));

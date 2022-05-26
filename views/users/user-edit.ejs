@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partial/head')%>
+    <%- include('../partial/head')%>
 
     <body>
         
-    <%- include('./partial/header')%>
+    <%- include('../partial/header')%>
     <section>
         <form action="/user-edit/<%=userToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data"class="formulario" >
             <h4><b> Para editar tu cuenta en Código Gamer ¡Ingresá estos datos!</b></h4>
@@ -32,7 +32,7 @@
                     Editar usuario
                 </button>
         
-            <form class="produt-delete_form" method="POST" action="/user-edit/<%=userToEdit.id%>_method=DELETE">
+            <form class="produt-delete_form" method="POST" action="/user-edit/<%=users.id%>_method=DELETE">
                 <button class="product-detail_product-delete" value="submit">
                     <i class="fas fa-trash-alt" id="delete-product-trash"></i>
                     Eliminar usuario
@@ -43,7 +43,7 @@
             
     </section>
    
-<%- include('./partial/footer')%> 
+<%- include('../partial/footer')%> 
 
 
 </body>

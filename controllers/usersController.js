@@ -56,17 +56,25 @@ const usersController={
           res.render('user-register',{errors,old:req.body})
           }
   },
+  userDelete: (req,res)=>{
+    let userToDelete=(user)=>{
+      if(user.id != req.params.id){
+        return user}}                                          
+    users=users.filter((userToDelete))                         
+    let newDataBase = JSON.stringify(users);
+    fs.writeFileSync(usersFilePath, newDataBase);
+    res.redirect("user-login");
+  }, 
           
       userEdit: (req, res) => {
         if (req.params.id - 1 < users.length) {
         res.render("user-edit", {
-          userToEdit: users[req.params.id -1],
+          userToEdit: users[req.params.id -1],users
           
       })}},
     
       userUpdate:(req,res)=>{
-        console.log(req.body)
-        console.log(req.params)
+      
         let userToEdit=users.find(
           (user)=>user.id == req.params.id);
           console.log(userToEdit)
@@ -87,16 +95,6 @@ const usersController={
     
       },
     
-    
-      userDelete: (req,res)=>{
-        let userToDelete=(user)=>{
-          if(user.id != req.params.id){
-            return user}}                                          
-        users=users.filter((userToDelete))                         
-        let newDataBase = JSON.stringify(users);
-        fs.writeFileSync(usersFilePath, newDataBase);
-        res.redirect("user-login");
-      }, 
       login:(req,res)=>{
         res.render('user-login')
        },

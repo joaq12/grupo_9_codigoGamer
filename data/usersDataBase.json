@@ -1,16 +1,1 @@
-[
-  {
-    "id": 1,
-    "name": "nuevo",
-    "lastName": "segundo",
-    "dni": "1",
-    "gender": "mas",
-    "birthDay": "1999-11-11",
-    "password1": "$2a$10$R8f6PLo3WRp8Qw/pyXYfFuSiUa77tgPzebxQikLjzigWExEBqpz56",
-    "password2": "$2a$10$1pPdLYd1wDDzDnfIkvG3z.uQzk/67M.FfjcYYcECBZTs6meSNzwLK",
-    "contactNumber": "123",
-    "email1": "ab@cd.com",
-    "email2": "ab@cd.com",
-    "userClass": ""
-  }
-]
+[{"id":1,"name":"nuevo","lastName":"segundo","dni":"1","gender":"mas","birthDay":"1999-11-11","password1":"$2a$10$R8f6PLo3WRp8Qw/pyXYfFuSiUa77tgPzebxQikLjzigWExEBqpz56","password2":"$2a$10$1pPdLYd1wDDzDnfIkvG3z.uQzk/67M.FfjcYYcECBZTs6meSNzwLK","contactNumber":"123","email1":"ab@cd.com","email2":"ab@cd.com","userClass":""}]
