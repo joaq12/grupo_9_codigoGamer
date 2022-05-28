@@ -13,5 +13,50 @@
   "email2": "ab@cd.com",
   "profilePhoto": "1653548533278.jpg",
   "userClass": "Administrador"
+ },
+ {
+  "id": 2,
+  "name": "Rodrigo Ezequiel",
+  "lastName": "Saccone",
+  "dni": "33498382",
+  "gender": "Masculino",
+  "birthDay": "1988-01-06",
+  "password1": "$2a$10$DV/uR3vfEkB63Ievr3qUseoJ9caH8DqhhEbPUXcj5emWMZqzegKxe",
+  "password2": "$2a$10$Z46OHQMfhiRUfBNP9YZz8eBrbNwzVNCAzTzyAU2uAtfVwllW9XqPq",
+  "contactNumber": "01165047598",
+  "email1": "sacconerodrigoe@gmail.com",
+  "email2": "sacconerodrigoe@gmail.com",
+  "profilePhoto": "1653628040263.jpg",
+  "userClass": "Administrador"
+ },
+ {
+  "id": 3,
+  "name": "Usuario ",
+  "lastName": "Prueba",
+  "dni": "11111111",
+  "gender": "FEMENINO",
+  "birthDay": "1960-01-01",
+  "password1": "$2a$10$w0bUbiNBEJlT6rtCA5cueeySnmYlhvC8Ze3MaE1ZQ4eRs8UBW4ZPe",
+  "password2": "$2a$10$4Fk2S7UbPrMaxfU7Yr6L1urIyI4Vkfvmfr/qaGonsxuPWRzf1PC8.",
+  "contactNumber": "2325-15555555",
+  "email1": "usuarioprueba@gmail.com",
+  "email2": "usuarioprueba@gmail.com",
+  "profilePhoto": "1653690072803.png",
+  "userClass": "Cliente"
+ },
+ {
+  "id": 4,
+  "name": "Usuario",
+  "lastName": "Prueba 2",
+  "dni": "22222222",
+  "gender": "Masculino",
+  "birthDay": "1960-02-01",
+  "password1": "$2a$10$0mfE3.5gqa0X2jmBpG70quE3/ekc1yK3dvjBdsEZqGJT5vSJRmNGi",
+  "password2": "$2a$10$hYVbhBRTJTtyP7LwTYbybOTggjkOy6uhtHNJ1DqG8a5Q8CPlPsSoO",
+  "contactNumber": "2325 659588",
+  "email1": "usuarioprueba2@gmail.com",
+  "email2": "usuarioprueba2@gmail.com",
+  "profilePhoto": "1653690374249.png",
+  "userClass": "Cliente"
  }
 ]

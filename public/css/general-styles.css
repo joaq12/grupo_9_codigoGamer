@@ -48,24 +48,36 @@ header{
 /* Inicio barra top*/
 .top-bar{
     background-color: #59359c;
-    max-height: 50px;
+    max-height: 65px;
     width: 100%;
     border-bottom: 1px solid #9e1fac;
     display: flex;
-}
-.nav-menu{
-    margin: 1px;
+    justify-content: center;
+    align-items: center;
 }
 
 .top-bar .nav-menu{
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    padding: 10px 25px;
 }
 .top-bar .nav-menu ul{
-     justify-content: space-around;
-     list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
   }
+
+.top-bar_list{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#social-media a{
+    font-size: 19px;
+}
 
 .top-bar .nav-menu ul li{
     color: white;
@@ -74,13 +86,13 @@ header{
   }
 
 .top-bar .nav-menu ul li a {
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 8px;
-      margin: 10px;
-      transition: 0.3s;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px;
+    transition: 0.3s;
   }
 
 .top-bar .nav-menu ul li a:hover{
@@ -89,6 +101,46 @@ header{
     background-color: whitesmoke;
     border-radius: 5px;
   }
+
+.topbar-user_main-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.top-bar_user-profile_avatar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 15%;
+    margin:10px;
+}
+
+.top-bar_user-profile_avatar{
+    max-height: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    border: solid 1.5px #fcfcfc;
+    border-radius: 50%;
+    width: 60%;
+}
+
+.top-bar_user-profile_data-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    margin: 10px;
+}
+
+.top-bar_user-profile_data-container p{
+    display: block;
+    color:white;
+    font-weight: bolder;
+    font-size: 16px;
+    padding: 0 10px 0 0;
+}
+
 
 /*fin barra top*/
 
@@ -551,7 +603,7 @@ span.footer-info{
             width: 40%;
             max-width:500px;
         }
-       
+    
        
     }
 }

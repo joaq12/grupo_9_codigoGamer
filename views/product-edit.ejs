@@ -23,10 +23,14 @@
                 <div class="product-form-images">
                     <span class="titulo-imagenes">Imágenes del Producto</span>
                     <div class="img-button-container">
+                    <div class="img_loader-box">
                         <input class="upload-img-button" type="file" name="photo1" accept=".jpg"  multiple>
                         <input class="upload-img-button" type="file" name="photo2" accept=".jpg"  multiple>
+                    </div>
+                    <div class="img_loader-box">
                         <input class="upload-img-button" type="file" name="photo3" accept=".jpg"  multiple>
                         <input class="upload-img-button" type="file" name="photo4" accept=".jpg"  multiple>
+                    </div>      
                     </div>
                 </div>
             </div>
@@ -36,7 +40,7 @@
                 <div class="catg-container_catg">
                     <label for="catg" class="catg-label">Seleccione la Categoría</label>
                     <select name="catg" id="categoria" placeholder="Categorías" class="product-controller">
-                        <option class="catg-option" selected><%=productToEdit.catg%></option>
+                        <option class="catg-option" hidden selected><%=productToEdit.catg%></option>
                         <option value="Hardware" class="catg-option">Hardware</option>
                         <option value="Consolas" class="catg-option">Consolas</option>
                         <option value="Accesorios" class="catg-option">Accesorios</option>

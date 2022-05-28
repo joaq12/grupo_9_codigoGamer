@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hola</h1>
-</body>
+<%- include('../partial/head')%>
+
+    <body>
+        <%- include('../partial/header')%>
+
+
+            
+                <div class="user-profiles_container-products">
+
+                    <% for (let i=0; i < users.length; i++) {%>
+                        <article class="user-profile">
+                            <div class="user-profile_avatar-container">
+                                <img class="user-profile_avatar" src="/images/users/<%=users[i].profilePhoto%>">
+                            </div>
+                            <div class="user-profile_data-container">
+                                <p class="user-profile-info">Nombre: <%= users[i].name %>
+                                        <%= users[i].lastName %>
+                                </p>
+                                <p class="user-profile-info">Email: <%= users[i].email1 %>
+                                </p>
+                                <p class="user-profile-info">Permisos: <%= users[i].userClass %>
+                                </p>
+                            </div>
+
+                            <i class="fa fa-heart"></i>
+                            <button class="user_profile-edit-button"><a href="/user-edit/<%= users[i].id %>"><i
+                                        class="fas fa-pencil-alt"></i></a></button>
+
+                        </article>
+                    <% } %>
+                </div>
+                    
+           
+        <%- include('../partial/footer')%>
+    </body>
+
 </html>

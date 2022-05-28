@@ -21,8 +21,6 @@
     font-size: 14px;
 }
 
-
-
 .formulario h4,
 .login-container_form h4{
     width: 70%;
@@ -215,6 +213,7 @@
     width: 85%;
     border-radius: 5px;
     padding: 10px;
+    font-size: 18px;
 }
 
 ::-webkit-input-placeholder{
@@ -285,10 +284,82 @@ div#birth-date_container input:focus-visible{
     border:none
 }
 
+#user-edit_form div{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family:  'Prompt', sans-serif;
+    margin-bottom: 15px;
+}
+
+#user-edit_form .controlador{
+    width: 100%;
+}
 
 
+#user-edit_form label{
+    width: 100%;
+    font-family:  'Prompt', sans-serif;
+    text-align: start;
+    line-height: 5px;
+}
+
+.user-edit-button{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2px 0;
+    width: 100%;
+    color:#9839b5 ;
+    border: solid 1px #9839b5;
+    border-radius: 5px;
+    font-size: 18px;
+    align-items: baseline;
+    background-color: white;
+    margin: 10px 0 0 0;
+}
+
+.fas.fa-user-edit {
+    padding: 8px;
+    font-size: 22px;
+}
+
+.user-edit-button:hover ,i#edit-pencil:hover{
+    background-color: #9839b5;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.far.fa-trash-alt{
+    padding: 8px;
+    font-size: 22px;
+}
 
 
+.user-delete-button{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    color:rgb(167,26,26) ;
+    border: solid 1px rgb(167,26,26);
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 2px;
+    align-items: baseline;
+    background-color: white;
+    margin: 10px 0 0 0;
+}
+
+
+.user-delete-button:hover {
+    background-color: rgb(167,26,26);
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
 
 
 @media (min-width: 361px){
@@ -337,6 +408,14 @@ div#birth-date_container input:focus-visible{
     background-color: white;
     }
 
+#user-edit_form div{
+    width: 50%;
+}
+
+#user-edit_form .controlador{
+    width: 95%;
+}
+
 .user-name_controller{
     width: 48%;
     border-radius: 5px;
@@ -349,4 +428,13 @@ div#birth-date_container input:focus-visible{
     min-height: 100px;
     max-height: 250px;  
     }
+
+.user-edit-button{
+    width: 65%;
+}
+
+.user-delete-button{
+    width: 65%;
+}
+
 }

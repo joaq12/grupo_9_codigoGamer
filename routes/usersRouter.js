@@ -13,9 +13,10 @@ const uploadFile=require('../middlewares/usersMulter');
 //todos los usuarios
 router.get('/users',usersController.allUsers);
 //perfil de usuario
-router.get('/user-profiles',usersController.userDetails);
+router.get('/user-profile/:id',usersController.userDetails);
 //login usuario
 router.get('/user-login',usersController.login);
+router.post('/user-login',validateRegister,usersController.loginProcess);
 //registro de usuario
 router.get('/user-register',usersController.register);
 router.post('/user-register',uploadFile.single('profilePhoto'),validateRegister,usersController.registerProcess);
