@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partial/head')%>
+
+    <body>
+        <%- include('../partial/header')%>
+
+
+
+            <div class="user-profile_container-products">
+
+                <article class="user-profile_individual">
+                    <div class="user-profile_individual-title">
+                        <p>¡Hola <%= user.name %>!, Esta es tu informacion de Usuario</p>
+                    </div>
+                    <section class="user-profile_section">
+                    <div class="user-profile_avatar-container_individual">
+                        <img class="user-profile_avatar_individual" src="/images/users/<%=user.profilePhoto%>">
+                    </div>
+                    <div class="user-profile_data-container_individual">
+                        <p class="user-profile-info_individual">
+                            Nombre: <%= user.name %>
+                                <%= user.lastName %>
+                        </p>
+                        <p class="user-profile-info_individual">
+                            Email: <%= user.email1 %>
+                        </p>
+                        <p class="user-profile-info_individual">
+                            DNI: <%= user.dni %>
+                        </p>
+                        <p class="user-profile-info_individual">
+                            Teléfono: <%= user.contactNumber %>
+                        </p>
+                        <p class="user-profile-info_individual">
+                            Fecha de Nacimiento: <%= user.birthDay %>
+                    </div>
+                    </section>
+                    <a href="/user-edit/<%=user.id %>">
+                    <button class="user-profile_edit-button" value="submit"><i class="fas fa-user-edit"></i>
+                        Editar 
+                    </button>
+                    </a>
+                    <form class="user-profile_exit-session-form" method="#" action="#">
+                        <button class="user-profile_exit-session-button" value="submit">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Cerrar Sesión
+                        </button>
+                    </form>
+                </article>
+            </div>
+
+
+            <%- include('../partial/footer')%>
+    </body>
+
+</html>

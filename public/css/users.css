@@ -1,0 +1,133 @@
+.user-profiles_container-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 10px;
+    gap: 20px;
+}
+
+
+article.user-profile{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    border: solid #59359c 1.5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+article.user-profile:hover{
+    border: solid #59359c 1.5px;
+    box-shadow: 4px 7px 18px #171313;  
+}
+
+.user-profile_avatar-container{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin:10px;
+}
+
+.user-profile_avatar{
+    max-height: 80px;
+    max-width: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    border: solid 1.5px #59359c;
+    border-radius: 50%;
+}
+
+.user-profile_data-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    padding: 10px;
+}
+
+.user-profile_data-container p{
+    width: 100%; 
+    display: block;
+    color:#9e1fac;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+article.user-profile .user_profile-edit-button{
+    border-radius: 50%;
+    color:#b9b0b0;
+    border: 1px solid #b9b0b0;
+    background-color: white;
+    position:absolute;
+    top: 67px;
+    right: 6px;
+}
+
+.user-profile .fas.fa-pencil-alt{
+    padding: 6px;
+    color:#b9b0b0;
+    font-size: 14px;
+}
+
+article.user-profile .user_profile-edit-button:hover{
+    border:solid 2px #9e1fac;
+    background-color: white;
+}
+
+.user_profile-edit-button:hover .fas.fa-pencil-alt{
+    color:#9e1fac;
+}
+
+
+
+
+@media (min-width:450px) and (max-width:759px) {
+    article.user-profile{ 
+        width:80%;
+        max-width: 400px;
+    }  
+
+    .user-profile_avatar-container{
+        width: 25%;   
+    }
+    
+    .user-profile_data-container p{
+        font-size: 15px;
+     }
+    
+    
+
+} 
+
+@media screen and (min-width:769px) {
+    article.user-profile{ 
+        max-width: 460px;
+    }  
+
+    .user-profile_avatar-container{
+        width: 30%;   
+    }
+
+    .user-profile_avatar{
+        max-height: 120px;
+        max-width: 120px;
+        border: solid 1px #59359c;
+        border-radius: 50%;
+    }
+
+    .user-profile_data-container p{
+       font-size: 16px;
+    }
+
+    article.user-profile .user_profile-edit-button{
+        top: 105px;
+        right: 6px;
+    }
+    
+    .user-profile .fas.fa-pencil-alt{
+        padding: 7px;
+        color:#b9b0b0;
+        font-size: 14px;
+    }
+}

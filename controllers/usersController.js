@@ -1,16 +1,19 @@
 const fs = require("fs");
 const path = require("path");
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
-var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const {validationResult}=require('express-validator');
 const bcrypt=require('bcryptjs');
 
+var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const usersController={
  
   userDetails:(req,res)=>{
-    res.render('user-profiles',{users})
+    if (req.params.id - 1 < users.length) {
+      res.render("user-profile", { user: users[req.params.id - 1] });
+    }
   },
+  
   registerProcess:(req,res)=>{
     const errors=validationResult(req);
     let newUser = {
@@ -55,6 +58,7 @@ const usersController={
           res.render('user-register',{errors,old:req.body})
           }
   },
+
   userDelete: (req,res)=>{
     let userToDelete=(user)=>{
       if(user.id != req.params.id){
@@ -65,51 +69,81 @@ const usersController={
     res.redirect("user-login");
   }, 
           
-      userEdit: (req, res) => {
-        if (req.params.id - 1 < users.length) {
-        res.render("user-edit", {
-          userToEdit: users[req.params.id -1],users
-          
-      })}},
-    
-      userUpdate:(req,res)=>{
+  userEdit: (req, res) => {
+    if (req.params.id - 1 < users.length) {
+    res.render("user-edit", {
+      userToEdit: users[req.params.id -1],users
       
-        let userToEdit=users.find(
-          (user)=>user.id == req.params.id);
-          console.log(userToEdit)
-          users.forEach(user=>{if(user.id==req.params.id){
-            (user.name = req.body.nombre),
-            (user.lastName=req.body.apellido),
-            (user.gender = req.body.sexo),
-            (user.birthDay = req.body.fechaNac),
-           // (user.password = hash),
-            (user.contactNumber = req.body.tel),
-            //(user.email=req.body.email),
-            (user.userClass=req.body.userClass)
-            
-            if(req.files){
-              req.files.forEach(imagen => {
-              userToEdit[imagen.fieldname]=imagen.filename
-              })};
-          }})
-          let newData= JSON.stringify(users);
-          fs.writeFileSync(usersFilePath, newData);
-          res.redirect("/");
-    
-      },
-    
-      login:(req,res)=>{
-        res.render('user-login')
-       },
+  })}},
   
-      register :(req,res)=>{
-        
-         res.render('user-register')
-      },
-      allUsers:(req,res)=>{
-        res.render('users')
-          },
-    };
+  userUpdate:(req,res)=>{
+  
+    let userToEdit=users.find(
+      (user)=>user.id == req.params.id)
+      console.log(userToEdit)
+      
+    users.forEach(user=>{if(user.id==req.params.id){
+      (user.name = req.body.nombre);
+      (user.lastName=req.body.apellido);
+      (user.gender = req.body.sexo);
+      (user.birthDay = req.body.fechaNac);
+      //(user.password = bcrypt.hashSync(req.body.password1,10)),
+      (user.contactNumber = req.body.tel);
+      (user.email=req.body.email),
+      (user.userClass=req.body.userClass);
+      (user.profilePhoto=req.file.filename);
+    }})
+      let newData= JSON.stringify(users);
+      fs.writeFileSync(usersFilePath, newData);
+      res.redirect("/");
+    
+    },
+    
+  login:(req,res)=>{
+    res.render('user-login')
+   },
+   
+  loginProcess :(req, res) => {
+    let errors = validationResult(req)
+    if(errors.isEmpty()){
+      let userList ;
+    if(users == ""){
+      userlist = [];
+    }else{
+        usersList = users 
+      }
+    for(let i=0 ; i<users.length ; i++) {
+      if(userList[i].email == req.body.email){
+        if(bcryptjs.compareSync(req.body.password,userlist[i].password)){
+          const usuerToLogin = userList[i]
+          console.log(userToLogin)
+        }
+      }
+      if(usuerToLogin == undefinded){
+        return res.render("user-login", {errors:[
+           {msg : "Credenciales Invalidas"}
+        ]})
+      }
+      req.session.usuariologged = userToLogin;
+      res.render("usuario Logueado")
+    }
+
+    }else{
+      return res.render("user-login", {errors:errors.errors})
+      
+    }
+
+
+  },
+  
+  register :(req,res)=>{        
+    res.render('user-register')
+  },
+
+  allUsers:(req,res)=>{
+    res.render('users',{users})
+  },
+};
 
     
   
