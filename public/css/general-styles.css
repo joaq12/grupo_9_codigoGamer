@@ -54,11 +54,16 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
+    min-height: 67px;
 }
 
 .top-bar .nav-menu{
     width: 100%;
     display: flex;
+    min-height: 67px;
+    align-items: center;
+
 }
 .top-bar .nav-menu ul{
     width: 100%;
@@ -77,6 +82,7 @@ header{
 
 #social-media a{
     font-size: 19px;
+    
 }
 
 .top-bar .nav-menu ul li{
@@ -96,16 +102,16 @@ header{
   }
 
 .top-bar .nav-menu ul li a:hover{
-    font-weight: 600;
     color: #59359c;
     background-color: whitesmoke;
     border-radius: 5px;
+    font-weight: bold;
   }
 
 .topbar-user_main-container{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .top-bar_user-profile_avatar-container{
@@ -113,17 +119,22 @@ header{
     flex-direction: row;
     justify-content: center;
     width: 15%;
-    margin:10px;
+    margin:5px 10px 0 10px;;
 }
 
 .top-bar_user-profile_avatar{
-    max-height: 40px;
-    max-width: 40px;
-    min-height: 40px;
-    min-width: 40px;
+    max-height: 45px;
+    max-width: 45px;
+    min-height: 45px;
+    min-width: 45px;
     border: solid 1.5px #fcfcfc;
     border-radius: 50%;
     width: 60%;
+    background-color: whitesmoke;
+}
+.top-bar_user-link{
+    text-decoration: none;
+    color: inherit;
 }
 
 .top-bar_user-profile_data-container{
@@ -139,6 +150,7 @@ header{
     font-weight: bolder;
     font-size: 16px;
     padding: 0 10px 0 0;
+    line-height: 18px;
 }
 
 
@@ -398,6 +410,22 @@ span.footer-info{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.fas.fa-users{
+    font-size: 20px;
+    margin: 0 0 0 5px ;
+    vertical-align: initial;
+}
+.fas.fa-user{
+    font-size: 16px;
+    margin: 0 0 0 5px ;
+    vertical-align: baseline;
+}
+
+ul.bell-alerts{
+    width: 5%;
+    margin: 0px;
 }
 
 /* Footer Section hola */

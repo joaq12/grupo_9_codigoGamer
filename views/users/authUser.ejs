@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partial/head')%>
+
+    <body>
+
+        <header>
+
+
+            <div class="top-bar">
+              <div class="nav-menu">
+                
+              </div>
+            </div>
+          
+            <div class="top-header">
+              <div class="userMiddlewares-logo">
+                <a href="/">
+                  <img src="/images/codigo-gamer-logo.jpeg.png" />
+                </a>
+              </div>
+          
+          </header>
+        
+            <section class="userMiddleware-section">
+                <article class="userMiddleware-container">
+                    <div classs="userMiddleware-alert">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4><b>Estas Intentando ingresar a una página que es esolo para usuarios logueados.</b></h4>
+                    <h4><b>Por favor, logueate para seguir navegando. Si no ténes cuenta,
+                            registráte, solo te tomara unos minutos!</b></h4>
+                    <span id="middlewares-links">
+                        <p class="reg-link"><a href="/user-login"> ¿Tenés Cuenta? Ingresá!</a></p>
+                        <br>
+                        <br>
+                        <p class="reg-link"><a href="/user-register"> ¿No tenes Cuenta? Registráte!</a></p>
+                    </span>
+                </article>
+            </section>
+
+
+            <%- include('../partial/footer')%>
+
+    </body>
+
+
+</html>

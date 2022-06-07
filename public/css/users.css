@@ -103,6 +103,7 @@ article.user-profile .user_profile-edit-button:hover{
 @media screen and (min-width:769px) {
     article.user-profile{ 
         max-width: 460px;
+        min-height: 145px;
     }  
 
     .user-profile_avatar-container{

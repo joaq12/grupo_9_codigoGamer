@@ -1,7 +1,8 @@
-function authMiddleware(res,req){
-    if(req.session.userlogged != undefined){
+function authMiddleware(req,res,next){
+    if(req.session.usuarioLogged !== undefined){
+        console.log("desde authMiddleware", req.session)
         next()
-    }elseres.render ("pagina solo para Usuarios")
+    }else return res.redirect ("/authUser")
 };
 
 module.exports = authMiddleware;

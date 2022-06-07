@@ -91,24 +91,28 @@
             <section class="shipping-discount_container">
                 <div class="product-shipping_container">
                     <span>Envio Gratis</span><br>
-                    <div class="free-shipping-container">
-                        <div class="free-shipping" id="yes" >
-                            <input type="checkbox" name="shipping" id="free" value=true/> Si
+                    <div class="prueba-prueba" id="yes" >
+                        <div class="free-shipping-container">
+                            <div class="prueba-prueba-edit" id="yes" >
+                                <input type="checkbox" name="shipping" id="switch" value="<%=productToEdit.shipping%>"/> 
+                                <label for="switch" id="switch-label">
+                                    <span id="handle"><i class="fas fa-circle"></i></span>
+                                </label>
+                            </div>
                         </div>
-                        <!-- <div class="free-shipping" id="no"> -->
-                            <!-- <input type="radio" name="shipping" id="non-free" value="" /> No -->
-                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="product-discount_container">
                     <span>Descuento</span><br>
-                    <div class="discount-container">
-                        <div class="apply-discount" id="yes">
-                            <input type="checkbox" name="discount" id="discount" /> Si
+                    <div class="prueba-prueba" id="yes" >
+                        <div class="discount-container">
+                            <div class="prueba-prueba" id="yes" >
+                                <input type="checkbox" name="discount" id="dis-switch" value="<%=productToEdit.discount%>"/> 
+                                <label for="dis-switch" id="dis-switch-label">
+                                    <span id="handle"><i class="fas fa-circle"></i></span>
+                                </label>
+                            </div>
                         </div>
-                        <!-- <div class="apply-discount" id="no">
-                            <input type="radio" name="discount" id="non-discount" /> No
-                        </div> -->
                     </div>
                     <div class="product_name-container_input">
                         <label for="discount-per" id="product-discount-per">Porcentaje de Descuento</label>

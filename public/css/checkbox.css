@@ -1,0 +1,60 @@
+
+.prueba-prueba{
+    position: relative;
+    top: -8px;
+}
+
+
+#switch,
+#dis-switch{
+    transform: scale(0);
+}
+
+#switch-label:hover,
+#dis-switch-label:hover{
+    cursor: pointer;
+}
+
+#handle{
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    transform: all 0.2s;
+    padding: 0px;
+}
+
+#switch-label,
+#dis-switch-label{
+    width: 50px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 15px;
+    background-color:rgb(187, 183, 183);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fas.fa-circle{
+    font-size: 17px;
+    color: rgb(93, 91, 91);
+    margin-top: 0.8px;
+}
+
+
+#switch:checked ~ #switch-label,
+#dis-switch:checked ~ #dis-switch-label{
+    background-color:#9839b5;
+}
+
+#switch:checked ~ #switch-label .fas.fa-circle,
+#dis-switch:checked ~ #dis-switch-label .fas.fa-circle{
+    transform: translateX(24.5px);
+    color: rgba(255, 255, 255, 0.663);
+    
+}
+
+.switch-label, .fas.fa-circle,
+.dis-switch-label{
+    transition: all 0.6s;
+}
