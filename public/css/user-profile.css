@@ -27,9 +27,11 @@ article.user-profile_individual{
 }
 
 .user-profile_individual-title p{
+    width: 80%;
     font-size: 24px;
     text-align: center;
     font-weight: bolder;
+    color: #59359c;
 }
 
 .user-profile_avatar-container_individual{
@@ -107,7 +109,7 @@ article.user-profile_individual{
     flex-wrap: wrap;
     width: 100%;
     color:rgb(104, 104, 104) ;
-    border: solid 1px rgb(104,104,104);
+    border: solid 1px rgb(104, 104, 104);
     border-radius: 5px;
     font-size: 18px;
     padding: 2px;
@@ -117,7 +119,8 @@ article.user-profile_individual{
 
 
 .user-profile_exit-session-button:hover {
-    background-color: rgb(104,104,104);
+    background-color: rgb(136, 135, 135);
+    border:rgb(136, 135, 135);
     color: white;
     font-weight: bolder;
     cursor: pointer;
@@ -196,6 +199,7 @@ article.user-profile_individual{
     .user-profile_section{
         display: flex;
         flex-wrap: nowrap;
+        align-items: center;
         width: 100%;
     }
 

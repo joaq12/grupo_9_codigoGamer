@@ -6,37 +6,196 @@
     <body>
         
     <%- include('../partial/header')%>
-    <section> 
-        <form action="/user-register" method="POST" enctype="multipart/form-data"class="formulario">
-            <h4><b> Para crear tu cuenta en Código Gamer ¡Ingresá estos datos!</b></h4>
-            <% if (locals.errors && errors.name) { %>
-                <p class="text-danger">
-                    <%= errors.name.msg %> 
-                </p>
-            <% } %>
-            <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%=locals.old&&old.nombre%>">
-            <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"value="<%=locals.old&&old.apellido%>" >
-            <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"value="<%=locals.old&&old.dni%>">
-            <input class="controlador" type="text" name="sexo" id="sexo" placeholder="Femenino/Masculino"value="<%=locals.old&&old.sexo%>">
-            <input class="controlador" type="date" name="fechaNac" id="fechaNac" placeholder="Nacimiento - dd/mm/aaaa"value="<%=locals.old&&old.fechaNac%>">
-            <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero"value="<%=locals.old&&old.tel%>">
-            <input class="controlador" type="password" name="password1" id="nac" placeholder="Introduzca contraseña">
-            <input class="controlador" type="password" name="password2" id="prov" placeholder="Verifique contraseña">
-            <input class="controlador" type="email" name="email1" id="email" placeholder="Correo Electrónico // mail@codigoGamer.com"value="<%=locals.old&&old.email1%>">
-            <input class="controlador" type="email" name="email2" id="email" placeholder="Confirmá Correo Electrónico">
-            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil"required>
-            <select name="userClass" class="controlador">
-									<option value="">elegí una clase</option>
-									<%  
-										let userClass = ['Administrador','Cliente'];
-									%>
-									<% for (const oneClass of userClass) { %>
-										<option 
-											value="<%= oneClass %>"
-											<%= locals.old && (oneClass === old.userClass) ? 'selected' : null %> 
-										> <%= oneClass %> </option>
-									<% } %>
-								</select>
+    <section class="user-edit_main-container"> 
+        <form action="/user-register" method="POST" enctype="multipart/form-data" class="formulario" id="user-edit_form">
+            <h4><b> Para crear tu cuenta en Código Gamer ¡Ingresá estos datos!</b></h4>               
+            <div>
+                <label>Nombre Completo</label>
+                <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre"
+                    value="<%=locals.old&&old.nombre%>">
+                <article class="errors"  id="register-errors">
+                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                            <% if(errors[i].param == "nombre") { %>
+                                <span> <%= errors[i].msg %> </span>
+                            <% } %>
+                        <%}%>
+                    <%}%>
+                </article>  
+            </div>           
+            <div>
+                <label>Apellidos</label>
+                <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"
+                    value="<%=locals.old&&old.lastName%>">
+                    <article class="errors"  id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "apellido") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>  
+            </div>
+            <div>
+                <label>DNI/CEDULA</label>
+                <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"
+                    value="<%=locals.old&&old.dni%>">
+                    <article class="errors" id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "dni") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>  
+            </div>
+            <div>
+                <label>Género</label>
+                <select name="sexo" id="sexo" class="controlador">
+                    <option class="catg-option" hidden selected>
+                        <%=locals.old&&old.sexo%>
+                    </option>
+                    <option value="Masculino" class="catg-option">Masculino</option>
+                    <option value="Femenino" class="catg-option">Femenino</option>
+                </select>
+                <article class="errors"  id="register-errors">
+                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                            <% if(errors[i].param == "sexo") { %>
+                                <span> <%= errors[i].msg %> </span>
+                            <% } %>
+                        <%}%>
+                    <%}%>
+                </article>  
+            </div>
+            <div>
+                <label>Fecha de Nacimiento</label>
+                <input class="controlador" type="date" name="fechaNac" id="fechaNac"
+                    placeholder="Nacimiento - dd/mm/aaaa" value="<%=locals.old&&old.birthDay%>">
+                    <article class="errors" id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "fechaNac") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>  
+            </div>
+            <div>
+                <label>Teléfono</label>
+                <input class="controlador" type="tel" name="tel" id="tel"
+                    placeholder="Teléfono - Cod.Area + Numero" value="<%=locals.old&&old.contactNumber%>">
+                    <article class="errors"  id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "tel") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>  
+            </div>
+            <div>
+                <label>Imagen de Perfil</label>
+                <input class="controlador" type="file" name="profilePhoto" id="profilePhoto" accept=".jpg"
+                    multiple title="Click para subir una foto de perfil">
+                    <article class="errors" id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "profilePhoto") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article> 
+            </div>
+            <div>
+                <label>Tipo de Usuario</label>
+                <select name="userClass" id="user-class" class="controlador">
+                    <option class="catg-option" hidden selected>
+                        <%=locals.old&&old.userClass%>
+                    </option>
+                    <option value="Administrador" class="catg-option">Administrador</option>
+                    <option value="Cliente" class="catg-option">Cliente</option>
+                </select>
+                <article class="errors" id="register-errors">
+                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                            <% if(errors[i].param == "userClass") { %>
+                                <span> <%= errors[i].msg %> </span>
+                            <% } %>
+                        <%}%>
+                    <%}%>
+                </article>  
+            </div>
+            <div>
+                <label>Correo Electrónico</label>
+                <input class="controlador" type="email" name="email1" id="email1"
+                    placeholder="Ingresá un Correo Electónico" value="<%=locals.old&&old.email1%>">
+                    <article class="errors" id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "email1") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>  
+            </div>
+            <div>
+                <label>Verificá tu Correo Electrónico</label>
+                <input class="controlador" type="email" name="email2" id="email2"
+                    placeholder="Verificá Correo Electónico" value="<%=locals.old&&old.contactNumber%>">
+                    <article class="errors"  id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "email2") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>  
+            </div>
+            <div>
+                <label>Contraseña</label>
+                <input class="controlador" type="password" name="password1" id="password1"
+                    placeholder="Introduzca contraseña">
+                    <article class="errors" id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "password1") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>  
+            </div>
+            <div>
+                <label>Repetí Contraseña</label>
+                <input class="controlador" type="password" name="password2" id="password2"
+                    placeholder="Repetí tu contraseña">
+                    <article class="errors" id="register-errors">
+                        <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "password2") { %>
+                                    <span> <%= errors[i].msg %> </span>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+                    </article>
+                    
+            </div>
+            <% if (locals && locals.old && locals.emailError && emailError.length>0) { %>
+            <article class="errors" id="register-errors"> 
+                    <% for (let i=0 ; i < emailError.length ; i++) {%>
+                            <span> <%= emailError[i].msg %> </span>
+                    <%}%>
+            </article>
+            <%}%>
+
             <p><label><input type="checkbox" name="acceptTerms" id="acceptTerms"required> Acepto <a href="#">Términos y Condiciones</a>
             </label></p>
             <input class="button" type="submit" value="Registrarse">

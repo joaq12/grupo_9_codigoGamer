@@ -16,8 +16,12 @@
                             <div class="image-carrusel_main-img">
                                 <img src="/images/<%= sproduct.photo1%>" alt="">
                                 <i class="fa fa-heart"></i>
+                            <% if(locals.session){ %>
+                                <% if(locals.session.userClass == "Administrador"){ %>    
                             <button class="product-detail_product-edit-button"><a href="/product-edit/<%=sproduct.id %>"><i
                                         class="fas fa-pencil-alt"></i></a></button>
+                                <%}%>
+                            <%}%>
                             </div>
                             <div class="image-carrusel_others-imgs">
                                 <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo2%>" alt="">
@@ -80,12 +84,17 @@
                             <a href="product-detail"><button class="button_product-detail_add">Añadir al
                                     Carro</button></a>
                             <a href="cart"><button class="button_product-detail_buy">Comprar</button></a>
+
+                            <% if(locals.session){ %>
+                                <% if(locals.session.userClass == "Administrador"){ %>
                             <form class="produt-delete_form" method="POST" action="/product-detail/<%=sproduct.id %>?_method=DELETE"_method=DELETE">
                                     <button class="product-detail_product-delete" value="submit">
                                         <i class="fas fa-trash-alt" id="delete-product-trash"></i>
                                         Eliminar Producto
                                     </button>
                             </form>
+                                <%}%>
+                            <%}%>
                         </div>
                         <div class="favourites-container">
                             <div class="favourites">

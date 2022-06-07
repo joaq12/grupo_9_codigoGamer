@@ -14,10 +14,13 @@
 
 
             <main class="main-section-store">
+                <% if(locals.session){ %>
+                    <% if(locals.session.userClass == "Administrador"){ %>
                     <div class="product-create_button-container">
                         <a href="/product-create"><button class="button_product-add"><i class="fas fa-plus"></i>Añadir Producto</button></a>
                     </div>
-
+                    <%}%>
+                <%}%>
                 <section class="main-store-catg_container">
 
                    
@@ -91,9 +94,12 @@
                                 </a>
                             </div>
                             <i class="fa fa-heart"></i>
+                            <% if(locals.session){ %>
+                                <% if(locals.session.userClass == "Administrador"){ %>
                             <button class="store_product-edit-button"><a href="/product-edit/<%= products[i].id %>"><i
                                         class="fas fa-pencil-alt"></i></a></button>
-                                        
+                                <% } %>  
+                            <% } %>           
                         </article>
                      <% } %>   
                     </div>

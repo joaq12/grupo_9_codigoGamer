@@ -1,7 +1,7 @@
-function ghuestMiddleware(res,req){
-    if(req.session.userlogged == undefined){
+function ghuestMiddleware(req,res,next){
+    if(req.session.usuarioLogged === undefined){
         next()
-    }elseres.render ("pagina solo para Invitados")
+    }else  return res.render ("ghestUser",{session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})
 };
 
 module.exports = ghuestMiddleware;

@@ -1,85 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partial/head')%>
+<%- include('../partial/head')%>
 
     <body>
-        
-    <%- include('../partial/header')%>
-    <section>
-        <form action="/user-edit/<%=userToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data"class="formulario" id="user-edit_form" >
-            <h4><b> Actualizá la información de tu cuenta </b></h4>
-            <div>
-            <label>Nombre Completo</label>
-            <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre"value="<%=userToEdit.name%>">
-            </div>
-            <div>
-            <label>Apellidos</label>
-            <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"value="<%=userToEdit.lastName%>">
-            </div>
-            <div>
-            <label>DNI/CEDULA</label>
-            <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"value="<%=userToEdit.dni%>">
-            </div>
-            <div>
-            <label>Sexo</label>
-            <input class="controlador" type="text" name="sexo" id="sexo" placeholder="Femenino/Masculino"value="<%=userToEdit.gender%>">
-            </div>
-            <div>
-            <label>Fecha de Nacimiento</label>
-            <input class="controlador" type="date" name="fechaNac" id="fechaNac" placeholder="Nacimiento - dd/mm/aaaa"value="<%=userToEdit.birthDay%>">
-            </div>
-            <div>
-            <label>Teléfono</label>
-            <input class="controlador" type="tel" name="tel" id="tel" placeholder="Teléfono - Cod.Area + Numero" value="<%=userToEdit.contactNumber%>">
-            </div>
-            <div>
-            <label>Contraseña</label>
-            <input class="controlador" type="password" name="password1" id="password1" placeholder="Introduzca contraseña" value="<%=userToEdit.password1%>" disabled>
-            </div>
-            <div>
-            <label>Repetí Contraseña</label>
-            <input class="controlador" type="password" name="password2" id="password2" placeholder="Verifique contraseña" value="<%=userToEdit.password2%>" disabled>
-            </div>
-            <div>
-            <label>Correo Electrónico</label>
-            <input class="controlador" type="email" name="email1" id="email"  value="<%=userToEdit.email1%>"disabled>
-            </div>
-            <div>
-            <label>Verificá tu Correo Electrónico</label>
-            <input class="controlador" type="email" name="email2" id="email2" value="<%=userToEdit.email2%>"disabled>
-            </div>
-            <div>
-            <label>Imagen de Perfil</label>
-            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto"accept=".jpg" multiple title="Click para subir una foto de perfil"value="<%=userToEdit.profilePhoto%>">
-            </div>
-            <div>
-            <label>Tipo de Usuario</label>
-            <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador"value="<%=userToEdit.userClass%>">
-                <option class="catg-option" hidden selected><%=userToEdit.userClass%></option>
-                <option value="Administrador" class="catg-option">Administrador</option>
-                <option value="cliente" class="catg-option">Cliente</option>
-            </select>
-            </div>
-            
-                <button class="user-edit-button" value="submit"><i class="fas fa-user-edit" ></i> 
-                     Editar usuario
-                </button>
-        
-                <form class="produt-delete_form" method="POST" action="/user-edit/<%=users.id%>_method=DELETE">
-                    <button class="user-delete-button" value="submit">
-                        <i class="far fa-trash-alt"></i>
-                        Eliminar usuario
-                    </button>
-                </form>
-        </form>
-       
-            
-    </section>
-   
-<%- include('../partial/footer')%> 
+
+        <%- include('../partial/header')%>
+            <section>
+                <section class="user-edit_main-container">
+                    <form action="/user-edit/<%=userToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data"
+                        class="formulario" id="user-edit_form">
+                        <h4><b> Actualizá la información de tu cuenta </b></h4>
+                        <div>
+                            <label>Nombre Completo</label>
+                            <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre"
+                                value="<%=userToEdit.name%>">
+                            <article class="errors"  id="register-errors">
+                                <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                    <% for (let i=0 ; i < errors.length ; i++) {%>
+                                        <% if(errors[i].param == "nombre") { %>
+                                            <span> <%= errors[i].msg %> </span>
+                                        <% } %>
+                                    <%}%>
+                                <%}%>
+                            </article>  
+                        </div>           
+                        <div>
+                            <label>Apellidos</label>
+                            <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"
+                                value="<%=userToEdit.lastName%>">
+                                <article class="errors"  id="register-errors">
+                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                                            <% if(errors[i].param == "apellido") { %>
+                                                <span> <%= errors[i].msg %> </span>
+                                            <% } %>
+                                        <%}%>
+                                    <%}%>
+                                </article>  
+                        </div>
+                        <div>
+                            <label>DNI/CEDULA</label>
+                            <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"
+                                value="<%=userToEdit.dni%>">
+                                <article class="errors" id="register-errors">
+                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                                            <% if(errors[i].param == "dni") { %>
+                                                <span> <%= errors[i].msg %> </span>
+                                            <% } %>
+                                        <%}%>
+                                    <%}%>
+                                </article>  
+                        </div>
+                        <div>
+                            <label>Tipo de Usuario</label>
+                            <select name="sexo" id="sexo" class="controlador">
+                                <option class="catg-option" hidden selected>
+                                    <%=userToEdit.gender%>
+                                </option>
+                                <option value="Masculino" class="catg-option">Masculino</option>
+                                <option value="Femenino" class="catg-option">Femenino</option>
+                            </select>
+                                <article class="errors" id="register-errors">
+                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                                            <% if(errors[i].param == "sexo") { %>
+                                                <span> <%= errors[i].msg %> </span>
+                                            <% } %>
+                                        <%}%>
+                                    <%}%>
+                                </article>  
+                        </div>
+                        <div>
+                            <label>Fecha de Nacimiento</label>
+                            <input class="controlador" type="date" name="fechaNac" id="fechaNac"
+                                placeholder="Nacimiento - dd/mm/aaaa" value="<%=userToEdit.birthDay%>">
+                                <article class="errors" id="register-errors">
+                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                                            <% if(errors[i].param == "fechaNac") { %>
+                                                <span> <%= errors[i].msg %> </span>
+                                            <% } %>
+                                        <%}%>
+                                    <%}%>
+                                </article>  
+                        </div>
+                        <div>
+                            <label>Teléfono</label>
+                            <input class="controlador" type="tel" name="tel" id="tel"
+                                placeholder="Teléfono - Cod.Area + Numero" value="<%=userToEdit.contactNumber%>">
+                                <article class="errors"  id="register-errors">
+                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                                            <% if(errors[i].param == "tel") { %>
+                                                <span> <%= errors[i].msg %> </span>
+                                            <% } %>
+                                        <%}%>
+                                    <%}%>
+                                </article>  
+                        </div>
+                        <div>
+                            <label>Correo Electrónico</label>
+                            <input class="controlador" type="email" name="email1" id="email1"
+                                placeholder="Ingresá un Correo Electónico" value="<%=userToEdit.email1%>">
+                                <article class="errors" id="register-errors">
+                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                                            <% if(errors[i].param == "email1") { %>
+                                                <span> <%= errors[i].msg %> </span>
+                                            <% } %>
+                                        <%}%>
+                                    <%}%>
+                                </article>  
+                        </div>
+                        <div>
+                            <label>Verificá tu Correo Electrónico</label>
+                            <input class="controlador" type="email" name="email2" id="email2"
+                                placeholder="Verificá Correo Electónico" value="<%=userToEdit.email2%>">
+                                <article class="errors"  id="register-errors">
+                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                                            <% if(errors[i].param == "email2") { %>
+                                                <span> <%= errors[i].msg %> </span>
+                                            <% } %>
+                                        <%}%>
+                                    <%}%>
+                                </article>  
+                        </div>
+                        <div>
+                            <label>Imagen de Perfil</label>
+                            <input class="controlador" type="file" name="profilePhoto" id="profilePhoto" accept=".jpg"
+                                multiple title="Click para subir una foto de perfil">
+                                <article class="errors" id="register-errors" value="<%=userToEdit.profilePhoto%>">
+                                  
+                                </article> 
+                        </div>
+                        <div>
+                            <label>Tipo de Usuario</label>
+                            <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador">
+                                <option class="catg-option" hidden selected>
+                                    <%=userToEdit.userClass%>
+                                </option>
+                                <option value="Administrador" class="catg-option">Administrador</option>
+                                <option value="Cliente" class="catg-option">Cliente</option>
+                            </select>
+                            <article class="errors" id="register-errors">
+                                <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                    <% for (let i=0 ; i < errors.length ; i++) {%>
+                                        <% if(errors[i].param == "userClass") { %>
+                                            <span> <%= errors[i].msg %> </span>
+                                        <% } %>
+                                    <%}%>
+                                <%}%>
+                            </article>  
+                        </div>
+
+                        <button class="user-edit-button" value="submit"><i class="fas fa-user-edit"></i>
+                            Editar usuario
+                        </button>
 
 
-</body>
+                    </form>
+                    <form class="produt-delete_form" method="POST"
+                        action="/user-edit/<%=userToEdit.id%>?_method=DELETE">
+                        <button class="user-delete-button" value="submit">
+                            <i class="far fa-trash-alt"></i>
+                            Eliminar usuario
+                        </button>
+                    </form>
+                </section>
+            </section>
+
+            <%- include('../partial/footer')%>
+
+
+    </body>
 
 </html>

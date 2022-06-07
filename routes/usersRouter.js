@@ -6,24 +6,29 @@ const router= express.Router();
 const usersController= require('../controllers/usersController');
 //middleWares
 const validateRegister=require('../middlewares/validateRegisterMiddleware')
+const validateLogin = require("../middlewares/validateLoginMiddleware")
 const uploadFile=require('../middlewares/usersMulter');
-
-
+const ghestMiddleware = require("../middlewares/ghestMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware")
+const validateUserEdit = require("../middlewares/validateUserEditMiddleware")
 
 //todos los usuarios
-router.get('/users',usersController.allUsers);
+router.get('/users',authMiddleware, usersController.allUsers);
 //perfil de usuario
-router.get('/user-profile/:id',usersController.userDetails);
+router.get('/user-profile/:id',authMiddleware, usersController.userDetails);
 //login usuario
-router.get('/user-login',usersController.login);
-router.post('/user-login',validateRegister,usersController.loginProcess);
+router.get('/user-login', ghestMiddleware, usersController.login);
+router.post('/user-login', validateLogin, usersController.loginProcess);
+router.post("/user-logout", usersController.logout)
 //registro de usuario
-router.get('/user-register',usersController.register);
+router.get('/user-register', ghestMiddleware, usersController.register);
 router.post('/user-register',uploadFile.single('profilePhoto'),validateRegister,usersController.registerProcess);
 //edicion de usuarios
 router.get('/user-edit/:id',usersController.userEdit);
-router.delete('user-edit/:id',usersController.userDelete);
-router.put('/user-edit/:id',uploadFile.single('profilePhoto'),validateRegister,usersController.userUpdate);
+router.delete('/user-edit/:id',usersController.userDelete);
+router.put('/user-edit/:id',uploadFile.single('profilePhoto'),validateUserEdit,usersController.userUpdate);
 
+router.get("/ghestUser", usersController.ghest)
+router.get("/authUser", usersController.auth)
 
 module.exports= router;

@@ -8,37 +8,38 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productosController = {
   detail: (req, res) => {
-    if (req.params.id - 1 < products.length) {
-      res.render("product-detail", { sproduct: products[req.params.id - 1] });
-    }
+    let product = products.find(producto => producto.id == parseInt(req.params.id))
+    if(product === undefined) return res.render("index")
+    res.render("product-detail", { sproduct: product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
+    
   },
 
   cart: (req, res) => {
-    res.render("cart");
+    res.render("cart", { sproduct: products, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   checkoutAdress: (req, res) => {
-    res.render("checkout-adress");
+    res.render("checkout-adress", {session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   checkoutConfirm: (req, res) => {
-    res.render("checkout-confirm");
+    res.render("checkout-confirm", {session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   checkoutData: (req, res) => {
-    res.render("checkout-data");
+    res.render("checkout-data", {session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   checkoutPayment: (req, res) => {
-    res.render("checkout-payment");
+    res.render("checkout-payment", {session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   checkoutShipping: (req, res) => {
-    res.render("Checkout-shipping");
+    res.render("Checkout-shipping", {session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   productCreate: (req, res) => {
-    res.render("product-create");
+    res.render("product-create", {session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   
@@ -68,7 +69,7 @@ const productosController = {
       (newProduct.price = req.body.price),
       (newProduct.shipping = req.body.shipping),
       (newProduct.stock = req.body.stock),
-      (newProduct.id = products.length + 1);
+      (newProduct.id = Date.now());
    
      if(req.files){
       req.files.forEach(imagen => {
@@ -83,17 +84,16 @@ const productosController = {
   },
 
   productEdit: (req, res) => {
-    if (req.params.id - 1 < products.length) {
+    let product = products.find(producto => producto.id == parseInt(req.params.id))
+    if(product === undefined) return res.render("index")
     res.render("product-edit", {
-      productToEdit: products[req.params.id -1],
-  })}},
+      productToEdit: product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
+  })},
 
   productUpdate:(req,res)=>{
-    console.log(req.file)
-    
     let productToEdit=products.find(
-      (product)=>product.id == req.params.id);
-      products.forEach(product=>{if(product.id==req.params.id){
+      (product)=>product.id === parseInt(req.params.id));
+      products.forEach(product=>{if(product.id === parseInt(req.params.id)){
         (product.name=req.body.name),
         (product.description=req.body.description ),
         (product.discount=req.body.discount === undefined ? false:true),
@@ -124,7 +124,7 @@ const productosController = {
     products=products.filter((productToDelete))                         
     let newDataBase = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, newDataBase);
-    res.redirect("/store");
+    res.render("store",{products, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
   },
 
   

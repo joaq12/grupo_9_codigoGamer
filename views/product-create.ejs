@@ -11,7 +11,7 @@
 
         <form action="/product-create" method="POST" enctype="multipart/form-data" class="product-form">
  
-            <h2>Carga / Edición de Productos</h2>
+            <h2>Carga de Productos</h2>
             <div class="name-images-container">
                 <div class="product_name-container">
                     <span>Nombre de Producto</span><br>
@@ -23,10 +23,14 @@
                 <div class="product-form-images">
                     <span class="titulo-imagenes">Imágenes del Producto</span>
                     <div class="img-button-container">
-                        <input class="upload-img-button" type="file" name="photo1" accept=".jpg" multiple>
-                        <input class="upload-img-button" type="file" name="photo2" accept=".jpg" multiple>
-                        <input class="upload-img-button" type="file" name="photo3" accept=".jpg" multiple>
-                        <input class="upload-img-button" type="file" name="photo4" accept=".jpg" multiple>
+                        <div class="img_loader-box">
+                            <input class="upload-img-button" type="file" name="photo1" accept=".jpg"  multiple>
+                            <input class="upload-img-button" type="file" name="photo2" accept=".jpg"  multiple>
+                        </div>
+                        <div class="img_loader-box">
+                            <input class="upload-img-button" type="file" name="photo3" accept=".jpg"  multiple>
+                            <input class="upload-img-button" type="file" name="photo4" accept=".jpg"  multiple>
+                        </div>      
                     </div>
                 </div>
             </div>
@@ -72,14 +76,14 @@
                     <div class="product_stock-container_input">
                         <label for="product-stock">Ingrese cantidad en Stock </label>
                         <input type="number" id="product-stock" name="stock" min="1" max="100"
-                            class="product-controller" placeholder="0" >
+                            class="product-controller" placeholder=" 0" >
                     </div>
                 </div>
                 <div class="product-price">
                     <span>Precio de Producto</span><br>
                     <div class="product_price-container_input">
                         <label for="price">Ingrese precio del Producto</label>
-                        <input type="text" name="price" id="price" class="product-controller" placeholder=" $ 0" >
+                        <input type="text" name="price" id="price" class="product-controller" placeholder="$ 0" >
                     </div>
                 </div>
             </section>
@@ -87,27 +91,28 @@
                 <div class="product-shipping_container">
                     <span>Envio Gratis</span><br>
                     <div class="free-shipping-container">
-                        <div class="free-shipping" id="yes">
-                            <input type="radio" name="shipping" id="free" value="true" /> Si
-                        </div>
-                        <div class="free-shipping" id="no">
-                            <input type="radio" name="shipping" id="non-free" value="false" /> No
+                        <div class="prueba-prueba" id="yes" >
+                            <input type="checkbox" name="shipping" id="switch" value=true/> 
+                            <label for="switch" id="switch-label">
+                                <span id="handle"><i class="fas fa-circle"></i></span>
+                            </label>
                         </div>
                     </div>
                 </div>
                 <div class="product-discount_container">
                     <span>Descuento</span><br>
                     <div class="discount-container">
-                        <div class="apply-discount" id="yes">
-                            <input type="radio" name="discount" id="discount" value="true" /> Si
-                        </div>
-                        <div class="apply-discount" id="no">
-                            <input type="radio" name="discount" id="non-discount" value="false" /> No
+                        <div class="prueba-prueba" id="yes" >
+                            <input type="checkbox" name="discount" id="dis-switch" value=true/> 
+                            <label for="dis-switch" id="dis-switch-label">
+                                <span id="handle"><i class="fas fa-circle"></i></span>
+                            </label>
                         </div>
                     </div>
                     <div class="product_name-container_input">
-                        <label for="discount-per" id="product-discount-per">Porcentaje de Descuento</label>
-                        <input type="text" name="discountAply" id="discount-per" class="product-controller" placeholder="%">
+                        <label for="switchd" id="product-discount-per">Porcentaje de Descuento</label>
+                        <input type="text" name="discountAply" id="product-discount-per" class="product-controller" 
+                        placeholder="%">
                     </div>
                 </div>
             </section>

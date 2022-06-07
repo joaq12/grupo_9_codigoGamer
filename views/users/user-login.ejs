@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partial/head')%>
+<%- include('../partial/head')%> 
 
     <body>
 
         <%- include('../partial/header')%>
 
-        <section class="login_form">
-            <form class="login-container_form" action="/user-login" method="POST">
-                <h4><b>¡Hola! Para seguir, ingresá tu correo electrónico y tu contraseña</b></h4>
-                <div class="user-name_controller" id="email_cont">
-                    <div class="login_item-container">
-                        <i class="fas fa-user-alt" id="login_item"></i>
+            <section class="login_form">
+                <form class="login-container_form" action="/user-login" method="POST" >
+                    <h4><b>¡Hola! Para seguir, ingresá tu correo electrónico y tu contraseña</b></h4>
+                    <% if (locals && locals.error && error.length>0) { %>
+                        <% for (let i=0 ; i < error.length ; i++) {%>
+                            <div class="login-errors">
+                                <%= error[i].msg%>
+                            </div> 
+                        <%}%>
+                    <%}%>
+                    <div class="user-name_controller" id="email_cont">
+                        <div class="login_item-container">
+                            <i class="fas fa-user-alt" id="login_item"></i>
+                        </div>
+                        <div class="login_controller-container">
+                            <input class="login-controlador" type="email" name="email" id="email"
+                                placeholder="Correo Electrónico" value="<%=locals.old&&old.email%>">
+                        </div>
+                        
                     </div>
-                    <div class="login_controller-container">
-                        <input class="login-controlador" type="email" name="email" id="email"
-                            placeholder="Correo Electrónico">
+                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                            <% for (let i=0 ; i < errors.length ; i++) {%>
+                                <% if(errors[i].param == "email") { %>
+                                    <div class="login-errors">
+                        <span> <%= errors[i].msg %> </span>
+                          <% } %>
+                            <%}%>
+                        <%}%>
+                    </div>
+                   
+                    <div class="user-name_controller" id="pass_cont">
+                        <div class="login_item-container">
+                            <i class="fas fa-lock" id="login_item"></i>
+                        </div>
+                        <div class="login_controller-container">
+                            <input class="login-controlador" type="password" name="password" id="password"
+                                placeholder="Contraseña" >
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="user-name_controller" id="pass_cont">
-                    <div class="login_item-container">
-                        <i class="fas fa-lock" id="login_item"></i>
-                    </div>
-                    <div class="login_controller-container">
-                        <input class="login-controlador" type="password" name="password" id="password"
-                            placeholder="Contraseña">
-                    </div>
+                <% if (locals && locals.errors && errors.length>0) { %>
+                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                            <% if(errors[i].param == "password") { %>
+                                 <div class="login-errors">
+                    <span> <%= errors[i].msg %> </span>
+                                 </div>
+                      <% } %>
+                        <%}%>
+                    <%}%>
+                    
                 </div>
-                <p><label><input type="checkbox" name="rememberAccount" id="rememberAccount"> Recordar Cuenta</label></p>
-                <input class="button" type="submit" value="Ingresar" id="login-button">
-                <p class="reg"><a href="/user-register"> ¿No tenes cuenta? Registráte</a></p>
-            </form>
-        </section>
+                <% if (locals && locals.passError && passError.length>0) { %>
+                    <% for (let i=0 ; i < passError.length ; i++) {%>
+                        <div class="login-errors">
+                            <%= passError[i].msg%>
+                        </div>    
+                    <%}%>
+                <%}%>
+                
+                    <p><label><input type="checkbox" name="rememberAccount" id="rememberAccount"> Recordar
+                            Cuenta</label></p>
+                    <input class="button" type="submit" value="Ingresar" id="login-button">
+                    <p class="reg"><a href="/user-register"> ¿No tenes cuenta? Registráte</a></p>
+                   
+                </form>
+            </section>
 
 
             <%- include('../partial/footer')%>

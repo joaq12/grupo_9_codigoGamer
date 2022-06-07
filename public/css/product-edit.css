@@ -40,6 +40,27 @@ label{
     font-size: 12px;
     font-family:  'Prompt', sans-serif;
 }
+.product-controller::placeholder{
+    color :#949494;
+    font-family:  'Prompt', sans-serif;
+}
+
+.section-product-form input,
+.section-product-form textarea,
+.section-product-form select{
+    color: #9839b5;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.section-product-form textarea::-webkit-scrollbar-track{
+    background: #efeded;
+    border-radius: 5px;
+}
+
+.section-product-form textarea::-webkit-scrollbar-thumb{
+    background:#9839b5;
+}
 
 .product-controller:focus-visible{
     outline: none;
@@ -87,6 +108,33 @@ label{
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+}
+
+input[type="file"]{
+    padding: 4px;
+    color: #949494;
+    font-weight: 300;
+}
+
+input[type="file"]::-webkit-file-upload-button{
+    background-color: white; 
+    border-radius: 5px;
+    border: 2px solid #9839b5;
+    color:#9839b5;
+    display: inline-block;
+    font-size: 14px;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin:2px
+}
+
+input[type="file"]::-webkit-file-upload-button:hover{
+    background-color: #9839b5;
+    color: white;
+    font-weight: bold;
 }
 
 .upload-img-button{
@@ -171,6 +219,14 @@ label{
 
 }
 
+.product-shipping_container, .product-discount_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
 .product_price-container_input{
     width: 100%;
 
@@ -201,7 +257,8 @@ label{
     padding: 10px;
 }
 
-.free-shipping-container{
+.free-shipping-container,
+.discount-container{
     margin: 0 20px;
     padding: 5px;
 }
@@ -218,6 +275,7 @@ label{
 .product_name-container_input{
     text-align: center;
 }
+
 
 #discount-per{
     width: 25%;
@@ -238,7 +296,7 @@ label{
 
 .button-container-edit .button{
     width: 100%;
-    padding: 8px 0;
+    padding: 10px 0;
     border-color: #59359c;
     color:#59359c;
 }
@@ -250,7 +308,7 @@ label{
 
 .button#publish-product{
     width: 100%;
-    padding: 8px 0;
+    padding: 10px 0;
     border: 2px solid #9839b5;
     color:#9839b5;
 }
@@ -336,6 +394,17 @@ label{
     .price-stock_container{
         border:none;
     }
+    #product-discount-per,
+    #discount-per,
+    #product-stock{
+    width: 15%;
+    padding: 5px;
+    }
+
+    #price{
+        width: 20%;
+    }
+
 
     .button-container-edit{
         flex-wrap: wrap;
@@ -374,6 +443,7 @@ label{
     .discount-container{
         display: flex;
         flex-wrap: nowrap;
+        justify-content: center;
     }
 
     .free-shipping,

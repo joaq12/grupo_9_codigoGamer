@@ -15,6 +15,22 @@
     box-shadow: 7px 13px 37px #313131;  
 }
 
+.user-edit_main-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    background-color: rgba(248, 246, 246, 0.2);
+    padding: 40px 20px 40px 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom:20px;
+    border-radius: 10px;
+    border: solid #59359c 2px;
+    box-shadow: 7px 13px 37px #313131;  
+}
+
+
 .formulario input{
     color: #9839b5;
     font-weight: bolder;
@@ -45,7 +61,6 @@
     border : 1px solid #adabb0;
     font-size: 12px;
     background-color: white;
-
 }
 
 .controlador:focus-visible{
@@ -126,6 +141,7 @@
     justify-content: center;
 }
 
+
 .login-container_form h4{
     width: 70%;
     display: inline-block;
@@ -149,9 +165,24 @@
     margin-bottom: 8px;
     margin-top: 8px;
     border : 1px solid #adabb0;
-    max-width: 420px;
+    max-width: 600px;
     background-color: white;
     font-family:  'Prompt', sans-serif;
+}
+
+.login-errors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 85%;
+    max-width: 600px;
+    font-family:  'Prompt', sans-serif;
+    color: #59359c;
+    font-weight: bold;
+    line-height: 10px;
+    margin-bottom: 10px;
+    padding: 0 0 0 5px;
+    font-size: 14px;
 }
 
 #email_cont:focus-within,
@@ -180,19 +211,25 @@
 .login-controlador#password::placeholder,
 .login-controlador#email::placeholder,
 .controlador::placeholder,
-#user-class::placeholder{
+#user-class::placeholder,
+#sexo::placeholder{
     color :#949494;
     font-family:  'Prompt', sans-serif;
 }
 
 .controlador#user-class{
-    color :#949494;
+    color :#9839b5;
     font-size: 14px;
     font-weight: bold;
     font-family:  'Prompt', sans-serif;
 }
 
-
+.controlador#sexo{
+    color :#9839b5;
+    font-size: 14px;
+    font-weight: bold;
+    font-family:  'Prompt', sans-serif;
+}
 
 .login_item-container{
     display: flex;
@@ -288,9 +325,86 @@ div#birth-date_container input:focus-visible{
     display: flex;
     text-align: center;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
     font-family:  'Prompt', sans-serif;
     margin-bottom: 15px;
+}
+
+.errors#register-errors{
+    display: flex;
+    text-align: start;
+    flex-wrap: wrap;
+    justify-content: none;
+    width: 100%;
+    font-family: 'Prompt', sans-serif;
+    margin-bottom:none;
+    font-family:  'Prompt', sans-serif;
+    color: #59359c;
+    font-weight: bold;
+    line-height: 10px;
+    padding: 0 0 0 5px;
+    font-size: 13px;
+    min-height: 16.5px;
+}
+
+.password_match-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.errors#password-message{
+    display: flex;
+    text-align: start;
+    flex-wrap: wrap;
+    justify-content: none;
+    width: 100%;
+    font-family: 'Prompt', sans-serif;
+    margin-bottom:none;
+    font-family:  'Prompt', sans-serif;
+    color: #59359c;
+    font-weight: bold;
+    line-height: 10px;
+    padding: 0 0 0 5px;
+    font-size: 13px;
+    min-height: 16.5px;
+}
+.errors#email-message{
+    display: flex;
+    text-align: start;
+    flex-wrap: wrap;
+    justify-content: none;
+    width: 100%;
+    font-family: 'Prompt', sans-serif;
+    margin-bottom:none;
+    font-family:  'Prompt', sans-serif;
+    color: #59359c;
+    font-weight: bold;
+    line-height: 10px;
+    padding: 0 0 0 5px;
+    font-size: 13px;
+    min-height: 16.5px;
+}
+
+#password1, #password2{
+    margin-bottom: 10px;
+}
+
+#user-edit_form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgba(248, 246, 246, 0.2);
+    padding : 10px 0px ;  
+    margin: auto;
+    margin-top: none;
+    margin-bottom:none;
+    border-radius: none;
+    border: none;
+    box-shadow: none;  
 }
 
 #user-edit_form .controlador{
@@ -300,6 +414,7 @@ div#birth-date_container input:focus-visible{
 
 #user-edit_form label{
     width: 100%;
+    padding: 0 0 0 5px;
     font-family:  'Prompt', sans-serif;
     text-align: start;
     line-height: 5px;
@@ -342,7 +457,7 @@ div#birth-date_container input:focus-visible{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 92%;
     color:rgb(167,26,26) ;
     border: solid 1px rgb(167,26,26);
     border-radius: 5px;
@@ -360,6 +475,8 @@ div#birth-date_container input:focus-visible{
     font-weight: bolder;
     cursor: pointer;
 }
+
+
 
 
 @media (min-width: 361px){
@@ -389,13 +506,28 @@ div#birth-date_container input:focus-visible{
 }
 
 @media screen and (min-width:769px) {
-.formulario,
-.login-container_form{
+.formulario{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 800px;
     }
+
+.login-container_form{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 600px;
+}
+
+
+
+.user-edit_main-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 800px;
+}
 
 .login-container_form .button{
     width: 50%;
@@ -413,11 +545,10 @@ div#birth-date_container input:focus-visible{
 }
 
 #user-edit_form .controlador{
-    width: 95%;
+    width: 98%;
 }
 
 .user-name_controller{
-    width: 48%;
     border-radius: 5px;
     font-family:  'Prompt', sans-serif;
     }

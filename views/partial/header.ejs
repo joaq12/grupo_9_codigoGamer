@@ -24,36 +24,44 @@
         <div class="top-bar_list">
         <li>
           <a href="../user-login">
+            Login / Register
             <i class="fas fa-user"> </i>
-            Login/Register
           </a>
         </li>
+        <% if(locals.session){ %>
+          <% if(locals.session.userClass == "Administrador"){ %>
         <li>
           <a href="../users">
-            <i class="fas fa-user"> </i>
             Ver Usuarios
+            <i class="fas fa-users"></i>
           </a>
         </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-bell"> </i>
-          </a>
-        </li>
+        
+        <%}%>
+        <%}%>
         </div>
       </ul>
+      <% if(locals.session){     %>
        <div class="topbar-user_main-container">
           <div class="top-bar_user-profile_avatar-container">
-            <a href="#">
-            <img class="top-bar_user-profile_avatar" src="/images/star-wars-art-awakens-exhibition-yoda-by1-300x236.jpg">
+            <a href="user-profile/<%=session.id%>">
+            <img class="top-bar_user-profile_avatar" src="/images/users/<%= session.profilePhoto%>">
             </a>
           </div>
           <div class="top-bar_user-profile_data-container">
-            <p class="top-bar_user-profile-info">Usuario</p>
+            <p class="top-bar_user-profile-info"><%=session.name%></p>
           </div>
+          <ul class="bell-alerts">
+            <li>
+              <a href="#" >
+                <i class="fas fa-bell"> </i>
+              </a>
+            </li>
+          </ul>
+          <%}%>
        </div>
     </div>
   </div>
-
 
   <div class="top-header">
     <div class="logo">
@@ -75,7 +83,7 @@
             <a href="#"> OFERTAS </a>
           </div>
           <div class="nav-section_item">
-            <a href="contact"> CONTACTO </a>
+            <a href="/contact"> CONTACTO </a>
           </div>
         </div>
         <div class="nav-section-list-icons">
@@ -94,7 +102,7 @@
             <div class="search-btn"><i class="fas fa-search icon"></i></div>
           </div>
           <div class="nav-section_item">
-            <a href="#">
+            <a href="/cart">
               <i class="fas fa-shopping-cart"> </i>
             </a>
           </div>

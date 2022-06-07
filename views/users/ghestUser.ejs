@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partial/head')%>
+
+    <body>
+
+        <header>
+
+
+            <div class="top-bar">
+              <div class="nav-menu">
+                
+              </div>
+            </div>
+          
+            <div class="top-header">
+              <div class="userMiddlewares-logo">
+                <a href="/">
+                  <img src="/images/codigo-gamer-logo.jpeg.png" />
+                </a>
+              </div> 
+              </header>
+            <% if(locals.session){ %>
+            <section class="userMiddleware-section">
+                <article class="userMiddleware-container">
+                    <div classs="userMiddleware-alert">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                    <h4><b>Hay una sesion activa 
+                      con el usuario <p><%=session.name %> <%=session.lastName %>.</p>
+                      </b></h4>
+                    <h4><b>Para Ingresar con otro usuario, cerra sesión e intentá nuevamente.</b></h4>
+                    </div>
+                    <span id="middlewares-links">
+                        <p class="reg-link"><a href="/user-profile/<%=session.id %>"> Cerrá Sesión</a></p>
+                    </span>
+                </article>
+            </section>
+            <% } %>
+
+
+            <%- include('../partial/footer')%>
+
+    </body>
+
+
+</html>
