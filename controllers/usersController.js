@@ -61,8 +61,8 @@ const usersController={
           res.redirect("/"); 
         }
           else{
+
           res.render('user-register',{errors:errors.errors,old:req.body})
-          }
   },
 
   login:(req,res)=>{
