@@ -49,7 +49,7 @@ article.user-profile:hover{
 .user-profile_data-container p{
     width: 100%; 
     display: block;
-    color:#9e1fac;
+    color:#313131;
     font-weight: bolder;
     font-size: 13px;
 }
@@ -113,6 +113,8 @@ article.user-profile .user_profile-edit-button:hover{
     .user-profile_avatar{
         max-height: 120px;
         max-width: 120px;
+        min-width: 120px;
+        min-height: 120px;
         border: solid 1px #59359c;
         border-radius: 50%;
     }

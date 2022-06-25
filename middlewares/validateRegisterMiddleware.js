@@ -14,7 +14,7 @@ const validateRegister=[
       }}),
     body('tel').notEmpty().withMessage('El número de contacto es requerido'),
     body('email1').notEmpty().withMessage('El Email es requerido').bail().isEmail().withMessage('El email debe tener un formato válido'),
-    body('email2').notEmpty().withMessage('El Email es requerido').bail().isEmail().withMessage('El email debe tener un formato válido')
+    body('email2').notEmpty().withMessage('La verificación de Email es requerida').bail().isEmail().withMessage('El email debe tener un formato válido')
     .custom(async (email2, {req}) => {
       const email1 = req.body.email1
       if(email1 !== email2){
