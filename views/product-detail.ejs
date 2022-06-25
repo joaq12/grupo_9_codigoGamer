@@ -7,12 +7,14 @@
         <%- include('./partial/header')%>
 
             <main class="product-detail_root">
-                <a href="/store" class="back-to-store"> <<< Volver al listado </a>
+                <a href="/store" class="back-to-store"> <<< Voler al listado </a>
+                <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
                 <section class="product-detail-container">
                     <section class="product-detail_image-container">
+                        <p class="product-detail_image-container_product-title"><%= sproduct.name%></p>
                         <div class="image-carrusel">
-                            <p class="product-detail_image-container_product-title"><%= sproduct.name%></p>
-                            <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
+                            
+                            
                             <div class="image-carrusel_main-img">
                                 <img src="/images/<%= sproduct.photo1%>" alt="">
                                 <i class="fa fa-heart"></i>
@@ -41,13 +43,34 @@
                                 <p class="product-detail_price">
                                     $<%= sproduct.price%>
                                 </p>
+                                <span class="product-detail_discount">
+                                <% if(sproduct.discount == "true"){ %> 
+                                <%= sproduct.discountAply%>% OFF
+                                <%}%>  
+                            </span>
                             <span class="product-detail_pay-methods">
-                                Hasta 6 cuotas sin interés<br>
-                            </span>
-                             
-                            <span class="product-detail_discount">
-                                <%= sproduct.discountAply%>% OFF  
-                            </span>
+                                <i class="fas fa-credit-card"></i>
+                                Hasta 6 cuotas sin interés
+                            </span><br>
+                            <% if(sproduct.shipping == true){ %>
+                                <p class="product-detail_pay-methods">
+                                   <i class="fas fa-shipping-fast"></i>
+                                    Envio Gratis
+                                </p>
+
+                            <%}%>
+                        </div>
+
+                        <div class="product-detail_buy-data_button-container">
+                            <a href="/cart"><button class="button_product-detail_add">Añadir al
+                                    Carro</button></a>
+                            <a href="/cart"><button class="button_product-detail_buy">Comprar</button></a>
+                        </div>
+
+                        <div class="favourites-container">
+                            <div class="favourites">
+                                <i class="far fa-heart" id="fav"></i> <a href=""> Añadir a Favoritos</a>
+                            </div>
                         </div>
 
                         <div class="product-detail_buy-data-general-info">
@@ -70,7 +93,7 @@
                             </div>
                             <i class="fa fa-heart" id="product-detail_favoutite-item"></i>
                         </div>
-                        <div class="product-detail_buy-data-shipping-cost">
+                        <!-- <div class="product-detail_buy-data-shipping-cost">
                             <div class="product-detail_cart_shipp-container">
                                     <p>Calcula el costo de tu Envío</p>
                                     <input id="pd-post-code" placeholder="Ingresa tu Código Postal">
@@ -79,11 +102,13 @@
                                         Su envío tiene un costo de $1.987
                                     </span> 
                             </div>
-                        </div>
-                        <div class="product-detail_buy-data_button-container">
-                            <a href="product-detail"><button class="button_product-detail_add">Añadir al
-                                    Carro</button></a>
-                            <a href="cart"><button class="button_product-detail_buy">Comprar</button></a>
+                        </div> -->
+                       
+                    </div>
+                
+                              
+
+                </section>
 
                             <% if(locals.session){ %>
                                 <% if(locals.session.userClass == "Administrador"){ %>
@@ -95,18 +120,7 @@
                             </form>
                                 <%}%>
                             <%}%>
-                        </div>
-                        <div class="favourites-container">
-                            <div class="favourites">
-                                <i class="far fa-heart" id="fav"></i> <a href=""> Añadir a Favoritos</a>
-                            </div>
-                        </div>
-                    </div>
-                
 
-
-
-                </section>
                 <div class="product-detail_section_slider-container">
                     <h5 class="section_container-title">Productos Relacionados</h5>
                     <div class="product-detail_slider-section">
@@ -163,11 +177,7 @@
                        
                     </div>
                 </div>
-
             </main>
-
             <%- include('./partial/footer')%>
-
     </body>
-
 </html>

@@ -48,7 +48,7 @@ label{
 .section-product-form input,
 .section-product-form textarea,
 .section-product-form select{
-    color: #9839b5;
+    color: #313131;
     font-weight: bolder;
     font-size: 14px;
 }
@@ -119,22 +119,21 @@ input[type="file"]{
 input[type="file"]::-webkit-file-upload-button{
     background-color: white; 
     border-radius: 5px;
-    border: 2px solid #9839b5;
-    color:#9839b5;
+    border: 1px solid #313131;
+    color:#313131;
     display: inline-block;
     font-size: 14px;
     padding: 5px 5px;
     text-align: center;
     text-decoration: none;
-    transition-duration: 0.4s;
+    transition-duration: 0.1s;
     cursor: pointer;
     margin:2px
 }
 
 input[type="file"]::-webkit-file-upload-button:hover{
-    background-color: #9839b5;
-    color: white;
-    font-weight: bold;
+    border: solid 2px #9839b5;
+    color: #9839b5;
 }
 
 .upload-img-button{

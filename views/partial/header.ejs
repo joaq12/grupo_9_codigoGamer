@@ -22,12 +22,14 @@
         </li>
       </div>  
         <div class="top-bar_list">
-        <li>
+          <% if(!locals.session){ %>
+          <li>
           <a href="../user-login">
-            Login / Register
+            Ingresar / Registrarse
             <i class="fas fa-user"> </i>
           </a>
         </li>
+        <%}%>
         <% if(locals.session){ %>
           <% if(locals.session.userClass == "Administrador"){ %>
         <li>
@@ -44,7 +46,7 @@
       <% if(locals.session){     %>
        <div class="topbar-user_main-container">
           <div class="top-bar_user-profile_avatar-container">
-            <a href="user-profile/<%=session.id%>">
+            <a href="../user-profile/<%=session.id%>">
             <img class="top-bar_user-profile_avatar" src="/images/users/<%= session.profilePhoto%>">
             </a>
           </div>
@@ -60,8 +62,10 @@
           </ul>
           <%}%>
        </div>
-    </div>
+      </div>
   </div>
+
+  
 
   <div class="top-header">
     <div class="logo">
@@ -112,5 +116,9 @@
         </div>
       </div>
     </div>
+    
+
   </div>
+
+  
 </header>

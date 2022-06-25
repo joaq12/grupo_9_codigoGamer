@@ -111,10 +111,11 @@ article.product_item{
 
 .product_item-main_article a{
     text-decoration: none;
-    color:#ab39b5;
+    color:#313131;
     font-size: 17px;
     text-align: center;
     padding: 10px;
+    font-weight: 600;
 }
 
 .product_item-main_article a:hover {
@@ -256,7 +257,7 @@ article.product_item{
     padding: 8px 12px 8px 8px;
     border: #4f4f4f solid 1px;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .button_product-add i{
@@ -266,16 +267,14 @@ article.product_item{
 }
 
 .product-create_button-container:hover i{
-    color: white;
+    color: #9e1fac;
     font-weight: bold;
 }
 
 .product-create_button-container:hover .button_product-add{
-    color: white;
-    background-color: rgb(72, 177, 72);
+    color: #9e1fac;
     font-weight: bold;
-    border: none;
-    outline: none;
+    border: #9e1fac solid 2px;
 }
 
 .catg-store_container-products{
@@ -322,7 +321,7 @@ article.product_item{
 
 .product_item:hover{
     border: solid #59359c 1px;
-    box-shadow: 4px 7px 18px #171313;  
+    box-shadow: 3px 3px 5px 0.5px #999999;  
 
 }
 

@@ -2,6 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    accent-color: #9839b5;
+}
+
+.w-img{
+    background-color: #59359c;
+    width: 20px;
 }
 
 ::-webkit-scrollbar{
@@ -15,6 +21,11 @@
 ::-webkit-scrollbar-thumb{
     background-color: #59359c;
     border-radius: 5px;
+}
+
+::selection{
+    background:#ba51c6;
+    color:#fcfcfc;
 }
 
 body{
@@ -46,7 +57,8 @@ header{
 }
 
 /* Inicio barra top*/
-.top-bar{
+.top-bar,
+.adm_top-bar{
     background-color: #59359c;
     max-height: 65px;
     width: 100%;
@@ -58,14 +70,17 @@ header{
     min-height: 67px;
 }
 
-.top-bar .nav-menu{
+.top-bar .nav-menu,
+.top-bar .adm_nav-menu{
     width: 100%;
     display: flex;
     min-height: 67px;
     align-items: center;
-
+    padding: 0 15px;
 }
-.top-bar .nav-menu ul{
+
+.top-bar .nav-menu ul,
+.top-bar .adm_nav-menu ul{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -131,7 +146,13 @@ header{
     border-radius: 50%;
     width: 60%;
     background-color: whitesmoke;
+    transition: 0.5s;
 }
+
+.top-bar_user-profile_avatar:hover{
+    transform: scale(1.12);
+}
+
 .top-bar_user-link{
     text-decoration: none;
     color: inherit;

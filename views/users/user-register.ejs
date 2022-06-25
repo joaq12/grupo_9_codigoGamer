@@ -59,6 +59,7 @@
                     </option>
                     <option value="Masculino" class="catg-option">Masculino</option>
                     <option value="Femenino" class="catg-option">Femenino</option>
+                    <option value="Femenino" class="catg-option">Otro</option>
                 </select>
                 <article class="errors"  id="register-errors">
                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
@@ -87,7 +88,7 @@
             <div>
                 <label>Teléfono</label>
                 <input class="controlador" type="tel" name="tel" id="tel"
-                    placeholder="Teléfono - Cod.Area + Numero" value="<%=locals.old&&old.contactNumber%>">
+                    placeholder="Ingresá un teléfono" value="<%=locals.old&&old.contactNumber%>">
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -114,7 +115,7 @@
             </div>
             <div>
                 <label>Tipo de Usuario</label>
-                <select name="userClass" id="user-class" class="controlador">
+                <select name="userClass" id="user-class" class="controlador" aria-placeholder="dasdasd">
                     <option class="catg-option" hidden selected>
                         <%=locals.old&&old.userClass%>
                     </option>
@@ -148,7 +149,7 @@
             <div>
                 <label>Verificá tu Correo Electrónico</label>
                 <input class="controlador" type="email" name="email2" id="email2"
-                    placeholder="Verificá Correo Electónico" value="<%=locals.old&&old.contactNumber%>">
+                    placeholder="Verificá Correo Electónico">
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -199,7 +200,7 @@
             <p><label><input type="checkbox" name="acceptTerms" id="acceptTerms"required> Acepto <a href="#">Términos y Condiciones</a>
             </label></p>
             <input class="button" type="submit" value="Registrarse">
-            <p><a href="/login">¿Ya tenes cuenta? Ingresá</a></p>
+            <p><a href="/user-login">¿Ya tenes cuenta? Ingresá</a></p>
         </form>
         
     </section>

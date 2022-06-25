@@ -19,10 +19,10 @@ router.get('/user-profile/:id',authMiddleware, usersController.userDetails);
 //login usuario
 router.get('/user-login', ghestMiddleware, usersController.login);
 router.post('/user-login', validateLogin, usersController.loginProcess);
-router.post("/user-logout", usersController.logout)
+router.post("/user-logout",authMiddleware, usersController.logout)
 //registro de usuario
 router.get('/user-register', ghestMiddleware, usersController.register);
-router.post('/user-register',uploadFile.single('profilePhoto'),validateRegister,usersController.registerProcess);
+router.post('/user-register', ghestMiddleware, uploadFile.single('profilePhoto'),validateRegister,usersController.registerProcess);
 //edicion de usuarios
 router.get('/user-edit/:id',usersController.userEdit);
 router.delete('/user-edit/:id',usersController.userDelete);
