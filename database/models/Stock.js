@@ -8,10 +8,17 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: 'stocks',
-        timestamps: false
+     timestamps: false
     };
-    const Stock = sequelize.define(alias, cols, config)
+    let Stock = sequelize.define(alias, cols, config)
+ 
+ //   Asociamos el modelo Stock con el modelo productos.
 
+ Stock.associate = function(models){
+    Stock.belongsTo(models.Product,{
+        as:"product",
+        foreignKey:"stock_id"
+    });
+}
     return Stock
 }

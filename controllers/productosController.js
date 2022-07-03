@@ -3,14 +3,35 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 var products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
+const db = require('../database/models');
+
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const productosController = {
   detail: (req, res) => {
-    let product = products.find(producto => producto.id == parseInt(req.params.id))
-    if(product === undefined) return res.render("index")
-    res.render("product-detail", { sproduct: product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
+
+    const id = req.params.id;
+
+    db.Product.findByPk(id)
+      .then((response) => {
+        
+        if(response === null){
+          res.send("index")
+        } else {
+          
+          res.send(response)
+
+        }
+      })
+      .catch((e) => {
+        console.log(e)
+        res.send(e)
+      })
+    
+    // let product = products.find(producto => producto.id == parseInt(req.params.id))
+    // if(product === undefined) return res.render("index")
+    // res.render("product-detail", { sproduct: product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
     
   },
 

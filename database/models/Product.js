@@ -37,32 +37,40 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.TINYINT,
             allowNull: false
-        },
-        dicountApply: {
-            type: dataTypes.TINYINT,
 
         },
-        id_Category: {
-            type: dataTypes.DATE,
+        id_category: {
+            type: dataTypes.SMALLINT,
             foreignKey: true,
             allowNull: false
         },
         id_Stock: {
-            type: dataTypes.INTEGER,
-            foreignKey: true,
-            allowNull: false
-        },
-        category: {
-            type: dataTypes.STRING,
+            type: dataTypes.SMALLINT,
             foreignKey: true,
             allowNull: false
         }
     };
     let config = {
-        tableName: 'products',
+        tableName: 'product',
         timestamps: false
     };
     const Product = sequelize.define(alias, cols, config)
+    
+    //Asociamos el modelo productos con los modelos Categorias y Stock.
+
+    Product.associate = function(models){
+        Product.hasMany(models.Category,{
+            as:"Category",
+            foreignKey:"id_category"
+        });
+        Product.associate = function(models){
+            Product.belongsTo(models.Stock,{
+                as:"Product",
+                foreignKey:"stock_id",
+                timestamps: false
+            });
+        }
+    }
 
     return Product
 }
