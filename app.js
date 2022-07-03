@@ -2,8 +2,9 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mainRouter = require('./routes/mainRouter');
-const productosRouter= require('./routes/productosRouter');
-const usersRouter= require("./routes/usersRouter");
+const productosRouter = require('./routes/productosRouter')
+
+const usersRouter = require("./routes/usersRouter");
 const methodOverride =  require('method-override');
 const cookieParser = require("cookie-parser");
 const session=require('express-session');
@@ -28,6 +29,8 @@ app.use(session({secret: "Shhh, It's a secret",resave: false,saveUninitialized: 
 
 app.use('/', mainRouter);
 app.use(productosRouter);
+//creo en al app.use la el productsRouter
+// app.use('/products',productosRouter);
 app.use(usersRouter);
 
 
