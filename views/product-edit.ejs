@@ -29,7 +29,6 @@
                     </div>
                     <div class="img_loader-box">
                         <input class="upload-img-button" type="file" name="photo3" accept=".jpg"  multiple>
-                        <input class="upload-img-button" type="file" name="photo4" accept=".jpg"  multiple>
                     </div>      
                     </div>
                 </div>
@@ -40,28 +39,7 @@
                 <div class="catg-container_catg">
                     <label for="catg" class="catg-label">Seleccione la Categoría</label>
                     <select name="catg" id="categoria" placeholder="Categorías" class="product-controller">
-                        <option class="catg-option" hidden selected><%=productToEdit.catg%></option>
-                        <option value="Hardware" class="catg-option">Hardware</option>
-                        <option value="Consolas" class="catg-option">Consolas</option>
-                        <option value="Accesorios" class="catg-option">Accesorios</option>
-                        <option value="Ofertas" class="catg-option">Ofertas</option>
-                    </select>
-                </div>
-                <div class="catg-container_subcatg">
-                    <label for="catg" class="sub-catg-label">Seleccione la Sub-Categoría</label>
-                    <select name="sub-catg" id="Sub-categoria" placeholder="Sub-Categorías" class="product-controller" disabled>
-                        <option value="Mouse" class="catg-option">Mouse</option>
-                        <option value="Teclados" class="catg-option">Teclados</option>
-                        <option value="monitores" class="catg-option">Monitores</option>
-                        <option value="Notebooks" class="catg-option">Notebooks</option>
-                        <option value="PS5" class="catg-option">PS5</option>
-                        <option value="XBOX" class="catg-option">XBOX</option>
-                        <option value="Microfonos" class="catg-option">PSE</option>
-                        <option value="Lentes" class="catg-option">Lentes</option>
-                        <option value="Mousepads" class="catg-option">Mousepads</option>
-                        <option value="Lámparas" class="catg-option">Lámparas</option>
-                        <option value="Ofertas-Hard" class="catg-option">Ofertas-Hard</option>
-                        <option value="Ofertas-Soft" class="catg-option">Ofertas-Soft</option>
+                        <option class="catg-option" disabled selected><%=productToEdit.category.name%></option>
                     </select>
                 </div>
             </div>
@@ -94,7 +72,7 @@
                     <div class="prueba-prueba" id="yes" >
                         <div class="free-shipping-container">
                             <div class="prueba-prueba-edit" id="yes" >
-                                <input type="checkbox" name="shipping" id="switch" value="<%=productToEdit.shipping%>"/> 
+                                <input type="checkbox" name="shipping" id="switch" value="1"/> 
                                 <label for="switch" id="switch-label">
                                     <span id="handle"><i class="fas fa-circle"></i></span>
                                 </label>
@@ -107,7 +85,7 @@
                     <div class="prueba-prueba" id="yes" >
                         <div class="discount-container">
                             <div class="prueba-prueba" id="yes" >
-                                <input type="checkbox" name="discount" id="dis-switch" value="<%=productToEdit.discount%>"/> 
+                                <input type="checkbox" name="discount" id="dis-switch" value="1"/> 
                                 <label for="dis-switch" id="dis-switch-label">
                                     <span id="handle"><i class="fas fa-circle"></i></span>
                                 </label>

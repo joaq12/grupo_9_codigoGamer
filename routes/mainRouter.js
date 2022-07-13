@@ -4,9 +4,8 @@ const router = express.Router();
 const mainController = require('../controllers/mainController');
 
 router.get('/', mainController.home);
-router.get('/store',mainController.store);
+router.get('/store/:id',mainController.storeByCategory);
 router.get('/contact',mainController.contact);
-router.get('/prueba',mainController.prueba);
 
 
 

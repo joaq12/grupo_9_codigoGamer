@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partial/head')%>
+
+<body>
+
+    <%- include('./partial/header')%>  
+
+    <section class="section-product-form">
+
+        <form action="/category-create" method="POST" enctype="multipart/form-data" class="product-form">
+ 
+            <h1>Crear una nueva categoria</h1>
+            <div class="name-catg_cont">
+                <div class="category-name_cont">
+                    <span>Nombre de la nueva categoría</span><br>
+                    <div class="catgInputCont">
+                        <input type="text" name="name" id="category-name" class="product-controller" maxlength="55">
+                    </div>
+                </div>
+            </div>
+            <div class="category-images-cont">
+                <span class="titulo-imagenes">Imágen de la categoría</span>
+                <div class="catg-img-button-container">
+                    <input class="upload-img-button" type="file" name="img" accept=".jpg"  multiple>
+                </div>
+            </div>
+
+            <div class="category-list_cont">
+                <h1>Categorias Existentes</h1><br>
+                <ul class="categoryList">
+                    <% for (let i = 0; i < category.length; i++) {%>
+
+                    <li><%= category[i].name %></li>
+
+                    <%}%>
+                </ul>
+            </div>
+            
+            
+           <div class="button-container-edit" id="publish">
+                <input class="button" type="submit" value="GUARDAR" id="publish-product" />
+            </div> 
+        </form>
+    </section>
+
+    <%- include('./partial/footer')%> 
+
+</body>
+
+</html>

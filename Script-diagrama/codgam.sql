@@ -57,6 +57,7 @@ CREATE TABLE `product` (
   `price` smallint NOT NULL,
   `shipping` tinyint NOT NULL,
   `discount` tinyint NOT NULL,
+  `dicountAply`int NOT NULL,
   `id_category` int NOT NULL,
   `id_stock` int NOT NULL,
   PRIMARY KEY (`id`),

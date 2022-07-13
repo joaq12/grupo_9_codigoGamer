@@ -15,7 +15,7 @@
                     </div>
                     <section class="user-profile_section">
                     <div class="user-profile_avatar-container_individual">
-                        <img class="user-profile_avatar_individual" src="/images/users/<%=user.profilePhoto%>">
+                        <img class="user-profile_avatar_individual" src="/images/users/<%=user.avatar%>">
                     </div>
                     <div class="user-profile_data-container_individual">
                         <p class="user-profile-info_individual">
@@ -23,16 +23,16 @@
                                 <%= user.lastName %>
                         </p>
                         <p class="user-profile-info_individual">
-                            Email: <%= user.email1 %>
+                            Email: <%= user.email %>
                         </p>
                         <p class="user-profile-info_individual">
                             DNI: <%= user.dni %>
                         </p>
                         <p class="user-profile-info_individual">
-                            Teléfono: <%= user.contactNumber %>
+                            Teléfono: <%= user.phone %>
                         </p>
                         <p class="user-profile-info_individual">
-                            Fecha de Nacimiento: <%= user.birthDay %>
+                            Fecha de Nacimiento: <%= user.bDte %>
                     </div>
                     </section>
                     <a href="/user-edit/<%=user.id %>">

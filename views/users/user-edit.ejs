@@ -54,7 +54,7 @@
                                 </article>  
                         </div>
                         <div>
-                            <label>Tipo de Usuario</label>
+                            <label>Género</label>
                             <select name="sexo" id="sexo" class="controlador">
                                 <option class="catg-option" hidden selected>
                                     <%=userToEdit.gender%>
@@ -75,7 +75,7 @@
                         <div>
                             <label>Fecha de Nacimiento</label>
                             <input class="controlador" type="date" name="fechaNac" id="fechaNac"
-                                placeholder="Nacimiento - dd/mm/aaaa" value="<%=userToEdit.birthDay%>">
+                                placeholder="Nacimiento - dd/mm/aaaa" value="<%=userToEdit.bDate%>">
                                 <article class="errors" id="register-errors">
                                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                                         <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -89,7 +89,7 @@
                         <div>
                             <label>Teléfono</label>
                             <input class="controlador" type="tel" name="tel" id="tel"
-                                placeholder="Teléfono - Cod.Area + Numero" value="<%=userToEdit.contactNumber%>">
+                                placeholder="Teléfono - Cod.Area + Numero" value="<%=userToEdit.phone%>">
                                 <article class="errors"  id="register-errors">
                                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                                         <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -102,8 +102,8 @@
                         </div>
                         <div>
                             <label>Correo Electrónico</label>
-                            <input class="controlador" type="email" name="email1" id="email1"
-                                placeholder="Ingresá un Correo Electónico" value="<%=userToEdit.email1%>">
+                            <input class="controlador" type="email" name="email" id="email"
+                                placeholder="Ingresá un Correo Electónico" disabled value="<%=userToEdit.email%>">
                                 <article class="errors" id="register-errors">
                                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                                         <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -115,46 +115,13 @@
                                 </article>  
                         </div>
                         <div>
-                            <label>Verificá tu Correo Electrónico</label>
-                            <input class="controlador" type="email" name="email2" id="email2"
-                                placeholder="Verificá Correo Electónico" value="<%=userToEdit.email2%>">
-                                <article class="errors"  id="register-errors">
-                                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
-                                        <% for (let i=0 ; i < errors.length ; i++) {%>
-                                            <% if(errors[i].param == "email2") { %>
-                                                <span> <%= errors[i].msg %> </span>
-                                            <% } %>
-                                        <%}%>
-                                    <%}%>
-                                </article>  
-                        </div>
-                        <div>
                             <label>Imagen de Perfil</label>
                             <input class="controlador" type="file" name="profilePhoto" id="profilePhoto" accept=".jpg"
-                                multiple title="Click para subir una foto de perfil">
-                                <article class="errors" id="register-errors" value="<%=userToEdit.profilePhoto%>">
+                                multiple title="Click para subir una foto de perfil" value="<%=userToEdit.avatar%>">
+                                <article class="errors" id="register-errors" >
                                   
                                 </article> 
-                        </div>
-                        <div>
-                            <label>Tipo de Usuario</label>
-                            <select name="userClass" id="user-class" placeholder="Tipo de Usuario" class="controlador">
-                                <option class="catg-option" hidden selected>
-                                    <%=userToEdit.userClass%>
-                                </option>
-                                <option value="Administrador" class="catg-option">Administrador</option>
-                                <option value="Cliente" class="catg-option">Cliente</option>
-                            </select>
-                            <article class="errors" id="register-errors">
-                                <% if (locals && locals.old && locals.errors && errors.length>0) { %>
-                                    <% for (let i=0 ; i < errors.length ; i++) {%>
-                                        <% if(errors[i].param == "userClass") { %>
-                                            <span> <%= errors[i].msg %> </span>
-                                        <% } %>
-                                    <%}%>
-                                <%}%>
-                            </article>  
-                        </div>
+                        </div>                        
 
                         <button class="user-edit-button" value="submit"><i class="fas fa-user-edit"></i>
                             Editar usuario

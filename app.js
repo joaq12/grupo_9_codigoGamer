@@ -26,12 +26,12 @@ app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(session({secret: "Shhh, It's a secret",resave: false,saveUninitialized: false,}));
 
-
+app.use("/",usersRouter);
 app.use('/', mainRouter);
 app.use(productosRouter);
 //creo en al app.use la el productsRouter
 // app.use('/products',productosRouter);
-app.use(usersRouter);
+
 
 
 
