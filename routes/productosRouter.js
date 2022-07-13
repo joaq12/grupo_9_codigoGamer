@@ -5,25 +5,46 @@ const router = express.Router();
 const productosController = require('../controllers/productosController');
 //middleWares
 const uploadFile=require('../middlewares/productsMulter')
-const authMiddleware = require("../middlewares/authMiddleware")
+//const authMiddleware = require("../middlewares/authMiddleware")
+
+
+//categorias
+router.get('/category-create', productosController.categoryCreate); 
+router.post('/category-create', uploadFile.any(),productosController.categoryConfirm); 
+router.get('/category-edit/:id', productosController.categoryEdit);
+router.put('/category-edit/:id', uploadFile.any(),productosController.categoryUpdate);  
+router.delete('/category-edit/:id', productosController.categoryDelete); 
+
+
+
+
+
+
+
+//listado de productos
+router.get('/productsList',productosController.list);
+
 
 // detalles de producto
 router.get('/product-detail/:id', productosController.detail); 
+
 //carrito de compras
-router.get('/cart',authMiddleware,productosController.cart);
+router.get('/cart',productosController.cart);
 // proceso de checkout
-router.get('/checkout-adress', authMiddleware, productosController.checkoutAdress);
-router.get('/checkout-confirm', authMiddleware, productosController.checkoutConfirm);
-router.get('/checkout-data', authMiddleware, productosController.checkoutData);
-router.get('/checkout-payment', authMiddleware, productosController.checkoutPayment);
-router.get('/checkout-shipping', authMiddleware, productosController.checkoutShipping);
+router.get('/checkout-adress',  productosController.checkoutAdress);
+router.get('/checkout-confirm',  productosController.checkoutConfirm);
+router.get('/checkout-data', productosController.checkoutData);
+router.get('/checkout-payment',  productosController.checkoutPayment);
+router.get('/checkout-shipping',  productosController.checkoutShipping);
+
 //creacion de productos 
-router.get('/product-create', authMiddleware, productosController.productCreate);
-router.post('/product-create', authMiddleware, uploadFile.any(),productosController.createConfirm); 
+router.get('/product-create', productosController.productCreate);
+router.post('/product-create', uploadFile.any(),productosController.createConfirm); 
+
 // edicion y borrado de productos
-router.get('/product-edit/:id', authMiddleware, productosController.productEdit);
-router.put('/product-edit/:id', authMiddleware, uploadFile.any(), productosController.productUpdate);
-router.delete('/product-detail/:id',authMiddleware, productosController.delete); 
+router.get('/product-edit/:id',  productosController.productEdit);
+router.put('/product-edit/:id',uploadFile.any(), productosController.productUpdate);
+router.delete('/product-detail/:id', productosController.delete); 
 
 
 module.exports = router;

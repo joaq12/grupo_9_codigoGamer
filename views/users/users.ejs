@@ -12,15 +12,15 @@
                     <% for (let i=0; i < users.length; i++) {%>
                         <article class="user-profile">
                             <div class="user-profile_avatar-container">
-                                <img class="user-profile_avatar" src="/images/users/<%=users[i].profilePhoto%>">
+                                <img class="user-profile_avatar" src="/images/users/<%=users[i].avatar%>">
                             </div>
                             <div class="user-profile_data-container">
-                                <p class="user-profile-info">Nombre: <%= users[i].name %>
+                                <p class="user-profile-info"><%= users[i]. name %>
                                         <%= users[i].lastName %>
                                 </p>
-                                <p class="user-profile-info">Email: <%= users[i].email1 %>
+                                <p class="user-profile-info"><%= users[i].email %>
                                 </p>
-                                <p class="user-profile-info">Permisos: <%= users[i].userClass %>
+                                <p class="user-profile-info"><%= users[i].userType %>
                                 </p>
                             </div>
                             <button class="user_profile-edit-button"><a href="/user-edit/<%= users[i].id %>"><i

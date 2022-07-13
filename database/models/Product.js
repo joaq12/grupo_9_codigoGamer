@@ -10,16 +10,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(55),
             allowNull: false
         },
-        img1: {
-            type: dataTypes.BLOB,
+        photo1: {
+            type: dataTypes.STRING,
             default: '../images/1654344377821.jpeg'
         },
-        img2: {
-            type: dataTypes.BLOB,
+        photo2: {
+            type: dataTypes.STRING,
             default: '../images/1654344377821.jpeg'
         },
-        img3: {
-            type: dataTypes.BLOB,
+        photo3: {
+            type: dataTypes.STRING,
             default: '../images/1654344377821.jpeg'
         },
        
@@ -27,27 +27,27 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         price: {
-            type: dataTypes.SMALLINT,
+            type: dataTypes.BIGINT,
             allowNull: false
         },
         shipping: {
             type: dataTypes.TINYINT,
-            allowNull: false
         },
         discount: {
             type: dataTypes.TINYINT,
-            allowNull: false
+            default:0
+        },
+        discountAply: {
+            type: dataTypes.SMALLINT,
+        },
 
-        },
         id_category: {
-            type: dataTypes.SMALLINT,
+            type: dataTypes.INTEGER,
             foreignKey: true,
-            allowNull: false
         },
-        id_Stock: {
-            type: dataTypes.SMALLINT,
-            foreignKey: true,
-            allowNull: false
+       
+        stock: {
+            type: dataTypes.SMALLINT
         }
     };
     let config = {
@@ -58,19 +58,13 @@ module.exports = (sequelize, dataTypes) => {
     
     //Asociamos el modelo productos con los modelos Categorias y Stock.
 
-    Product.associate = function(models){
-        Product.hasMany(models.Category,{
-            as:"Category",
-            foreignKey:"id_category"
-        });
-        Product.associate = function(models){
-            Product.belongsTo(models.Stock,{
-                as:"Product",
-                foreignKey:"stock_id",
-                timestamps: false
-            });
-        }
-    }
+     Product.associate = function(models){
+         Product.belongsTo(models.Category,{
+             as:"category",
+             foreignKey:"id_category"
+         });
+        
+     }
 
     return Product
 }

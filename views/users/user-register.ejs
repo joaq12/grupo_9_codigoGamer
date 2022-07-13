@@ -26,7 +26,7 @@
             <div>
                 <label>Apellidos</label>
                 <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"
-                    value="<%=locals.old&&old.lastName%>">
+                    value="<%=locals.old&&old.apellido%>">
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -74,7 +74,7 @@
             <div>
                 <label>Fecha de Nacimiento</label>
                 <input class="controlador" type="date" name="fechaNac" id="fechaNac"
-                    placeholder="Nacimiento - dd/mm/aaaa" value="<%=locals.old&&old.birthDay%>">
+                    placeholder="Nacimiento - dd/mm/aaaa" value="<%=locals.old&&old.fechaNac%>">
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -88,7 +88,7 @@
             <div>
                 <label>Teléfono</label>
                 <input class="controlador" type="tel" name="tel" id="tel"
-                    placeholder="Ingresá un teléfono" value="<%=locals.old&&old.contactNumber%>">
+                    placeholder="Ingresá un teléfono" value="<%=locals.old&&old.tel%>">
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -115,7 +115,7 @@
             </div>
             <div>
                 <label>Tipo de Usuario</label>
-                <select name="userClass" id="user-class" class="controlador" aria-placeholder="dasdasd">
+                <select name="userClass" id="user-class" class="controlador">
                     <option class="catg-option" hidden selected>
                         <%=locals.old&&old.userClass%>
                     </option>
@@ -149,7 +149,7 @@
             <div>
                 <label>Verificá tu Correo Electrónico</label>
                 <input class="controlador" type="email" name="email2" id="email2"
-                    placeholder="Verificá Correo Electónico">
+                    placeholder="Verificá Correo Electónico" value="<%=locals.old&&old.email2%>">
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>

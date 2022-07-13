@@ -18,8 +18,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BIGINT,
             allowNull: false
         },
+
         bDate: {
             type: dataTypes.DATE,
+            allowNull: false
+        },
+
+        gender: {
+            type: dataTypes.STRING,
             allowNull: false
         },
        
@@ -28,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         avatar: {
-            type: dataTypes.BLOB,
+            type: dataTypes.STRING(100),
             default: '../images/users/default.png'
         },
        
@@ -42,7 +48,7 @@ module.exports = (sequelize, dataTypes) => {
 
         },
         userType: {
-            type: dataTypes.TINYINT,
+            type: dataTypes.STRING(20),
             foreignKey: true,
             allowNull: false
         }

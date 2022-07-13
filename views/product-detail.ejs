@@ -7,7 +7,7 @@
         <%- include('./partial/header')%>
 
             <main class="product-detail_root">
-                <a href="/store" class="back-to-store"> <<< Voler al listado </a>
+                <a href="/store/<%=sproduct.category.id%>" class="back-to-store"> <<< Voler al listado </a>
                 <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
                 <section class="product-detail-container">
                     <section class="product-detail_image-container">
@@ -19,18 +19,18 @@
                                 <img src="/images/<%= sproduct.photo1%>" alt="">
                                 <i class="fa fa-heart"></i>
                             <% if(locals.session){ %>
-                                <% if(locals.session.userClass == "Administrador"){ %>    
+                                <% if(locals.session.userType !== "Cliente"){ %>    
                             <button class="product-detail_product-edit-button"><a href="/product-edit/<%=sproduct.id %>"><i
                                         class="fas fa-pencil-alt"></i></a></button>
                                 <%}%>
                             <%}%>
                             </div>
                             <div class="image-carrusel_others-imgs">
+                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo1%>" alt="">
+                                </div>
                                 <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo2%>" alt="">
                                 </div>
                                 <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo3%>" alt="">
-                                </div>
-                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo4%>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                 </section>
 
                             <% if(locals.session){ %>
-                                <% if(locals.session.userClass == "Administrador"){ %>
+                                <% if(locals.session.userClass !== "Cliente"){ %>
                             <form class="produt-delete_form" method="POST" action="/product-detail/<%=sproduct.id %>?_method=DELETE"_method=DELETE">
                                     <button class="product-detail_product-delete" value="submit">
                                         <i class="fas fa-trash-alt" id="delete-product-trash"></i>

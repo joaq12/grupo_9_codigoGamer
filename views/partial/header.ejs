@@ -31,7 +31,7 @@
         </li>
         <%}%>
         <% if(locals.session){ %>
-          <% if(locals.session.userClass == "Administrador"){ %>
+          <% if(session.userType !== "Cliente"){ %>
         <li>
           <a href="../users">
             Ver Usuarios
@@ -47,7 +47,7 @@
        <div class="topbar-user_main-container">
           <div class="top-bar_user-profile_avatar-container">
             <a href="../user-profile/<%=session.id%>">
-            <img class="top-bar_user-profile_avatar" src="/images/users/<%= session.profilePhoto%>">
+            <img class="top-bar_user-profile_avatar" src="/images/users/<%= session.avatar%>">
             </a>
           </div>
           <div class="top-bar_user-profile_data-container">
@@ -81,7 +81,7 @@
             <a href="/"> HOME </a>
           </div>
           <div class="nav-section_item">
-            <a href="../store"> TIENDA </a>
+            <a href="../productsList"> TIENDA </a>
           </div>
           <div class="nav-section_item">
             <a href="#"> OFERTAS </a>

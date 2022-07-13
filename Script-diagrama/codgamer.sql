@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `codgamdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `codgamdb`;
 -- MySQL dump 10.13  Distrib 8.0.29, for macos12 (x86_64)
 --
 -- Host: 127.0.0.1    Database: codgamdb
@@ -57,6 +55,7 @@ CREATE TABLE `product` (
   `price` smallint NOT NULL,
   `shipping` tinyint NOT NULL,
   `discount` tinyint NOT NULL,
+  `dicountAply` int NOT NULL,
   `id_category` int NOT NULL,
   `id_stock` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -167,4 +166,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-03 11:35:08
+-- Dump completed on 2022-07-13 18:24:23
