@@ -1,12 +1,11 @@
-module.exports=
-{
-  "development": {
-    "username": "root",
-    "password": "Martina2011",
-    "database": "codgamdb",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
+module.exports={
+    "development": {
+      "username": "u858386230_codgameMaster",
+      "password": "VivaPeron*2022",
+      "database": "u858386230_codgameMaster",
+      "host": "45.93.101.99",
+      "dialect": "mysql"
+    },
   "test": {
     "username": "root",
     "password": null,
