@@ -15,6 +15,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             default: '../images/codigo-gamer-logo.jpeg.png'
         },
+        
     };
     let config = {
         tableName: 'category',
