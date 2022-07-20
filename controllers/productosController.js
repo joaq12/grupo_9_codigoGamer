@@ -26,7 +26,7 @@ const productosController = {
     db.Product.findByPk(id, {include:{association:"category"}})
       .then((sproduct) => {  
         if(sproduct === null){
-          res.send("index")
+          res.send("home")
         } else {  
           res.render("product-detail", {sproduct, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
         }
@@ -87,7 +87,7 @@ const productosController = {
   
     db.Category.create(newCategory)
     .then(resp => {
-      res.redirect("/")
+      res.redirect("/home")
     })
     .catch(e => {
       console.log(e)
@@ -98,7 +98,7 @@ const productosController = {
     db.Category.findByPk(req.params.id,{include:{association:"product"}})
     .then((category) => {
       if(category === undefined) {
-        return res.render("index")
+        return res.render("home")
         }else{  
           res.render("category-edit", {
             category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
@@ -149,7 +149,7 @@ const productosController = {
       }}
     )
     .then(response =>{
-      res.redirect("/")
+      res.redirect("/home")
     })
     .catch((e) => {
       console.log(e)
@@ -187,13 +187,13 @@ const productosController = {
     db.Product.create(newProduct)
     .then(newProduct => {
       console.log(newProduct)
-      res.redirect("/")
+      res.redirect("/home")
     })
     .catch(e => {
       console.log('----------- error creando producto -------------')
       console.log(e)
       console.log('-------------------------------------------------')
-      res.redirect("/")
+      res.redirect("/home")
     })
   },
  
@@ -201,7 +201,7 @@ const productosController = {
    db.Product.findByPk(req.params.id,{include:{association:"category"}})
    .then((productToEdit) => {
      if(productToEdit === undefined) {
-       return res.render("index")
+       return res.render("home")
        }else{  
          res.render("product-edit", {
            productToEdit, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
@@ -242,7 +242,7 @@ const productosController = {
     }
   })
   .then(response =>{
-    res.redirect("/")
+    res.redirect("/home")
   })
   .catch((e) => {
     console.log(e)
@@ -286,7 +286,7 @@ const productosController = {
       }}
     )
     .then(response =>{
-      res.redirect("/")
+      res.redirect("/home")
     })
     .catch((e) => {
       console.log(e)

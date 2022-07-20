@@ -1,4 +1,5 @@
 const fs = require("fs");
+const {body}= require('express-validator');
 const path = require("path");
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 const { validationResult } = require("express-validator");
@@ -9,6 +10,42 @@ const db = require('../database/models');
 var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const usersController = {
+
+  registerProcess: (req, res) => {
+    let errors = validationResult(req);
+    let newUser = {}
+    if(errors.isEmpty()){
+      newUser.name = req.body.nombre,
+            newUser.lastName = req.body.apellido,
+            newUser.dni = req.body.dni,
+            newUser.gender = req.body.sexo,
+            newUser.bDate = req.body.fechaNac,
+            newUser.password = (req.body.password1 == req.body.password2) 
+            ? bcrypt.hashSync(req.body.password1, 10)
+            :null,
+            newUser.phone = req.body.tel,
+            newUser.email = (req.body.email1 == req.body.email2) 
+            ? req.body.email1
+            :null,
+            newUser.userType = req.body.userClass,
+            newUser.avatar = req.file != undefined 
+            ? req.file.filename 
+            : "default.png";
+    }else{
+      res.render("user-register", {errors:errors.errors , old:req.body})
+    }
+     
+     if(newUser){
+       db.User.create(newUser)
+       .then(newUser => {
+       res.redirect("/home")
+  
+       })
+       .catch(e => {
+       console.log("error de validacion")   
+       })
+     }
+  },
   
   login: (req, res) => {
     res.render("user-login");
@@ -17,48 +54,30 @@ const usersController = {
   loginProcess: (req, res) => {
     let errors = validationResult(req);
   
-    if (errors.isEmpty()) {
 
       db.User.findAll()
       
       .then(userList=>{
-      
+      if(errors.isEmpty()){
       for (let i = 0; i < userList.length; i++) {
-        if (userList[i].email == req.body.email) {
-          if (bcrypt.compareSync(req.body.password, userList[i].password)) {
-           let userToLogin = userList[i];
-            req.session.usuarioLogged = userToLogin;
-            return res.redirect("/");            
-          } else {
-            let passError = [{ msg: "La Contraseña ingresada es incorrecta" }];
-            return res.render("user-login", {
-              errors: errors.errors,
-              passError: passError,
-              old: req.body,
-            });
-          }
-
-        }
+        if (userList[i].email == req.body.email && bcrypt.compareSync(req.body.password, userList[i].password)) {
+          if(errors.isEmpty()){ 
+          let userToLogin = userList[i];
+          req.session.usuarioLogged = userToLogin;
+          res.redirect("/home");                         
       }
-      for (let i = 0; i < userList.length; i++) {
-        if (userList[i].email !== req.body.email) {
-          let error = [
-            {
-              msg: "Los datos ingresados no coinciden con ninguna cuenta registrada",
-            },
-          ];
-          res.render("user-login", { error: error });
-        }
-      };
-    
-    })}},
+        }}}else{
+         res.render("user-login", {
+         errors: errors.errors,
+         old: req.body,})
+         }})},
   
       
   
   
   logout: (req, res) => {
     req.session.usuarioLogged = undefined;
-    return res.redirect("/");
+    return res.redirect("/home");
   },
 
   register: (req, res) => {
@@ -84,50 +103,6 @@ const usersController = {
     });
   },
   
-  registerProcess: (req, res) => {
-    const errors = validationResult(req);
-    let newUser = {
-      name: null,
-      lastName: null,
-      dni: null,
-      gender: null,
-      bDate: null,
-      password: null,
-      phone: null,
-      email: null,
-      avatar: null,
-      userType: null,
-    };
-      console.log(req.body)
-      newUser.name = req.body.nombre,
-      newUser.lastName = req.body.apellido,
-      newUser.dni = req.body.dni,
-      newUser.gender = req.body.sexo,
-      newUser.bDate = req.body.fechaNac,
-      newUser.password = (req.body.password1 == req.body.password1) 
-      ? bcrypt.hashSync(req.body.password1, 10)
-      :null,
-      newUser.phone = req.body.tel,
-      newUser.email = (req.body.email1 == req.body.email2) 
-      ? req.body.email1
-      :null,
-      newUser.userType = req.body.userClass,
-      newUser.avatar = req.file != undefined 
-      ? req.file.filename 
-      : "default.png";
-      console.log(newUser)
-      
-      
-      db.User.create(newUser)
-      .then(newUser => {
-      console.log(newUser)
-      res.redirect("/")
-    })
-    .catch(e => {
-      console.log(e)
-      res.render("user-register", { errors: errors.errors, old: req.body });
-    })
-    },
 
   
 
@@ -138,7 +113,7 @@ const usersController = {
       }}
     )
     .then(response =>{
-      res.redirect("/")
+      res.redirect("/home")
     })
     .catch((e) => {
       console.log(e)
@@ -151,7 +126,7 @@ const usersController = {
     db.User.findByPk(req.params.id)
     .then((userToEdit) => {
       if(userToEdit === undefined) {
-        return res.render("index")
+        return res.render("home")
         }else{  
           res.render("user-edit", {
             userToEdit,old: req.body, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
@@ -185,7 +160,7 @@ const usersController = {
     }
   })
   .then(response =>{
-    res.redirect("/")
+    res.redirect("/home")
   })
   .catch((e) => {
     console.log(e)
@@ -199,6 +174,7 @@ const usersController = {
   allUsers: (req, res) => {
   db.User.findAll()    
     .then(users=>{
+      console.log(users)
       res.render("users",{users,
       session : req.session.usuarioLogged === undefined
           ? null

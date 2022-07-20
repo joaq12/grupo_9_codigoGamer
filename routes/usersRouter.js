@@ -4,6 +4,7 @@ const router= express.Router();
 
 //controllers
 const usersController= require('../controllers/usersController');
+
 //middleWares
 const validateRegister=require('../middlewares/validateRegisterMiddleware')
 const validateLogin = require("../middlewares/validateLoginMiddleware")
@@ -22,7 +23,8 @@ router.post('/user-login', validateLogin, usersController.loginProcess);
 router.post("/user-logout", usersController.logout)
 //registro de usuario
 router.get('/user-register', usersController.register);
-router.post('/user-register', uploadFile.single('profilePhoto'),usersController.registerProcess);
+router.post('/user-register', uploadFile.single('profilePhoto'),validateRegister,usersController.registerProcess);
+
 ////edicion de usuarios
 router.get('/user-edit/:id',usersController.userEdit);
 router.put('/user-edit/:id',uploadFile.single('profilePhoto'),usersController.userUpdate)

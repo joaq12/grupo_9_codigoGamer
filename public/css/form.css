@@ -13,6 +13,7 @@
     border-radius: 10px;
     border: solid #59359c 2px;
     box-shadow: 2px 2px 15px #bfbebe;  
+    align-items: self-start;
 }
 
 .user-edit_main-container{
@@ -350,9 +351,9 @@ div#birth-date_container input:focus-visible{
     font-family: 'Prompt', sans-serif;
     margin-bottom:none;
     font-family:  'Prompt', sans-serif;
-    color: #BA51C6;
+    color: #c61921;
     font-weight: bold;
-    line-height: 10px;
+    line-height: 15px;
     padding: 0 0 0 5px;
     font-size: 13px;
     min-height: 16.5px;

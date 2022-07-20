@@ -11,11 +11,15 @@ const Product = require("../database/models/Product");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController ={
+    inicio : (req, res) =>{
+        res.render("index")
+    },
+
     home : (req, res) =>{
         console.log(req.session.usuarioLogged)
         db.Category.findAll()
             .then(category =>{
-                    res.render ('index', { category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
+                    res.render ('home', { category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
             })
     },
 
@@ -24,7 +28,6 @@ const mainController ={
             .then(category =>{
                 console.log(category)
                 res.render ('store', { category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
-
             })
     },
 

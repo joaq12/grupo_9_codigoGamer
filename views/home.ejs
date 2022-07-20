@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partial/head')%>
+
+
+<body>
+
+<%- include('./partial/header')%>  
+
+<section class="hero">
+<img class="hero-banner" src="images/banner.webp" alt="Banner Landscape">
+</section>
+
+<main class="main-section">
+    <% if(locals.session){ %>
+        <% if(locals.session.userType !== "Cliente"){ %>
+        <div class="product-create_button-container">
+            <a href="/category-create"><button class="button_product-add"><i class="fas fa-plus"></i>Añadir Categoría</button></a>
+        </div>
+        <%}%>
+    <%}%>
+
+<section class="main-catg_container">
+<h3 class="catg_container-title">Categorías</h3>
+
+<div class="catg_container-products">
+    <% for (let i = 0; i < category.length; i++) {%>
+
+        <% if (category[i].id == 1) {%>
+            <article class="product_item">
+                <a class="poduct-caregorie_main-link" href="/productsList">
+                <img class="product_item-img" src=" /images/<%= category[i].img %>" alt="item name">
+                </a>
+                <div class="product_item-main_article">
+                    <div class="envio">
+                        <p class="product_item-main_article-name"><%= category[i].name %></p>
+                    </div>
+                    <h4 class="main-section_description"></h4>
+                    <a href="/productsList">Ir a Categoría</a>
+                </div>
+                <% if(locals.session){ %>
+                    <% if(locals.session.userType !== "Cliente"){ %>
+                <button class="store_product-edit-button"><a href="/category-edit/<%= category[i].id %>"><i
+                            class="fas fa-pencil-alt"></i></a></button>
+                     <% } %>  
+                <% } %>     
+            </article>
+        <%}%>
+        <%}%>
+
+
+
+
+
+    <% for (let i = 0; i < category.length; i++) {%>
+        <% if (category[i].id !== 1) {%>
+            
+    <article class="product_item">
+        <a class="poduct-caregorie_main-link" href="/store/<%=category[i].id%>">
+        <img class="product_item-img" src=" /images/<%= category[i].img %>" alt="item name">
+        </a>
+        <div class="product_item-main_article">
+            <div class="envio">
+                <p class="product_item-main_article-name"><%= category[i].name %></p>
+            </div>
+            <h4 class="main-section_description"></h4>
+            <a href="/store/<%=category[i].id%>">Ir a Categoría</a>
+        </div>
+        <% if(locals.session){ %>
+            <% if(locals.session.userType !== "Cliente"){ %>
+        <button class="store_product-edit-button"><a href="/category-edit/<%= category[i].id %>"><i
+                    class="fas fa-pencil-alt"></i></a></button>
+             <% } %>  
+        <% } %>     
+    </article>
+    <%}%>
+    <%}%>
+    
+
+</div>
+</section>
+
+<section class="section-slider">
+<h3 class="section_container-title">Best Sellers</h3>
+<div class="slider-section_container">
+    <article class="product_item">
+        <a class="poduct-store_main-link" href="product-detail">
+        <img class="product_item-img" src="images/notebooks.jpeg" alt="item name">
+        <div class="product_item-main_article">
+            <p class="product_item-main_article-name">Nombre del Producto</p>
+            <div class="envio">
+                <i class="fas fa-truck"></i>
+                <span></i> Envio Gratis</span>
+            </div>
+            <p class="price">$ 12.345</p>
+            <p class="discount">20% off</p>
+            <h4 class="description">Descripcion del Producto</h4>
+        </div>
+    </a>
+    <div class="button-container">
+        <span class="button-span"> </span>
+        <input class="button" type="submit" value="Agregar al Carro">
+        <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
+    </div>
+     <button class="store_product-edit-button"><a href="/product-upload-edit"><i
+                class="fas fa-pencil-alt"></i></a></button> 
+</article>
+    <article class="product_item">
+        <a class="poduct-store_main-link" href="product-detail">
+        <img class="product_item-img" src="images/microfonos.jpeg" alt="item name">
+        <div class="product_item-main_article">
+            <p class="product_item-main_article-name">Nombre del Producto</p>
+            <div class="envio">
+                <i class="fas fa-truck"></i>
+                <span></i> Envio Gratis</span>
+            </div>
+            <p class="price">$ 12.345</p>
+            <p class="discount">20% off</p>
+            <h4 class="description">Descripcion del Producto</h4>
+        </div>
+    </a>
+    <div class="button-container">
+        <span class="button-span"> </span>
+        <input class="button" type="submit" value="Agregar al Carro">
+        <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
+    </div>
+    <button class="store_product-edit-button"><a href="/product-upload-edit"><i
+                class="fas fa-pencil-alt"></i></a></button> 
+</article>
+    <article class="product_item">
+        <a class="poduct-store_main-link" href="product-detail">
+        <img class="product_item-img" src="images/sillasgamer.jpeg" alt="item name">
+        <div class="product_item-main_article">
+            <p class="product_item-main_article-name">Nombre del Producto</p>
+            <div class="envio">
+                <i class="fas fa-truck"></i>
+                <span></i> Envio Gratis</span>
+            </div>
+            <p class="price">$ 12.345</p>
+            <p class="discount">20% off</p>
+            <h4 class="description">Descripcion del Producto</h4>
+        </div>
+    </a>
+    <div class="button-container">
+        <span class="button-span"> </span>
+        <input class="button" type="submit" value="Agregar al Carro">
+        <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
+    </div>
+    <!-- <button class="store_product-edit-button"><a href="/product-upload-edit"><i
+                class="fas fa-pencil-alt"></i></a></button> -->
+</article>
+    <article class="product_item">
+        <a class="poduct-store_main-link" href="product-detail">
+        <img class="product_item-img" src="images/gabinetes.jpeg" alt="item name">
+        <div class="product_item-main_article">
+            <p class="product_item-main_article-name">Nombre del Producto</p>
+            <div class="envio">
+                <i class="fas fa-truck"></i>
+                <span></i> Envio Gratis</span>
+            </div>
+            <p class="price">$ 12.345</p>
+            <p class="discount">20% off</p>
+            <h4 class="description">Descripcion del Producto</h4>
+        </div>
+    </a>
+    <div class="button-container">
+        <span class="button-span"> </span>
+        <input class="button" type="submit" value="Agregar al Carro">
+        <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
+    </div>
+    <!-- <button class="store_product-edit-button"><a href="/product-upload-edit"><i
+                class="fas fa-pencil-alt"></i></a></button> -->
+       
+</article>
+</div>
+
+</section>
+
+<section class="information">
+<h3 class="information-section_container_title">Information</h3>
+<div class="information-section_container">
+
+    <box class="information-section_container_item1">
+        <div class="box-container_item">
+            <h3 class="box-title">NEWSLETTER <i class="fas fa-newspaper"></i></h3>
+        </div>
+    </box>
+
+    <box class="information-section_container_item1">
+        <div class="box-container_item">
+
+            <h3 class="box-title">HOW TO BUY <i class="fas fa-store"></i></h3>
+        </div>
+    </box>
+
+    <box class="information-section_container_item1">
+        <div class="box-container_item">
+            <h3 class="box-title">FAQ <i class="far fa-thumbs-up"></i></h3>
+        </div>
+    </box>
+</section>
+
+<section class="newsletter">
+    <div class="newsletter-container">
+        <div class="newsletter-text">
+            <p class="text">Suscribite a nuestro Newsletter para recibir
+                ofertas especiales y toda la Info !!!
+            </p>
+        </div>
+        <i class="fas fa-at" id="newsletter-icon"></i>
+        <div class="add-newsletter">            
+        <input type="email" id="newsletter-mail" placeholder="ejemplo@codigogamer.com">
+        <button class="newsletter-button" type="submit" value="add-newsletter">Suscribirme</button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<%- include('./partial/footer')%> 
+
+
+</body>
+
+</html>

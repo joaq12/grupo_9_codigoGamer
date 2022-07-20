@@ -115,12 +115,12 @@
             </div>
             <div>
                 <label>Tipo de Usuario</label>
-                <select name="userClass" id="user-class" class="controlador">
+                <select name="userClass" id="user-class" class="controlador" disabled>
                     <option class="catg-option" hidden selected>
                         <%=locals.old&&old.userClass%>
                     </option>
                     <option value="Administrador" class="catg-option">Administrador</option>
-                    <option value="Cliente" class="catg-option">Cliente</option>
+                    <option value="Cliente" class="catg-option" selected >Cliente</option>
                 </select>
                 <article class="errors" id="register-errors">
                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
@@ -144,6 +144,13 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <% if (locals && locals.old && locals.mailError !== undefined) { %>
+            
+                            
+                                    <span> <%= mailError.msg %> </span>
+                           
+                  
+                    <%}%>
                     </article>  
             </div>
             <div>
@@ -190,11 +197,11 @@
                     
             </div>
             <% if (locals && locals.old && locals.emailError && emailError.length>0) { %>
-            <article class="errors" id="register-errors"> 
+            
                     <% for (let i=0 ; i < emailError.length ; i++) {%>
                             <span> <%= emailError[i].msg %> </span>
                     <%}%>
-            </article>
+          
             <%}%>
 
             <p><label><input type="checkbox" name="acceptTerms" id="acceptTerms"required> Acepto <a href="#">Términos y Condiciones</a>
