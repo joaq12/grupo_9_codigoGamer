@@ -17,13 +17,14 @@
                             </div> 
                         <%}%>
                     <%}%>
-                    <div class="user-name_controller" id="email_cont">
+                    <div class="user-name_controller form-control" id="email_cont">
                         <div class="login_item-container">
                             <i class="fas fa-user-alt" id="login_item"></i>
                         </div>
                         <div class="login_controller-container">
                             <input class="login-controlador" type="email" name="email" id="email"
                                 placeholder="Correo Electrónico" value="<%=locals.old&&old.email%>">
+                                <p class="msj-error">mensaje de error</p>
                         </div>
                         
                     </div>
@@ -41,9 +42,10 @@
                         <div class="login_item-container">
                             <i class="fas fa-lock" id="login_item"></i>
                         </div>
-                        <div class="login_controller-container">
-                            <input class="login-controlador" type="password" name="password" id="password"
+                        <div class="login_controller-container form-control">
+                            <input class="login-controlador controlador" type="password" name="password" id="password"
                                 placeholder="Contraseña" >
+                                <p class="msj-error">mensaje de error</p>
                         </div>
                         
                     </div>
@@ -77,7 +79,7 @@
 
 
             <%- include('../partial/footer')%>
-
+<script src="/js/user-login.js"></script>
     </body>
 
 

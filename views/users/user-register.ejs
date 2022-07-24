@@ -9,10 +9,11 @@
     <section class="user-edit_main-container"> 
         <form action="/user-register" method="POST" enctype="multipart/form-data" class="formulario" id="user-edit_form">
             <h4><b> Para crear tu cuenta en Código Gamer ¡Ingresá estos datos!</b></h4>               
-            <div>
+            <div class="form-control">
                 <label>Nombre Completo</label>
                 <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre"
                     value="<%=locals.old&&old.nombre%>">
+                    <p class="msj-error">mensaje de error</p>
                 <article class="errors"  id="register-errors">
                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                         <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -23,10 +24,11 @@
                     <%}%>
                 </article>  
             </div>           
-            <div>
+            <div class="form-control">
                 <label>Apellidos</label>
                 <input class="controlador" type="text" name="apellido" id="apellido" placeholder="Apellido"
                     value="<%=locals.old&&old.apellido%>">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -37,10 +39,11 @@
                         <%}%>
                     </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>DNI/CEDULA</label>
                 <input class="controlador" type="text" name="dni" id="dni" placeholder="DNI"
                     value="<%=locals.old&&old.dni%>">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -51,7 +54,7 @@
                         <%}%>
                     </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Género</label>
                 <select name="sexo" id="sexo" class="controlador">
                     <option class="catg-option" hidden selected>
@@ -71,10 +74,11 @@
                     <%}%>
                 </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Fecha de Nacimiento</label>
                 <input class="controlador" type="date" name="fechaNac" id="fechaNac"
                     placeholder="Nacimiento - dd/mm/aaaa" value="<%=locals.old&&old.fechaNac%>">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -85,10 +89,11 @@
                         <%}%>
                     </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Teléfono</label>
                 <input class="controlador" type="tel" name="tel" id="tel"
                     placeholder="Ingresá un teléfono" value="<%=locals.old&&old.tel%>">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -99,10 +104,11 @@
                         <%}%>
                     </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Imagen de Perfil</label>
                 <input class="controlador" type="file" name="profilePhoto" id="profilePhoto" accept=".jpg"
                     multiple title="Click para subir una foto de perfil">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -132,10 +138,11 @@
                     <%}%>
                 </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Correo Electrónico</label>
                 <input class="controlador" type="email" name="email1" id="email1"
                     placeholder="Ingresá un Correo Electónico" value="<%=locals.old&&old.email1%>">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -153,10 +160,11 @@
                     <%}%>
                     </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Verificá tu Correo Electrónico</label>
                 <input class="controlador" type="email" name="email2" id="email2"
                     placeholder="Verificá Correo Electónico" value="<%=locals.old&&old.email2%>">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors"  id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -167,10 +175,11 @@
                         <%}%>
                     </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Contraseña</label>
                 <input class="controlador" type="password" name="password1" id="password1"
                     placeholder="Introduzca contraseña">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -181,10 +190,11 @@
                         <%}%>
                     </article>  
             </div>
-            <div>
+            <div class="form-control">
                 <label>Repetí Contraseña</label>
                 <input class="controlador" type="password" name="password2" id="password2"
                     placeholder="Repetí tu contraseña">
+                    <p class="msj-error">mensaje de error</p>
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -214,7 +224,7 @@
    
 <%- include('../partial/footer')%> 
 
-
+<script src="/js/scriptUser.js"></script>
 </body>
 
 </html>

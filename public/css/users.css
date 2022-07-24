@@ -78,8 +78,28 @@ article.user-profile .user_profile-edit-button:hover{
 .user_profile-edit-button:hover .fas.fa-pencil-alt{
     color:#9e1fac;
 }
+.form-control.check input {
+    border-color: #2ecc71;
+}
 
+.form-control.error .controlador {
+    border-color: #e74c3c;
+}
+.form-control.error textarea {
+    border-color: #e74c3c;
+}
+.form-control.check textarea {
+    border-color:  #2ecc71;
+}
 
+.form-control .msj-error {
+   
+    visibility: hidden;
+}
+.form-control.error .msj-error {
+    visibility: visible;
+    color: #e74c3c;
+}
 
 
 @media (min-width:450px) and (max-width:759px) {
