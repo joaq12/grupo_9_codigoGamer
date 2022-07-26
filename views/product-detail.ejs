@@ -10,13 +10,19 @@
                 <a href="/store/<%=sproduct.category.id%>" class="back-to-store"> <<< Voler al listado </a>
                 <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
                 <section class="product-detail-container">
+                    
+                    
                     <section class="product-detail_image-container">
                         <p class="product-detail_image-container_product-title"><%= sproduct.name%></p>
+                        
+                        
                         <div class="image-carrusel">
                             
                             
                             <div class="image-carrusel_main-img">
-                                <img src="/images/<%= sproduct.photo1%>" alt="">
+                                <img id="img1" src="/images/<%= sproduct.photo1%>" alt="">
+                                <img id="img2" src="/images/<%= sproduct.photo2%>" alt="">
+                                <img id="img3" src="/images/<%= sproduct.photo3%>" alt="">
                                 <i class="fa fa-heart"></i>
                             <% if(locals.session){ %>
                                 <% if(locals.session.userType !== "Cliente"){ %>    
@@ -26,15 +32,18 @@
                             <%}%>
                             </div>
                             <div class="image-carrusel_others-imgs">
-                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo1%>" alt="">
+                                <div id="gallerycont1" class="image-carrusel_others-imgs_img1"><img src="/images/<%= sproduct.photo1%>" alt="">
                                 </div>
-                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo2%>" alt="">
+                                <div  id="gallerycont2" class="image-carrusel_others-imgs_img2"><img src="/images/<%= sproduct.photo2%>" alt="">
                                 </div>
-                                <div class="image-carrusel_others-imgs_img"><img src="/images/<%= sproduct.photo3%>" alt="">
+                                <div id="gallerycont3" class="image-carrusel_others-imgs_img3"><img src="/images/<%= sproduct.photo3%>" alt="">
                                 </div>
                             </div>
                         </div>
                     </section>
+
+
+
 
 
                     <div class="product-detail_buy-data">
@@ -179,5 +188,6 @@
                 </div>
             </main>
             <%- include('./partial/footer')%>
+            <script src="/events/gallery.js"></script>
     </body>
 </html>

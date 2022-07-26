@@ -12,15 +12,16 @@
             <div>
                 <label>Nombre Completo</label>
                 <input class="controlador" type="text" name="nombre" id="nombre" placeholder="Nombre"
-                    value="<%=locals.old&&old.nombre%>">
+                    value="<%=locals.old&&old.nombre%>" autofocus >
                 <article class="errors"  id="register-errors">
                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                         <% for (let i=0 ; i < errors.length ; i++) {%>
                             <% if(errors[i].param == "nombre") { %>
                                 <span> <%= errors[i].msg %> </span>
-                            <% } %>
-                        <%}%>
-                    <%}%>
+                                <% } %>
+                                <%}%>
+                                <%}%>
+                    <ul class="nameError"></ul>
                 </article>  
             </div>           
             <div>
@@ -35,6 +36,7 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="lastNameError"></ul>
                     </article>  
             </div>
             <div>
@@ -49,6 +51,7 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="dniError"></ul>
                     </article>  
             </div>
             <div>
@@ -60,7 +63,7 @@
                     <option value="Masculino" class="catg-option">Masculino</option>
                     <option value="Femenino" class="catg-option">Femenino</option>
                     <option value="Femenino" class="catg-option">Otro</option>
-                </select>
+                </select>      
                 <article class="errors"  id="register-errors">
                     <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                         <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -69,6 +72,7 @@
                             <% } %>
                         <%}%>
                     <%}%>
+                     <ul class="genderError"></ul>
                 </article>  
             </div>
             <div>
@@ -83,6 +87,7 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="bDateError"></ul>
                     </article>  
             </div>
             <div>
@@ -97,12 +102,13 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="phoneError"></ul>
                     </article>  
             </div>
             <div>
                 <label>Imagen de Perfil</label>
                 <input class="controlador" type="file" name="profilePhoto" id="profilePhoto" accept=".jpg"
-                    multiple title="Click para subir una foto de perfil">
+                    multiple title="Click para subir una foto de perfil" >
                     <article class="errors" id="register-errors">
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
@@ -111,6 +117,7 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="avatarError"></ul>
                     </article> 
             </div>
             <div>
@@ -144,13 +151,10 @@
                                 <% } %>
                             <%}%>
                         <%}%>
-                        <% if (locals && locals.old && locals.mailError !== undefined) { %>
-            
-                            
-                                    <span> <%= mailError.msg %> </span>
-                           
-                  
+                        <% if (locals && locals.old && locals.mailError !== undefined) { %>   
+                        <span> <%= mailError.msg %> </span>
                     <%}%>
+                    <ul class="email1Error"></ul>
                     </article>  
             </div>
             <div>
@@ -165,6 +169,7 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="email2Error"></ul>
                     </article>  
             </div>
             <div>
@@ -179,6 +184,7 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="password1Error"></ul>
                     </article>  
             </div>
             <div>
@@ -193,6 +199,7 @@
                                 <% } %>
                             <%}%>
                         <%}%>
+                        <ul class="password2Error"></ul>
                     </article>
                     
             </div>
@@ -214,7 +221,7 @@
    
 <%- include('../partial/footer')%> 
 
-
+<!-- <script src="/events/validateRegister.js"></script> -->
 </body>
 
 </html>

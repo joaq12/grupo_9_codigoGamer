@@ -27,7 +27,9 @@ const usersController = {
             newUser.email = (req.body.email1 == req.body.email2) 
             ? req.body.email1
             :null,
-            newUser.userType = req.body.userClass,
+            newUser.userType = req.body.userClass != undefined
+            ? req.body.userClass 
+            : "Cliente"
             newUser.avatar = req.file != undefined 
             ? req.file.filename 
             : "default.png";
@@ -39,10 +41,10 @@ const usersController = {
        db.User.create(newUser)
        .then(newUser => {
        res.redirect("/home")
-  
        })
        .catch(e => {
-       console.log("error de validacion")   
+        console.log("error de validacion")   
+        console.log(e)
        })
      }
   },

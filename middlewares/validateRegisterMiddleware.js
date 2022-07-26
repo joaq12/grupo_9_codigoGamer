@@ -1,3 +1,4 @@
+const { promiseImpl } = require('ejs');
 const {body}= require('express-validator');
 const path = require('path');
 const db = require('../database/models');
@@ -26,16 +27,32 @@ const validateRegisterMiddleware=[
     body('tel').notEmpty().withMessage('El número de contacto es requerido'),
     body('email1').notEmpty().withMessage('El Email es requerido').bail()
         .isEmail().withMessage('El email debe tener un formato válido').bail()
+      
         .custom(async (email1, {req}) => {
-          (req,res) =>{
-          db.User.findAll()
-          .then(userList=>{
-            for (let i = 0; i < userList.length; i++) {
-            if (userList[i].email === email1) {
-             throw new Error('El email ingresado ya existe en la base de datos')
-            }}})
-          }       
-          }),
+      
+        db.User.findOne({where: {email : email1}})
+        .then(user=>{
+          console.log(user)
+          if (user) {
+           throw new Error('El email ingresado ya existe en la base de datos')
+          }})
+               
+        }),
+
+        
+        //.custom(value => {
+        //    console.log(value,"hola")
+        //    db.User.findAll({ where: { email: value } })
+        //            .then(user => {
+        //                if (!user) {
+        //                  console.log("Nada")
+        //                }
+        //    })
+        //    .catch(e=>{
+        //      console.log(e)
+        //      Promise.reject('Este correo ya esta en uso.');
+        //    });
+        //  }),
     body('email2').notEmpty().withMessage('La verificación de Email es requerida').bail().isEmail().withMessage('El email debe tener un formato válido').bail()
       .custom(async (email2, {req}) => {
         const email1 = req.body.email1

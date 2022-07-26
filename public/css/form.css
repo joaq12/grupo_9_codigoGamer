@@ -190,11 +190,16 @@
     font-family:  'Prompt', sans-serif;
     color: #d63d52;
     font-weight: bold;
-    line-height: 10px;
+    line-height: 15px;
     margin-bottom: 10px;
     padding: 0 0 0 5px;
     font-size: 14px;
 }
+
+.login-errors li{
+    list-style: none;
+}
+
 
 #email_cont:focus-within,
 #pass_cont:focus-within {
@@ -333,6 +338,7 @@ div#birth-date_container input:focus-visible{
 }
 
 #user-edit_form div{
+    position: relative;
     display: flex;
     text-align: center;
     flex-wrap: wrap;
@@ -341,6 +347,8 @@ div#birth-date_container input:focus-visible{
     font-family:  'Prompt', sans-serif;
     margin-bottom: 15px;
 }
+
+
 
 .errors#register-errors{
     display: flex;
@@ -357,6 +365,10 @@ div#birth-date_container input:focus-visible{
     padding: 0 0 0 5px;
     font-size: 13px;
     min-height: 16.5px;
+}
+
+.errors#register-errors ul li{
+    list-style: none;
 }
 
 .password_match-container{

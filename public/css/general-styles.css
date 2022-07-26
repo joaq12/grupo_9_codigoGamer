@@ -36,6 +36,16 @@ body{
     background-color: whitesmoke;
 }
 
+.is-valid {
+    color: #313131;
+    background-color: #3c7a4c;
+  }
+  .is-invalid {
+    color: #313131;
+    background-color: #f6d8db;
+  }
+  
+
 h3{
     font-size: 24px;
 }
