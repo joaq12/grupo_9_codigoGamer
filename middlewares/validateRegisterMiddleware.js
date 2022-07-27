@@ -1,4 +1,3 @@
-const { promiseImpl } = require('ejs');
 const {body}= require('express-validator');
 const path = require('path');
 const db = require('../database/models');
@@ -26,18 +25,8 @@ const validateRegisterMiddleware=[
         }}),
     body('tel').notEmpty().withMessage('El número de contacto es requerido'),
     body('email1').notEmpty().withMessage('El Email es requerido').bail()
-        .isEmail().withMessage('El email debe tener un formato válido').bail()
-      
-        .custom(async (email1, {req}) => {
-      
-        db.User.findOne({where: {email : email1}})
-        .then(user=>{
-          console.log(user)
-          if (user) {
-           throw new Error('El email ingresado ya existe en la base de datos')
-          }})
-               
-        }),
+        .isEmail().withMessage('El email debe tener un formato válido').bail(),
+       
 
         
         //.custom(value => {

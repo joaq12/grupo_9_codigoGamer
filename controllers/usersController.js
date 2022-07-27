@@ -13,41 +13,48 @@ const usersController = {
 
   registerProcess: (req, res) => {
     let errors = validationResult(req);
-    let newUser = {}
     if(errors.isEmpty()){
-      newUser.name = req.body.nombre,
-            newUser.lastName = req.body.apellido,
-            newUser.dni = req.body.dni,
-            newUser.gender = req.body.sexo,
-            newUser.bDate = req.body.fechaNac,
-            newUser.password = (req.body.password1 == req.body.password2) 
+      db.User.findOne({ where: { email: req.body.email1 }, raw:true })
+        .then(user => {
+          if(!user){
+		          db.User.create({
+            	name : req.body.nombre,
+            	lastName : req.body.apellido,
+            	dni : req.body.dni,
+            	gender : req.body.sexo,
+            	bDate : req.body.fechaNac,
+            	password : (req.body.password1 == req.body.password2) 
             ? bcrypt.hashSync(req.body.password1, 10)
             :null,
-            newUser.phone = req.body.tel,
-            newUser.email = (req.body.email1 == req.body.email2) 
+            	phone : req.body.tel,
+            	email : (req.body.email1 == req.body.email2) 
             ? req.body.email1
             :null,
-            newUser.userType = req.body.userClass != undefined
+           	userType : req.body.userClass != undefined
             ? req.body.userClass 
-            : "Cliente"
-            newUser.avatar = req.file != undefined 
+            : "Cliente",
+            	avatar : req.file != undefined  
             ? req.file.filename 
-            : "default.png";
+            : "default.png"
+          })
+		      .then(user=>{
+		      	res.redirect("/home")
+		      }) 
+		      }else{
+             res.render("user-register", {errors:[
+               {
+                 msg: 'El email ya esta registrado',
+                 param: 'email1',
+               }
+             ] , old:req.body})
+          }                    
+        })
     }else{
+      console.log(errors.errors)
       res.render("user-register", {errors:errors.errors , old:req.body})
     }
-     
-     if(newUser){
-       db.User.create(newUser)
-       .then(newUser => {
-       res.redirect("/home")
-       })
-       .catch(e => {
-        console.log("error de validacion")   
-        console.log(e)
-       })
-     }
   },
+
   
   login: (req, res) => {
     res.render("user-login");
@@ -55,24 +62,46 @@ const usersController = {
   
   loginProcess: (req, res) => {
     let errors = validationResult(req);
-  
-
-      db.User.findAll()
-      
+    db.User.findAll()
       .then(userList=>{
-      if(errors.isEmpty()){
-      for (let i = 0; i < userList.length; i++) {
-        if (userList[i].email == req.body.email && bcrypt.compareSync(req.body.password, userList[i].password)) {
-          if(errors.isEmpty()){ 
-          let userToLogin = userList[i];
-          req.session.usuarioLogged = userToLogin;
-          res.redirect("/home");                         
-      }
-        }}}else{
-         res.render("user-login", {
-         errors: errors.errors,
-         old: req.body,})
-         }})},
+        if(errors.isEmpty()){
+          for (let i = 0; i < userList.length; i++) {
+            if (userList[i].email == req.body.email ){
+              let userToLogin = userList[i];
+              if(bcrypt.compareSync(req.body.password, userList[i].password)){
+                req.session.usuarioLogged = userToLogin;
+                return res.redirect("/home");
+              }else {
+                res.render("user-login", {errors:[
+                {
+                msg: 'La contraseña ingresada es incorrecta',
+                param: 'password',
+                }
+                ] , old:req.body})
+              }                         
+            }
+          }
+          
+          for (let i = 0; i < userList.length; i++) {
+            if(!(userList[i].email == req.body.email )){
+              res.render("user-login", {errors:[
+              {
+              msg: 'El email no se encuentra registrado en la base de datos',
+              param: 'email',
+              }
+              ] , old:req.body})
+            }
+          }
+        }else{
+          res.render("user-login", {
+          errors: errors.errors,
+          old: req.body,})
+        }
+      })
+      .catch(e=>{
+        console.log(e)
+      })
+  },
   
       
   
