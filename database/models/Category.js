@@ -11,11 +11,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(55),
             allowNull: false
         },
-        img: {
-            type: dataTypes.STRING,
-            default: '../images/codigo-gamer-logo.jpeg.png'
-        },
-        
+       img: {
+           type: dataTypes.STRING,
+           default: '../images/codigo-gamer-logo.jpeg.png'
+       },
     };
     let config = {
         tableName: 'category',
