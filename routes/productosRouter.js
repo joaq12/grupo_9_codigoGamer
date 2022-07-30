@@ -3,8 +3,11 @@ const router = express.Router();
 
 //controllers
 const productosController = require('../controllers/productosController');
+//api controller
+const apiProductController = require('../api/productsApiController');
 //middleWares
-const uploadFile=require('../middlewares/productsMulter')
+const uploadFile=require('../middlewares/productsMulter');
+const productsApiController = require('../api/productsApiController');
 //const authMiddleware = require("../middlewares/authMiddleware")
 
 
@@ -14,11 +17,6 @@ router.post('/category-create', uploadFile.any(),productosController.categoryCon
 router.get('/category-edit/:id', productosController.categoryEdit);
 router.put('/category-edit/:id', uploadFile.any(),productosController.categoryUpdate);  
 router.delete('/category-edit/:id', productosController.categoryDelete); 
-
-
-
-
-
 
 
 //listado de productos
@@ -45,6 +43,11 @@ router.post('/product-create', uploadFile.any(),productosController.createConfir
 router.get('/product-edit/:id',  productosController.productEdit);
 router.put('/product-edit/:id',uploadFile.any(), productosController.productUpdate);
 router.delete('/product-detail/:id', productosController.delete); 
+
+//rutas apis
+router.get('/api/products',productsApiController.all);
+router.get('/api/products/:id',productsApiController.showProduct);
+router.get('/api/categories',productsApiController.countByCategory);
 
 
 module.exports = router;
