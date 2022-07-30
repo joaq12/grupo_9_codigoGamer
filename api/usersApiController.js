@@ -6,14 +6,21 @@ module.exports={
         db.User
         .findAll({
             attributes:['id','name','email'],
-            
+            nest:true,
+            raw:true,
         })
-        .then(user=>{
+        .then(users=>{
+            let result=users.map(user=>{
+                return {
+                    ...user,
+                    detail:`http://localhost:3030/api/users/${user.id}`,
+                    
+                }
+            })
+
             return res.json({
-                userDetail:`/api/users/${user.id}`,
-            count:user.length,
-            users:user,
-            
+                count:users.length,
+                users:result
             })
         })
     },
@@ -28,8 +35,7 @@ module.exports={
             userEmail:user.email,
             userBirthDay:user.bDate,
             userPhone:user.phone,
-            avatarUrl:'http://localhost:3030/images/users/'+user.avatar
-            
+            userAvatar:user.avatar
             })
         })
     }
