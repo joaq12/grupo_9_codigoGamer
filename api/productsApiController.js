@@ -4,7 +4,7 @@ const sequelize=require('sequelize');
 const usersApiController = require('./usersApiController');
 
 
-module.exports={
+module.exports = {
     all:async (req,res)=>{
         try {
             let products=await db.Product.findAll({include:{association:"category"},

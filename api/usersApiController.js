@@ -1,7 +1,7 @@
 const db=require('../database/models');
 const Op=db.Sequelize.Op;
 
-module.exports={
+module.exports = {
     all:(req,res)=>{
         db.User
         .findAll({
