@@ -165,7 +165,7 @@
                         <% if (locals && locals.old && locals.errors && errors.length>0) { %>
                             <% for (let i=0 ; i < errors.length ; i++) {%>
                                 <% if(errors[i].param == "email2") { %>
-                                    <span> <%= errors[i].msg %> </span>
+                                    <span > <%= errors[i].msg %> </span>
                                 <% } %>
                             <%}%>
                         <%}%>
@@ -221,7 +221,7 @@
    
 <%- include('../partial/footer')%> 
 
-<!-- <script src="/events/validateRegister.js"></script> -->
+<script src="/events/validateRegister.js"></script>
 </body>
 
 </html>

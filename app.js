@@ -10,8 +10,8 @@ const cookieParser = require("cookie-parser");
 const session=require('express-session');
 const bcrypt=require('bcryptjs');
 app.use(express.static("public"));
-const sessionMiddleware = require("./middlewares/sessionMiddleware")
-app.use(sessionMiddleware)
+
+
 
 // config de ejs  ** en los renglones 15,16 se indica dentro del array las carpetas en las cuales se deben buscar las vistas
 app.set('view engine', 'ejs');

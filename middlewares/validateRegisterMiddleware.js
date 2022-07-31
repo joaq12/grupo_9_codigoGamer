@@ -27,21 +27,6 @@ const validateRegisterMiddleware=[
     body('email1').notEmpty().withMessage('El Email es requerido').bail()
         .isEmail().withMessage('El email debe tener un formato válido').bail(),
        
-
-        
-        //.custom(value => {
-        //    console.log(value,"hola")
-        //    db.User.findAll({ where: { email: value } })
-        //            .then(user => {
-        //                if (!user) {
-        //                  console.log("Nada")
-        //                }
-        //    })
-        //    .catch(e=>{
-        //      console.log(e)
-        //      Promise.reject('Este correo ya esta en uso.');
-        //    });
-        //  }),
     body('email2').notEmpty().withMessage('La verificación de Email es requerida').bail().isEmail().withMessage('El email debe tener un formato válido').bail()
       .custom(async (email2, {req}) => {
         const email1 = req.body.email1

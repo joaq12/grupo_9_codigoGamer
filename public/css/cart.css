@@ -43,6 +43,14 @@ body{
 }
 
 .cart_product-c{
+        width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cart_product-c{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

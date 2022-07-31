@@ -22,33 +22,25 @@
                     <div class="sidebar">
                         <div class="sidebar-list">
 
-                            <h4 class="sidebar-title">Hardware</h4>
+                            <h4 class="sidebar-title">Categorias</h4>
                             <ul>
-                                <li><a href="#"> MOUSE </a></li>
-                                <li><a href="#"> TECLADOS </a></li>
-                                <li><a href="#"> MONITORES </a></li>
-                                <li><a href="#"> NOTEBOOKS </a></li>
-                            </ul>
-                            <h4 class="sidebar-title">Consolas</h4>
-                            <ul>
-                                <li><a href="#"> PS5</a></li>
-                                <li><a href="#"> XBOX </a></li>
-                                <li><a href="#"> PSE </a></li>
-                                <li><a href="#"> NINTENDO </a></li>
-
-                            </ul>
-                            <h4 class="sidebar-title">Accesorios</h4>
-                            <ul>
-                                <li><a href="#"> Microfonos</a></li>
-                                <li><a href="#"> Lentes </a></li>
-                                <li><a href="#"> Mousepad </a></li>
-                                <li><a href="#"> Lámparas </a></li>
-
-                            </ul>
-                            <h4 class="sidebar-title">Ofertas</h4>
-                            <ul>
-                                <li><a href="#"> Hard</a></li>
-                                <li><a href="#"> Soft </a></li>
+                                <li><a href="/store/14"> MOUSE</a></li>
+                                <li><a href="/store/15"> SILLAS GAMER</a></li>
+                                <li><a href="/store/17"> ACCESORIOS</a></li>
+                                <li><a href="/store/16"> NOTEBOOKS </a></li>
+                                <li><a href="/store/18"> MICROFONOS</a></li>
+                                <li><a href="/store/19"> AURICULARES</a></li>
+                                <li><a href="/store/20"> PARLANTES</a></li>
+                                <li><a href="/store/21"> PC ARMADAS</a></li>
+                                <li><a href="/store/22"> CONECTIVIDAD</a></li>
+                                <li><a href="/store/23"> TECLADOS</a></li>
+                                <li><a href="/store/24"> JOSTICKS</a></li>
+                                <li><a href="/store/25"> MEMORIAS</a></li>
+                                <li><a href="/store/26"> MICROPROCESADORES</a></li>
+                                <li><a href="/store/27"> FAN COOLERS</a></li>
+                                <li><a href="/store/28"> OFERTAS</a></li>
+                                <li><a href="/store/16"> MONITORES</a></li>
+                                <li><a href="/store/30"> CONSOLAS</a></li>
                             </ul>
                         </div>
                     </div>
@@ -82,8 +74,8 @@
                                 
                             </a>
                             <div class="button-container">
-                                <a href="cart" class="store_cart-link">
-                                    <input class="button" type="submit" value="Añadir al Carro">
+                                <a  class="store_cart-link">
+                                    <input class="button" id="addToCart" type="" value="Añadir al Carro">
                                 </a>
                                 <a href="cart" class="store_cart-link">
                                     <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
@@ -128,8 +120,10 @@
 
             </main>
 
+
             <%- include('./partial/footer')%>
 
+            <script src="/events/addToCart.js"></script>
 
     </body>
 

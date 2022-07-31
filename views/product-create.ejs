@@ -18,6 +18,16 @@
                     <div class="product_name-container_input">
                         <label for="name" id="input-product_name">Ingrese el Nombre del Producto</label>
                         <input type="text" name="name" id="name" class="product-controller" maxlength="55">
+                        <article class="errors" id="register-errors">
+                            <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                <% for (let i=0 ; i < errors.length ; i++) {%>
+                                    <% if(errors[i].param == "name") { %>
+                                        <span id="pcreate-errors"> <%= errors[i].msg %> </span>
+                                    <% } %>
+                                <%}%>
+                            <%}%>
+                            <ul class="nameError"></ul>
+                        </article>
                     </div>
                 </div>
                 <div class="product-form-images">
@@ -25,11 +35,37 @@
                     <div class="img-button-container">
                         <div class="img_loader-box">
                             <input class="upload-img-button" type="file" name="photo1" accept=".jpg"  multiple>
+                            <article class="errors"  id="register-errors">
+                            <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                <% for (let i=0 ; i < errors.length ; i++) {%>
+                                    <% if(errors[i].param == "photo1") { %>
+                                        <span id="pcreate-errors"> <%= errors[i].msg %> </span>
+                                    <% } %>
+                                <%}%>
+                            <%}%>
+                            </article>
+                        </div>
+                        <div class="img_loader-box">
                             <input class="upload-img-button" type="file" name="photo2" accept=".jpg"  multiple>
+                            <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                <% for (let i=0 ; i < errors.length ; i++) {%>
+                                    <% if(errors[i].param == "photo1") { %>
+                                        <span id="pcreate-errors"> <%= errors[i].msg %> </span>
+                                    <% } %>
+                                <%}%>
+                            <%}%>
                         </div>
                         <div class="img_loader-box">
                             <input class="upload-img-button" type="file" name="photo3" accept=".jpg"  multiple>
-                        </div>      
+                            <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                                <% for (let i=0 ; i < errors.length ; i++) {%>
+                                    <% if(errors[i].param == "photo3") { %>
+                                        <span id="pcreate-errors"> <%= errors[i].msg %> </span>
+                                    <% } %>
+                                <%}%>
+                            <%}%>
+                        </div>
+                        </article>      
                     </div>
                 </div>
             </div>
@@ -42,7 +78,7 @@
                         <% for (let i = 0; i < category.length; i++) {%>
                         <option selected hidden></option>
                         <option value="<%=category[i].id%>" class="catg-option"><%=category[i].name%></option>
-                    <%}%>
+                        <%}%>
                     </select>
                 </div>
             </div>
@@ -51,6 +87,13 @@
                 <span>Descripción de Producto</span><br>
                 <textarea name="description" id="product-description_description"
                     class="product-controller" placeholder="Ingrese la descripción del producto...." value=""></textarea>
+                    <% if (locals && locals.old && locals.errors && errors.length>0) { %>
+                        <% for (let i=0 ; i < errors.length ; i++) {%>
+                            <% if(errors[i].param == "description") { %>
+                                <span id="pcreate-errors"> <%= errors[i].msg %> </span>
+                            <% } %>
+                        <%}%>
+                    <%}%>
             </div>
             <section class="price-stock_container">
                 <div class="product-stock">

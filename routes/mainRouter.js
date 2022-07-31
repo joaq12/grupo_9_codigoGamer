@@ -7,6 +7,7 @@ router.get('/', mainController.inicio);
 router.get('/home', mainController.home);
 router.get('/store/:id',mainController.storeByCategory);
 router.get('/contact',mainController.contact);
+router.get('/dashboard',mainController.dashboard);
 
 
 

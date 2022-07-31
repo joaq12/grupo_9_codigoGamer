@@ -4,6 +4,7 @@
 <%- include('./partial/head')%>
 
     <body>
+        <script src="/public/events/validateRegister.js"></script>       
 
         <%- include('./partial/header')%>
 
@@ -22,33 +23,26 @@
                     <div class="sidebar">
                         <div class="sidebar-list">
 
-                            <h4 class="sidebar-title">Hardware</h4>
+                            <h4 class="sidebar-title">Categorias</h4>
                             <ul>
-                                <li><a href="#"> MOUSE </a></li>
-                                <li><a href="#"> TECLADOS </a></li>
-                                <li><a href="#"> MONITORES </a></li>
-                                <li><a href="#"> NOTEBOOKS </a></li>
-                            </ul>
-                            <h4 class="sidebar-title">Consolas</h4>
-                            <ul>
-                                <li><a href="#"> PS5</a></li>
-                                <li><a href="#"> XBOX </a></li>
-                                <li><a href="#"> PSE </a></li>
-                                <li><a href="#"> NINTENDO </a></li>
-
-                            </ul>
-                            <h4 class="sidebar-title">Accesorios</h4>
-                            <ul>
-                                <li><a href="#"> Microfonos</a></li>
-                                <li><a href="#"> Lentes </a></li>
-                                <li><a href="#"> Mousepad </a></li>
-                                <li><a href="#"> Lámparas </a></li>
-
-                            </ul>
-                            <h4 class="sidebar-title">Ofertas</h4>
-                            <ul>
-                                <li><a href="#"> Hard</a></li>
-                                <li><a href="#"> Soft </a></li>
+                                <li><a href="/productsList"> TODOS </a></li>
+                                <li><a href="/store/14"> MOUSE</a></li>
+                                <li><a href="/store/15"> SILLAS GAMER</a></li>
+                                <li><a href="/store/17"> ACCESORIOS</a></li>
+                                <li><a href="/store/16"> NOTEBOOKS </a></li>
+                                <li><a href="/store/18"> MICROFONOS</a></li>
+                                <li><a href="/store/19"> AURICULARES</a></li>
+                                <li><a href="/store/20"> PARLANTES</a></li>
+                                <li><a href="/store/21"> PC ARMADAS</a></li>
+                                <li><a href="/store/22"> CONECTIVIDAD</a></li>
+                                <li><a href="/store/23"> TECLADOS</a></li>
+                                <li><a href="/store/24"> JOSTICKS</a></li>
+                                <li><a href="/store/25"> MEMORIAS</a></li>
+                                <li><a href="/store/26"> PROCESADORES</a></li>
+                                <li><a href="/store/27"> FAN COOLERS</a></li>
+                                <li><a href="/store/28"> OFERTAS</a></li>
+                                <li><a href="/store/29"> MONITORES</a></li>
+                                <li><a href="/store/30"> CONSOLAS</a></li>
                             </ul>
                         </div>
                     </div>
@@ -56,7 +50,6 @@
                     <div class="catg-store_container-products">
                         <% for (let i = 0; i < category.product.length; i++) {%>
                             <% if(category.product.id != 1) {%>
-
                         <article class="product_item">
                            
                             <a href=""></a>
@@ -64,7 +57,6 @@
                                 <img class="product_item-img" src="/images/<%= category.product[i].photo1%>" alt="item name">
                                 <div class="product_item-main_article">
                                     <p class="product_item-main_article-name"><%= category.product[i].name %></p>
-
                                     
                                     <div class="envio">
                                     <% if(category.product[i].shipping == 1){%>
@@ -72,28 +64,25 @@
                                         <span> Envio Gratis</span>
                                      <%}%>
                                     </div>
-
                                     
                                    
                                     <p class="price">$ <%= category.product[i].price %></p>
                                     <% if(category.product[i].discountAply > 0){%>
                                         <p class="discount"><%= category.product[i].discountAply %>% OFF</p>
                                     <%}%>
-
                                 </div>
                                 
                             </a>
                             <div class="button-container">
-                                <a href="cart" class="store_cart-link">
+                                <a href="" class="store_cart-link" id="addToCart">
                                     <input class="button" type="submit" value="Añadir al Carro">
                                 </a>
-                                <a href="cart" class="store_cart-link">
+                                <a href="" class="store_cart-link">
                                     <input class="button" id="buy-now" type="submit" value="Comprar Ahora">
                                 </a>
                             </div>
                             <i class="fa fa-heart"></i>
                               
-
                               <% if(locals.session){ %>
                                 <% if(locals.session.userType !== "Cliente"){ %>
                             <button class="store_product-edit-button"><a href="/product-edit/<%= category.product[i].id %>"><i
@@ -135,7 +124,7 @@
 
             <%- include('./partial/footer')%>
 
-
+        <script src="../public/events/addToCart.js"></script>
     </body>
 
 </html>

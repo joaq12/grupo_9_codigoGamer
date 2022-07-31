@@ -2,7 +2,11 @@
 
 
   <div class="top-bar">
+
+   
+
     <div class="nav-menu">
+
       <ul>
           <div class="top-bar_list" id="social-media">
         <li>
@@ -68,12 +72,50 @@
   
 
   <div class="top-header">
+    
+    <div id="menu__items">
+      <ul>
+        <li>
+          <% if(locals.session){     %>
+            <a href="../user-profile/<%=session.id%>">
+              <img class="top-bar_user-profile_avatar" src="/images/users/<%= session.avatar%>"><p class="top-bar_user-profile-info"><%=session.name%></p>
+            </a>
+            <%}%>
+            
+            <% if(!locals.session ){     %>
+            <a href="../user-login">
+              INGRESAR / REGISTRARSE
+            </a>
+            
+          <%}%>
+        </li>
+        <li><a href="">TIENDA</a></li>
+        <li><a href="">CARRITO</a></li>
+        <li><a href="">FAVORITOS</a></li>
+        <li><a href="">CONTACTO</a></li>
+        <% if(locals.session){     %>
+        <li><a href="/user-profile/<%=session.id%>">CERRAR SESION</a></li>
+        <%}%>
+        
+      </ul>
+    </div>
+    
+
     <div class="logo">
       <a href="/home">
         <img src="/images/codigo-gamer-logo.jpeg.png" />
       </a>
     </div>
 
+
+    <div class="hamb__navbar__container">
+      <div id="hamb__lines">
+        <span class="line line1" id="line1"></span>
+        <span class="line line2" id="line2"></span>
+        <span class="line line3" id="line3"></span>
+      </div>
+  </div>
+  
     <div class="nav-section">
       <div class="nav-section-list">
         <div class="nav-section-list-links">
@@ -111,14 +153,11 @@
             </a>
           </div>
         </div>
-        <div class="burger-menu">
-          <i class="fa fa-bars burger"> </i>
-        </div>
       </div>
     </div>
     
 
   </div>
 
-  
+  <script src="../../events/hambmenu.js"></script>
 </header>

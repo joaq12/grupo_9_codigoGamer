@@ -6,7 +6,8 @@ const productosController = require('../controllers/productosController');
 //middleWares
 const uploadFile=require('../middlewares/productsMulter')
 //const authMiddleware = require("../middlewares/authMiddleware")
-
+const validatepCreate=require('../middlewares/validateProductCreateMiddleware')
+const validateEdit=require('../middlewares/validateProductEditMiddleware')
 
 //categorias
 router.get('/category-create', productosController.categoryCreate); 
@@ -14,12 +15,6 @@ router.post('/category-create', uploadFile.any(),productosController.categoryCon
 router.get('/category-edit/:id', productosController.categoryEdit);
 router.put('/category-edit/:id', uploadFile.any(),productosController.categoryUpdate);  
 router.delete('/category-edit/:id', productosController.categoryDelete); 
-
-
-
-
-
-
 
 //listado de productos
 router.get('/productsList',productosController.list);
@@ -39,11 +34,11 @@ router.get('/checkout-shipping',  productosController.checkoutShipping);
 
 //creacion de productos 
 router.get('/product-create', productosController.productCreate);
-router.post('/product-create', uploadFile.any(),productosController.createConfirm); 
+router.post('/product-create', uploadFile.any(),validatepCreate,productosController.createConfirm); 
 
 // edicion y borrado de productos
 router.get('/product-edit/:id',  productosController.productEdit);
-router.put('/product-edit/:id',uploadFile.any(), productosController.productUpdate);
+router.put('/product-edit/:id',uploadFile.any(),validateEdit, productosController.productUpdate);
 router.delete('/product-detail/:id', productosController.delete); 
 
 

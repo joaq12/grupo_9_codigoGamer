@@ -1,3 +1,4 @@
+const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 
@@ -15,11 +16,15 @@ const mainController ={
         res.render("index")
     },
 
+    dashboard : (req, res) =>{
+        res.render("dashboard")
+    },
+
     home : (req, res) =>{
-        console.log(req.session.usuarioLogged)
-        db.Category.findAll()
+        db.Category.findAll({include:{association:"product"}})
             .then(category =>{
-                    res.render ('home', { category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
+                console.log(category[1].product[2].photo1);
+                res.render ('home', { category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
             })
     },
 

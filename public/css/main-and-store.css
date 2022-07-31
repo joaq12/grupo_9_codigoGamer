@@ -410,7 +410,6 @@ article.product_item{
     flex: 100%;
     border-color: #59359c;
     color:#59359c;
-    display: none;
     margin-bottom: 5px;
     padding: 10px 0;
     font-weight: bold;
@@ -428,6 +427,9 @@ article.product_item{
     background-color: #59359c;
    }
 
+   .dispNone {
+    display: none;
+   }
 
 
 
@@ -523,7 +525,7 @@ article.product_item .store_product-edit-button:hover{
 
 .sidebar-title{
     width: 100%;
-    text-align: left;
+    text-align: center;
     color:#313131 ;
     margin: 10px 0 5px 10px ;
     font-size: 24px;

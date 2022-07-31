@@ -50,6 +50,37 @@ let inputCheck = document.querySelectorAll("#fomr-ckeched")
             genderError.innerHTML = "" 
         }
     });
+
+    avatar.addEventListener("change", () =>{
+        acceptedExt = [".gif", ".jpg", ".jpeg", ".png"];            
+            extention = (avatar.value.substring(avatar.value.lastIndexOf("."))).toLowerCase();
+            let extFilter = acceptedExt.filter(file => file.includes(extention));
+            console.log(extention);
+            console.log(extFilter);
+            if (extFilter.length > 0) {
+                avatar.style.border = "solid 1px #59359c"
+                avatarError.innerHTML = ""
+                avatar.style.outline = "none"
+                errors.pop(`Error en ${avatar.name}`) 
+            } else {
+                avatarError.innerHTML = `Extensión de archivo inválida. \n  
+                Las extensiones permitidas son ${acceptedExt.join(' - ')}`
+                avatar.style.border = "solid 2px #c61921"
+                errors.push(`Error en ${avatar.name}`) 
+            }
+            if(e.target.value == ""){
+                avatar.style.border = "solid 2px #c61921"
+                avatarError.innerHTML = "<li>Imagen requerida</li>" 
+                errors.push(`Error en ${avatar.name}`) 
+            }else{
+                avatar.style.border = "solid 1px #59359c"
+                avatarError.innerHTML = ""
+                avatar.style.outline = "none"
+                errors.pop(`Error en ${avatar.name}`) 
+            }
+    
+
+    })
     
   
     let validarInputFormulario = (e) => {
@@ -144,34 +175,18 @@ let inputCheck = document.querySelectorAll("#fomr-ckeched")
                 };
             break;
 
-            case "profilePhoto":
-            acceptedExt = [".gif", ".jpg", ".jpeg", ".png"];            
-            extention = (e.target.value.substring(e.target.value.lastIndexOf("."))).toLowerCase();
-            let extFilter = acceptedExt.filter(file => file.includes(extention));
-            if (extFilter.length > 0) {
-                avatar.style.border = "solid 1px #59359c"
-                avatarError.innerHTML = ""
-                avatar.style.outline = "none"
-                errors.pop(`Error en ${e.target.name}`) 
-            } else {
-                avatarError.innerHTML = `Extensión de archivo inválida. \n  
-                Las extensiones permitidas son ${acceptedExt.join(' - ')}`
-                avatar.style.border = "solid 2px #c61921"
-                errors.push(`Error en ${e.target.name}`) 
-            }
-            if(e.target.value == ""){
-                avatar.style.border = "solid 2px #c61921"
-                avatarError.innerHTML = "<li>Imagen requerida</li>" 
-                errors.push(`Error en ${e.target.name}`) 
-            }else{
-                avatar.style.border = "solid 1px #59359c"
-                avatarError.innerHTML = ""
-                avatar.style.outline = "none"
-                errors.pop(`Error en ${e.target.name}`) 
-            }
-    
-            break;
-
+           case "profilePhoto":
+           if(e.target.value == ""){
+               avatar.style.border = "solid 2px #c61921"
+               avatarError.innerHTML = "<li>Imagen requerida</li>" 
+               errors.push(`Error en ${e.target.name}`) 
+           }else{
+               avatar.style.border = "solid 1px #59359c"
+               avatarError.innerHTML = ""
+               avatar.style.outline = "none"
+               errors.pop(`Error en ${e.target.name}`) 
+           }
+           break
             case "email1":
                if(email1.value == ""){
                     email1Error.innerHTML = "<li>El email es requerido</li>"

@@ -200,6 +200,15 @@
     list-style: none;
 }
 
+span#pcreate-errors{
+    color: #d63d52;
+    text-align:center;
+}
+
+span#pedit-errors{
+    color: #d63d52;
+    text-align:center;
+}
 
 #email_cont:focus-within,
 #pass_cont:focus-within {

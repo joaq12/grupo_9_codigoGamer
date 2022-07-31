@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 var products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const { validationResult } = require("express-validator");
 
 const db = require('../database/models');
 const Product = require("../database/models/Product");
@@ -12,10 +13,8 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const productosController = {
 
   list: (req,res) => {
-
-    db.Product.findAll()
+   db.Product.findAll()
   .then(product =>{
-      console.log(product)
       res.render ('productsList', { product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
   })
 
@@ -27,19 +26,15 @@ const productosController = {
       .then((sproduct) => {  
         if(sproduct === null){
           res.send("home")
-        } else {  
+        } else {
+          console.log(sproduct.category)  
           res.render("product-detail", {sproduct, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
         }
       })
       .catch((e) => {
         console.log(e)
         res.send(e)
-      })
-    
-    // let product = products.find(producto => producto.id == parseInt(req.params.id))
-    // if(product === undefined) return res.render("index")
-    // res.render("product-detail", { sproduct: product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
-    
+      })    
   },
 
   cart: (req, res) => {
@@ -95,17 +90,17 @@ const productosController = {
   },
 
   categoryEdit : (req, res) => {
-    db.Category.findByPk(req.params.id,{include:{association:"product"}})
-    .then((category) => {
-      if(category === undefined) {
-        return res.render("home")
-        }else{  
-          res.render("category-edit", {
+    db.Category.findAll({include:{association:"product"}})
+    .then((categories) => { 
+       let category = categories.filter((e) => {
+        e.id == req.params.id
+        })
+      console.log(category)  
+      res.render("category-edit", {
             category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
         })
-      }
-    }
-    )
+
+      })
      .catch((e) => {
        console.log(e)
        res.send(e)
@@ -164,7 +159,9 @@ const productosController = {
       })
   },
 
+
   createConfirm: (req, res) => {
+    let errors = validationResult(req);
     const newProduct = {
       name: req.body.name,
       photo1: null,
@@ -183,10 +180,10 @@ const productosController = {
           newProduct[imagen.fieldname]=imagen.filename
       })
     }
-    console.log(newProduct)
+    
+    if(errors.isEmpty()){
     db.Product.create(newProduct)
-    .then(newProduct => {
-      console.log(newProduct)
+    .then(product => {
       res.redirect("/home")
     })
     .catch(e => {
@@ -195,6 +192,13 @@ const productosController = {
       console.log('-------------------------------------------------')
       res.redirect("/home")
     })
+    }else{
+      db.Category.findAll()
+      .then(category =>{
+        console.log(errors.errors)
+        res.render("product-create", {category, errors:errors.errors , old:req.body,  session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
+      })
+    }
   },
  
  productEdit : (req, res) => {
@@ -215,68 +219,87 @@ const productosController = {
     })
   },
 
- productUpdate:(req,res)=>{
-  let productToEdit = db.Product.findByPk(req.params.id);
-    productToEdit={
-    name : req.body.name?req.body.name:name,
-    price :req.body.price,
-    id_category : req.body.catg,
-    description : req.body.description,
-    stock: req.body.stock,
-    price: req.body.price,
-    shipping : req.body.shipping?req.body.shipping:0,
-    discount : req.body.discount?req.body.discount:0,
-    discountAply : req.body.discountAply,
-  };
+ productUpdate: async (req,res)=> {
+  let errors = validationResult(req);
+  let productToEdit = await db.Product.findByPk(req.params.id,{include:{association:"category"}})
   if(req.files){
     req.files.forEach(imagen => {
         productToEdit[imagen.fieldname]=imagen.filename
     })
   }
+  if(errors.errors.length > 0){
+    console.log(errors.errors)
+    return res.render("product-edit", {
+      productToEdit,  errors:errors.errors , old:req.body})
+  }
 
-  db.Product.update(
-    productToEdit
-  ,{
-    where: {
-      id:req.params.id
-    }
-  })
-  .then(response =>{
-    res.redirect("/home")
-  })
-  .catch((e) => {
-    console.log(e)
-    res.render(e)
-  })
+ if(errors.isEmpty()){
+ const product = await db.Product.findOne({
+   where:{
+     id:req.params.id
+   }
+ });
+
+ product.set({
+   ...req.body,id:req.params.id
+ });
+ await product.save()
+ res.redirect("/home")
+  }
+    //db.Product.update(
+    //    productToEdit,{ where: 
+    //      {
+    //        id:req.params.id
+    //      }
+    //      , 
+    //      include:{association:"category"}
+    //    })
+    //.then(productToEdit =>{
+    //    console.log(productToEdit);
+    //    if(!errors.isEmpty()) {
+    //      res.render("product-edit", {
+    //        productToEdit, error:errors.errors, old:req.body})
+    //    }else{
+    //    res.redirect("/home")
+    //    }
+    //    })
+    //.catch((e) => {
+    //  console.log(e)
+    //    })
+  
+      //   const productUpdate = async (req, res) =>{
+      //     const errors = validationResult(req);
+      //     let productToEdit = {...req.body,id:req.params.id}
+      //     if (errors.errors.length > 0) {
+      //         return res.render("./product/productAdmin", {
+      //             cervezaToEdit,
+      //             errors: resultValidation.mapped(),
+      //             oldData: req.body,
+      //         });
+      //     }
+      
+      //     const cerveza = await Product.findOne({
+      //         where:{id:req.params.id}
+      //     }); 
+      //     cerveza.set({
+      //         name: req.body.name,
+      //         description: req.body.description,
+      //         price: req.body.price,
+      //         bitterness: req.body.bitterness,
+      //         color: req.body.color,
+      //         alcohol: req.body.alcohol,
+      //         carbonation: req.body.carbonation,
+      //         hop: req.body.hop,
+      //         category: req.body.category,
+      //         image: req.file?req.file.filename:req.body.image
+      //     })
+      //     await cerveza.save();
+      //     res.redirect('/product/productPage')
+      
+      // }
+
 
  },
-
- //  let productToEdit={
- //  
- //      (product.name=req.body.name),
- //      (product.description=req.body.description ),
- //      (product.discount=req.body.discount === undefined ? false:true),
- //      (product.discountAply = req.body.discountAply),
- //      (product.catg=req.body.catg),
- //      (product.price=req.body.price),
- //      (product.shipping=req.body.shipping === undefined ? false:true),
- //      (product.stock=req.body.stock)
-
- //      if(req.files){
- //          req.files.forEach(imagen => {
- //          productToEdit[imagen.fieldname]=imagen.filename
- //          })};
-
- //    }})
-
- //  
-
- //    let newData= JSON.stringify(products);
- //    fs.writeFileSync(productsFilePath, newData);
- //    res.redirect("/store")
-
- //},
-
 
  delete: (req,res)=>{
 
@@ -285,28 +308,16 @@ const productosController = {
         id:req.params.id
       }}
     )
-    .then(response =>{
+  .then(response =>{
       res.redirect("/home")
     })
-    .catch((e) => {
+  .catch((e) => {
       console.log(e)
       res.render(e)
     })
 
 },
 
-
- //delete: (req,res)=>{
- //  let productToDelete=(product)=>{
- //    if(product.id != req.params.id){
- //      return product}}                                          
- //  products=products.filter((productToDelete))                         
- //  let newDataBase = JSON.stringify(products);
- //  fs.writeFileSync(productsFilePath, newDataBase);
- //  res.render("store",{products, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
- //},
-
-  
 };
 
 module.exports = productosController;
