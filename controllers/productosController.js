@@ -6,14 +6,29 @@ const { validationResult } = require("express-validator");
 
 const db = require('../database/models');
 const Product = require("../database/models/Product");
+const OP = db.Sequelize.Op
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const productosController = {
 
+  search: (req,res) =>{
+    db.Product.findAll({
+        where:{
+          name : {[OP.like]: "%" + req.query.search + "%"}
+        }
+      })
+      .then(product =>{
+        res.render ('productsList', {msg: " No hay resultados para la busqueda ingresada ", product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
+    })
+  },
+
   list: (req,res) => {
-   db.Product.findAll()
+   db.Product.findAll({ order: [
+    ['id_category', 'DESC'],
+    ['name', 'DESC'],
+],})
   .then(product =>{
       res.render ('productsList', { product, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
   })
@@ -22,13 +37,14 @@ const productosController = {
 
   detail: (req, res) => {
     const id = req.params.id;
-    db.Product.findByPk(id, {include:{association:"category"}})
-      .then((sproduct) => {  
+    db.Product.findAll( {include:{association:"category"}})
+      .then((sproduct) => {
+        console.log(sproduct.category)
         if(sproduct === null){
           res.send("home")
         } else {
           console.log(sproduct.category)  
-          res.render("product-detail", {sproduct, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
+          res.render("product-detail", { id, sproduct, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
         }
       })
       .catch((e) => {
@@ -90,12 +106,10 @@ const productosController = {
   },
 
   categoryEdit : (req, res) => {
-    db.Category.findAll({include:{association:"product"}})
-    .then((categories) => { 
-       let category = categories.filter((e) => {
-        e.id == req.params.id
-        })
-      console.log(category)  
+    db.Category.findOne({where:{
+      id : req.params.id
+    }})
+    .then(category => {  
       res.render("category-edit", {
             category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
         })
@@ -109,7 +123,7 @@ const productosController = {
 
 
    categoryUpdate:(req,res)=>{
-    let categoryToEdit = db.Product.findByPk(req.params.id);
+    let categoryToEdit = db.Category.findByPk(req.params.id);
       categoryToEdit={
       name : req.body.name?req.body.name:name,
     };
@@ -127,7 +141,8 @@ const productosController = {
       }
     })
     .then(response =>{
-      res.redirect("/")
+      console.log(response)
+    res.redirect("/home")
     })
     .catch((e) => {
       console.log(e)
@@ -195,7 +210,6 @@ const productosController = {
     }else{
       db.Category.findAll()
       .then(category =>{
-        console.log(errors.errors)
         res.render("product-create", {category, errors:errors.errors , old:req.body,  session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged});
       })
     }
@@ -243,60 +257,15 @@ const productosController = {
  product.set({
    ...req.body,id:req.params.id
  });
- await product.save()
- res.redirect("/home")
+  if(req.files){
+    req.files.forEach(imagen => {
+        product[imagen.fieldname]=imagen.filename
+    })
   }
-    //db.Product.update(
-    //    productToEdit,{ where: 
-    //      {
-    //        id:req.params.id
-    //      }
-    //      , 
-    //      include:{association:"category"}
-    //    })
-    //.then(productToEdit =>{
-    //    console.log(productToEdit);
-    //    if(!errors.isEmpty()) {
-    //      res.render("product-edit", {
-    //        productToEdit, error:errors.errors, old:req.body})
-    //    }else{
-    //    res.redirect("/home")
-    //    }
-    //    })
-    //.catch((e) => {
-    //  console.log(e)
-    //    })
-  
-      //   const productUpdate = async (req, res) =>{
-      //     const errors = validationResult(req);
-      //     let productToEdit = {...req.body,id:req.params.id}
-      //     if (errors.errors.length > 0) {
-      //         return res.render("./product/productAdmin", {
-      //             cervezaToEdit,
-      //             errors: resultValidation.mapped(),
-      //             oldData: req.body,
-      //         });
-      //     }
-      
-      //     const cerveza = await Product.findOne({
-      //         where:{id:req.params.id}
-      //     }); 
-      //     cerveza.set({
-      //         name: req.body.name,
-      //         description: req.body.description,
-      //         price: req.body.price,
-      //         bitterness: req.body.bitterness,
-      //         color: req.body.color,
-      //         alcohol: req.body.alcohol,
-      //         carbonation: req.body.carbonation,
-      //         hop: req.body.hop,
-      //         category: req.body.category,
-      //         image: req.file?req.file.filename:req.body.image
-      //     })
-      //     await cerveza.save();
-      //     res.redirect('/product/productPage')
-      
-      // }
+ await product.save()
+ let id = req.params.id
+ res.redirect(`/product-detail/${id}`)
+  }
 
 
  },

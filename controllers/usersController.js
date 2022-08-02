@@ -191,7 +191,8 @@ const usersController = {
     }
   })
   .then(response =>{
-    res.redirect("/home")
+    let id = req.params.id 
+    res.redirect(`/user-profile/${id}`)
   })
   .catch((e) => {
     console.log(e)

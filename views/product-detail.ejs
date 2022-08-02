@@ -7,36 +7,38 @@
         <%- include('./partial/header')%>
 
             <main class="product-detail_root">
-                <a href="/store/<%=sproduct.category.id%>" class="back-to-store"> <<< Voler al listado </a>
+            <% for (let i = 0; i <  sproduct.length; i++) { %>
+                <% if(sproduct[i].id  == id) {%>
+                <a href="/store/<%=sproduct[i].category.id%>" class="back-to-store"> <<< Voler al listado </a>
                 <p class="product-detail-carrusel_best-seller">MAS VENDIDO</p>
                 <section class="product-detail-container">
                     
                     
                     <section class="product-detail_image-container">
-                        <p class="product-detail_image-container_product-title"><%= sproduct.name%></p>
+                        <p class="product-detail_image-container_product-title"><%= sproduct[i].name%></p>
                         
                         
                         <div class="image-carrusel">
                             
                             
                             <div class="image-carrusel_main-img">
-                                <img id="img1" src="/images/<%= sproduct.photo1%>" alt="">
-                                <img id="img2" src="/images/<%= sproduct.photo2%>" alt="">
-                                <img id="img3" src="/images/<%= sproduct.photo3%>" alt="">
+                                <img id="img1" src="/images/<%= sproduct[i].photo1%>" alt="">
+                                <img id="img2" src="/images/<%= sproduct[i].photo2%>" alt="">
+                                <img id="img3" src="/images/<%= sproduct[i].photo3%>" alt="">
                                 <i class="fa fa-heart"></i>
                             <% if(locals.session){ %>
                                 <% if(locals.session.userType !== "Cliente"){ %>    
-                            <button class="product-detail_product-edit-button"><a href="/product-edit/<%=sproduct.id %>"><i
+                            <button class="product-detail_product-edit-button"><a href="/product-edit/<%=sproduct[i].id %>"><i
                                         class="fas fa-pencil-alt"></i></a></button>
                                 <%}%>
                             <%}%>
                             </div>
                             <div class="image-carrusel_others-imgs">
-                                <div id="gallerycont1" class="image-carrusel_others-imgs_img1"><img src="/images/<%= sproduct.photo1%>" alt="">
+                                <div id="gallerycont1" class="image-carrusel_others-imgs_img1"><img src="/images/<%= sproduct[i].photo1%>" alt="">
                                 </div>
-                                <div  id="gallerycont2" class="image-carrusel_others-imgs_img2"><img src="/images/<%= sproduct.photo2%>" alt="">
+                                <div  id="gallerycont2" class="image-carrusel_others-imgs_img2"><img src="/images/<%= sproduct[i].photo2%>" alt="">
                                 </div>
-                                <div id="gallerycont3" class="image-carrusel_others-imgs_img3"><img src="/images/<%= sproduct.photo3%>" alt="">
+                                <div id="gallerycont3" class="image-carrusel_others-imgs_img3"><img src="/images/<%= sproduct[i].photo3%>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -48,20 +50,20 @@
 
                     <div class="product-detail_buy-data">
                         <div class="product-detail_product-info">
-                            <span class="product-detail_product-name_title"><%= sproduct.name%></span>
+                            <span class="product-detail_product-name_title"><%= sproduct[i].name%></span>
                                 <p class="product-detail_price">
-                                    $<%= sproduct.price%>
+                                    $<%= sproduct[i].price%>
                                 </p>
                                 <span class="product-detail_discount">
-                                <% if(sproduct.discount == "true"){ %> 
-                                <%= sproduct.discountAply%>% OFF
+                                <% if(sproduct[i].discount == "true"){ %> 
+                                <%= sproduct[i].discountAply%>% OFF
                                 <%}%>  
                             </span>
                             <span class="product-detail_pay-methods">
                                 <i class="fas fa-credit-card"></i>
                                 Hasta 6 cuotas sin interés
                             </span><br>
-                            <% if(sproduct.shipping == true){ %>
+                            <% if(sproduct[i].shipping == true){ %>
                                 <p class="product-detail_pay-methods">
                                    <i class="fas fa-shipping-fast"></i>
                                     Envio Gratis
@@ -71,9 +73,9 @@
                         </div>
 
                         <div class="product-detail_buy-data_button-container">
-                            <a href="/cart"><button class="button_product-detail_add">Añadir al
+                            <a href="#"><button class="button_product-detail_add">Añadir al
                                     Carro</button></a>
-                            <a href="/cart"><button class="button_product-detail_buy">Comprar</button></a>
+                            <a href="#"><button class="button_product-detail_buy">Comprar</button></a>
                         </div>
 
                         <div class="favourites-container">
@@ -121,7 +123,7 @@
 
                             <% if(locals.session){ %>
                                 <% if(locals.session.userClass !== "Cliente"){ %>
-                            <form class="produt-delete_form" method="POST" action="/product-detail/<%=sproduct.id %>?_method=DELETE"_method=DELETE">
+                            <form class="produt-delete_form" method="POST" action="/product-detail/<%=sproduct[i].id %>?_method=DELETE"_method=DELETE">
                                     <button class="product-detail_product-delete" value="submit">
                                         <i class="fas fa-trash-alt" id="delete-product-trash"></i>
                                         Eliminar Producto
@@ -129,8 +131,10 @@
                             </form>
                                 <%}%>
                             <%}%>
-
-                <div class="product-detail_section_slider-container">
+                
+                
+                
+                <!-- <div class="product-detail_section_slider-container">
                     <h5 class="section_container-title">Productos Relacionados</h5>
                     <div class="product-detail_slider-section">
                         <article class="product-detail_product_item" id="p-item">
@@ -178,14 +182,17 @@
                             </a>
                         </article>
                     </div>
-                </div>
+                </div> -->
+                
                 <div class="product-detail_detail-complete">
                     <div class="detail-complete_text">
                         <span class="detail-text">Detalle del Producto</span>
-                        <p><%= sproduct.description%></p>
+                        <p><%= sproduct[i].description%></p>
                        
                     </div>
                 </div>
+            <%}%>
+            <%}%>
             </main>
             <%- include('./partial/footer')%>
             <script src="/events/gallery.js"></script>

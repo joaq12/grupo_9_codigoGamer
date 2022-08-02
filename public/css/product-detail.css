@@ -97,7 +97,7 @@
     width: 75%;
     margin: 10px;
     min-height: 240px;
-    max-height: 240px;
+    max-height: 350px;
 }
 
 .image-carrusel_main-img #img1 {
@@ -459,19 +459,18 @@ button #delete-product-trash{
 }
 
 
-
-
-
 @media screen and (min-width:769px) {
-
-    .back-to-store{
+    
+    .back-to-store {
         display: flex;
         float: left;
         text-decoration: none;
-        color: #313131;
+        color: #59359c;
+        font-weight: bolder;
         font-size: 15px;
-        margin: 10px 0;
+        PADDING: 1px 6px;
     }
+    
     .product-detail_root{
         max-width: 950px;
         padding-top: 10px;

@@ -437,6 +437,7 @@ font-weight: bold;
 
 .information h3{
     padding: 10px 20px 30px;
+    color: #59359c;
 }
 
 .information-section_container{
@@ -647,7 +648,7 @@ ul.bell-alerts{
        display: none;
     }
     
-    .top-header .nav-section{
+    .nav-section-list-links{
         display: none;
     }
     
@@ -750,7 +751,10 @@ ul.bell-alerts{
  
         .sidebar {
             display: none;
-        }          
+        } 
+        .nav-section-list-icons #search-bar{
+            display: block;
+        }        
     }
     
     /*desktop*/

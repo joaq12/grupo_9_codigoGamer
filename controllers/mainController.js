@@ -21,9 +21,9 @@ const mainController ={
     },
 
     home : (req, res) =>{
-        db.Category.findAll({include:{association:"product"}})
+        db.Category.findAll({order:[
+            ['name', 'ASC']],include:{association:"product"}})
             .then(category =>{
-                console.log(category[1].product[2].photo1);
                 res.render ('home', { category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
             })
     },

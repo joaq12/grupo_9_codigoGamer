@@ -64,6 +64,30 @@ p.reg-link{
      margin: 12px;
 }
 
+
+
+p.home-link{
+    display: center;
+    justify-content: flex-start;
+    margin: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p.home-link a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #313131;
+}
+
+p.home-link a:hover{
+    color:#59359c;
+    font-weight: bold;
+}
+ 
+
 span#middlewares-links a{
     text-decoration: none;
     text-align: center;

@@ -19,9 +19,10 @@
 
 .main-catg_container h3{
     text-align: center;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     margin: 15px;
+    color: #59359c;
 }
 
 .poduct-caregorie_main-link{
@@ -224,7 +225,14 @@ article.product_item{
     transition: 1.5s;
 }
 
+.brand__container{
+    width: 100%;
+    margin: 80px 0 30px 0;
+}
 
+.brand__container img{
+    width: 100%;
+}
 
 /*----------------------------------------------------------------------------------*Store Section*/
 
@@ -410,6 +418,7 @@ article.product_item{
     flex: 100%;
     border-color: #59359c;
     color:#59359c;
+    display: none;
     margin-bottom: 5px;
     padding: 10px 0;
     font-weight: bold;
@@ -510,7 +519,7 @@ article.product_item .store_product-edit-button:hover{
 .sidebar {
     margin: 0px 35px 0 25px;
     min-width: 180px;
-    width: 16%;
+    width: 18%;
     background-color: #f1f1f1;
     position: realive;
     border-radius: 10px;
@@ -520,15 +529,15 @@ article.product_item .store_product-edit-button:hover{
 
 }
 .sidebar-list{
-    display: inline-block;
+    width: 100%;
 }
 
 .sidebar-title{
     width: 100%;
     text-align: center;
     color:#313131 ;
-    margin: 10px 0 5px 10px ;
-    font-size: 24px;
+    margin: 40px 0 10px 0 ;
+    font-size: 22px;
 }   
 
 .sidebar ul {
@@ -537,12 +546,17 @@ article.product_item .store_product-edit-button:hover{
     list-style:none;   
   }
 
+  .sidebar ul li{
+    margin: 10px 0;
+    font-size: 10px;
+  }
+
   
   /* Sidebar links */
 .sidebar a {
     margin: 0 auto ;
     color: #59359c;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 10px;
     text-decoration: none;
     font-size: 18px;
 
@@ -713,6 +727,7 @@ article.product_item .store_product-edit-button:hover{
         display: flex;
         flex-wrap: wrap;
         border-radius: 5px;
+        height: 750px;
     }
     section.top-main div.miniaturas{
         position: relative;

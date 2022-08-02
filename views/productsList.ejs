@@ -22,30 +22,34 @@
                     <div class="sidebar">
                         <div class="sidebar-list">
 
-                            <h4 class="sidebar-title">Categorias</h4>
+                            <h4 class="sidebar-title">CATEGORIAS</h4>
                             <ul>
-                                <li><a href="/store/14"> MOUSE</a></li>
-                                <li><a href="/store/15"> SILLAS GAMER</a></li>
                                 <li><a href="/store/17"> ACCESORIOS</a></li>
-                                <li><a href="/store/16"> NOTEBOOKS </a></li>
-                                <li><a href="/store/18"> MICROFONOS</a></li>
                                 <li><a href="/store/19"> AURICULARES</a></li>
-                                <li><a href="/store/20"> PARLANTES</a></li>
-                                <li><a href="/store/21"> PC ARMADAS</a></li>
                                 <li><a href="/store/22"> CONECTIVIDAD</a></li>
-                                <li><a href="/store/23"> TECLADOS</a></li>
+                                <li><a href="/store/30"> CONSOLAS</a></li>
+                                <li><a href="/store/27"> FAN COOLERS</a></li>
                                 <li><a href="/store/24"> JOSTICKS</a></li>
                                 <li><a href="/store/25"> MEMORIAS</a></li>
+                                <li><a href="/store/18"> MICROFONOS</a></li>
                                 <li><a href="/store/26"> MICROPROCESADORES</a></li>
-                                <li><a href="/store/27"> FAN COOLERS</a></li>
-                                <li><a href="/store/28"> OFERTAS</a></li>
                                 <li><a href="/store/16"> MONITORES</a></li>
-                                <li><a href="/store/30"> CONSOLAS</a></li>
+                                <li><a href="/store/14"> MOUSE</a></li>
+                                <li><a href="/store/16"> NOTEBOOKS </a></li>
+                                <li><a href="/store/20"> PARLANTES</a></li>
+                                <li><a href="/store/21"> PC ARMADAS</a></li>
+                                <li><a href="/store/15"> SILLAS GAMER</a></li>
+                                <li><a href="/store/23"> TECLADOS</a></li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="catg-store_container-products">
+                        <% if (product.length == 0) { %>
+                            <span class="search-msg"><%=msg%></span>
+                        <%}%>
+
+
                         <% for (let i = 0; i <  product.length; i++) { %>
                         <article class="product_item">
                            
@@ -94,7 +98,7 @@
                     
                 </section>
                 
-                <section class="information">
+                <!-- <section class="information">
 
                     <div class="information-section_container">
                         <h3 class="information-section_container_title">Information</h3>
@@ -116,7 +120,7 @@
                                 <h3 class="box-title">FAQ <i class="far fa-thumbs-up"></i></h3>
                             </div>
                         </box>
-                </section>
+                </section> -->
 
             </main>
 

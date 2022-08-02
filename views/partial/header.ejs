@@ -35,7 +35,7 @@
         </li>
         <%}%>
         <% if(locals.session){ %>
-          <% if(session.userType !== "Cliente"){ %>
+          <% if(session.userType == "Administrador"){ %>
         <li>
           <a href="../users">
             Ver Usuarios
@@ -91,7 +91,7 @@
         </li>
         <li><a href="">TIENDA</a></li>
         <li><a href="">CARRITO</a></li>
-        <li><a href="">FAVORITOS</a></li>
+        <!-- <li><a href="">FAVORITOS</a></li> -->
         <li><a href="">CONTACTO</a></li>
         <% if(locals.session){     %>
         <li><a href="/user-profile/<%=session.id%>">CERRAR SESION</a></li>
@@ -108,14 +108,6 @@
     </div>
 
 
-    <div class="hamb__navbar__container">
-      <div id="hamb__lines">
-        <span class="line line1" id="line1"></span>
-        <span class="line line2" id="line2"></span>
-        <span class="line line3" id="line3"></span>
-      </div>
-  </div>
-  
     <div class="nav-section">
       <div class="nav-section-list">
         <div class="nav-section-list-links">
@@ -125,36 +117,45 @@
           <div class="nav-section_item">
             <a href="../productsList"> TIENDA </a>
           </div>
-          <div class="nav-section_item">
+          <!-- <div class="nav-section_item">
             <a href="#"> OFERTAS </a>
-          </div>
+          </div> -->
           <div class="nav-section_item">
             <a href="/contact"> CONTACTO </a>
           </div>
         </div>
         <div class="nav-section-list-icons">
-          <div class="nav-section_item">
+          <!-- <div class="nav-section_item">
             <a href="#">
               <i class="fas fa-heart"> </i>
             </a>
-          </div>
+          </div> -->
           <div class="nav-section_item-search" id="search-bar">
+            <form action="/search" method="GET">
             <input
-              type="text"
+              name="search"
+              type="search"
               class="serch-input"
-              placeholder="Buscar aquí..."
-              required
-            />
-            <div class="search-btn"><i class="fas fa-search icon"></i></div>
+              placeholder="Buscar Productos..."
+            /> 
+            <div class="search-btn"><i class="fas fa-search icon"></i></div></form>
           </div>
-          <div class="nav-section_item">
+          <!-- <div class="nav-section_item">
             <a href="/cart">
               <i class="fas fa-shopping-cart"> </i>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
+    <div class="hamb__navbar__container">
+      <div id="hamb__lines">
+        <span class="line line1" id="line1"></span>
+        <span class="line line2" id="line2"></span>
+        <span class="line line3" id="line3"></span>
+      </div>
+  </div>
+  
     
 
   </div>
