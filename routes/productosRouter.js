@@ -7,6 +7,7 @@ const productosController = require('../controllers/productosController');
 const uploadFile=require('../middlewares/productsMulter')
 const authMiddleware = require("../middlewares/authMiddleware")
 const adminMiddleware = require("../middlewares/adminMiddleware")
+const productsApiController = require('../api/productsApiController');
 const validatepCreate=require('../middlewares/validateProductCreateMiddleware')
 const validateEdit=require('../middlewares/validateProductEditMiddleware')
 
@@ -44,6 +45,11 @@ router.post('/product-create', uploadFile.any(),validatepCreate,productosControl
 router.get('/product-edit/:id', adminMiddleware, productosController.productEdit);
 router.put('/product-edit/:id',uploadFile.any(),validateEdit, productosController.productUpdate);
 router.delete('/product-detail/:id', productosController.delete); 
+
+//rutas apis
+router.get('/api/products',productsApiController.all);
+router.get('/api/products/:id',productsApiController.showProduct);
+router.get('/api/categories',productsApiController.countByCategory);
 
 
 module.exports = router;

@@ -31,8 +31,13 @@ const mainController ={
     storeByCategory:(req,res)=>{
         db.Category.findByPk(req.params.id, {include:{association:"product"}})
             .then(category =>{
-                console.log(category)
-                res.render ('store', { category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged} );
+                if(category){  
+                    res.render("store", {
+                    category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
+                  })
+                 } else {
+                  res.render("ERROR", {noCatgError : "La categoría no existe en la base de datos", session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
+                }
             })
     },
 

@@ -37,14 +37,12 @@ const productosController = {
 
   detail: (req, res) => {
     const id = req.params.id;
-    db.Product.findAll( {include:{association:"category"}})
+    db.Product.findByPk( id, {include:{association:"category"}})
       .then((sproduct) => {
-        console.log(sproduct.category)
-        if(sproduct === null){
-          res.send("home")
+        if(sproduct){  
+          res.render("product-detail", { sproduct, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
         } else {
-          console.log(sproduct.category)  
-          res.render("product-detail", { id, sproduct, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
+          res.render("ERROR", {noProdError : "El producto no existe en la base de datos", session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
         }
       })
       .catch((e) => {
@@ -110,11 +108,14 @@ const productosController = {
       id : req.params.id
     }})
     .then(category => {  
-      res.render("category-edit", {
-            category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
-        })
-
+      if(category){  
+        res.render("category-edit", {
+        category, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged
       })
+     } else {
+      res.render("ERROR", {noCatgError : "La categoría no existe en la base de datos", session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged})          
+    }
+        })
      .catch((e) => {
        console.log(e)
        res.send(e)
@@ -199,7 +200,8 @@ const productosController = {
     if(errors.isEmpty()){
     db.Product.create(newProduct)
     .then(product => {
-      res.redirect("/home")
+      let id = product.id
+      res.redirect(`/product-detail/${id}`)
     })
     .catch(e => {
       console.log('----------- error creando producto -------------')
@@ -218,8 +220,8 @@ const productosController = {
  productEdit : (req, res) => {
    db.Product.findByPk(req.params.id,{include:{association:"category"}})
    .then((productToEdit) => {
-     if(productToEdit === undefined) {
-       return res.render("home")
+     if(!productToEdit) {
+      res.render("ERROR", {noUserError : "El producto no existe en la base de datos"})
        }else{  
          res.render("product-edit", {
            productToEdit, session:req.session.usuarioLogged === undefined ? null : req.session.usuarioLogged

@@ -168,3 +168,15 @@ window.addEventListener('load', function() {
         }
     })
 });
+
+
+      
+    
+    document.addEventListener("submit", function(e){
+        if(errors.length >0){
+            for (let i = 0; i < errors.length; i++) {   
+                e.preventDefault();
+                console.log(errors[i]);
+            }
+        }
+    })

@@ -18,7 +18,7 @@ menu.addEventListener("mouseover", ()=>{
 })
 
 menu.addEventListener("mouseout", ()=>{
-    hambMenu.classList.toggle("active");
+    hambMenu.classList.remove("active");
     menu.style.display="none"
 })
 

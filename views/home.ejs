@@ -11,19 +11,24 @@
 <div class="container-slider">
     <div class="slider" id="slider">
         <div class="slider_section">
-            <img src="/images/banner1.png" alt="" class="slider__img">
+            <a href="/product-detail/110">
+                <img src="/images/banner1.png" alt="" class="slider__img">
+            </a>
         </div>
        <div class="slider_section">
-
-           <img src="/images/banner2.png" alt="" class="slider__img">
+            <a href="/product-detail/87">
+                <img src="/images/banner2.png" alt="" class="slider__img">
+            </a>
        </div>
        <div class="slider_section">
-
-           <img src="/images/banner3.png" alt="" class="slider__img">
+            <a href="/product-detail/81">
+                <img src="/images/banner3.png" alt="" class="slider__img">
+            </a>
        </div>
        <div class="slider_section">
-
-           <img src="/images/banner4.png" alt="" class="slider__img">
+            <a href="/product-detail/106">
+                <img src="/images/banner4.png" alt="" class="slider__img">
+            </a>
        </div>
     </div>
         <div class="slider__btn--right" id="btn-right">
@@ -47,29 +52,26 @@
 <h3 class="catg_container-title">CATEGORIAS</h3>
 
 <div class="catg_container-products">
-    <% for (let i = 0; i < category.length; i++) {%>
+    
 
-        <% if (category[i].id == 1) {%>
+       
             <article class="product_item">
                 <a class="poduct-caregorie_main-link" href="/productsList">
-                <img class="product_item-img" src=" /images/<%= category[i].img %>" alt="item name">
+                <img class="product_item-img" src=" /images/1659396574062.jpg" alt="item name">
                 </a>
                 <div class="product_item-main_article">
                     <div class="envio">
-                        <p class="product_item-main_article-name"><%= category[i].name %></p>
+                        <p class="product_item-main_article-name">Todos los productos</p>
                     </div>
                     <h4 class="main-section_description"></h4>
-                    <a href="/productsList">Ir a Categoría</a>
+                    <a href="/productsList">Ver</a>
                 </div>
                 <% if(locals.session){ %>
                     <% if(locals.session.userType !== "Cliente"){ %>
-                <button class="store_product-edit-button"><a href="/category-edit/<%= category[i].id %>"><i
-                            class="fas fa-pencil-alt"></i></a></button>
-                     <% } %>  
+                    <% } %>  
                 <% } %>     
             </article>
-        <%}%>
-        <%}%>
+        
 
 
 

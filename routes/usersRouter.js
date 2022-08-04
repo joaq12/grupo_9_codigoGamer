@@ -13,6 +13,7 @@ const ghestMiddleware = require("../middlewares/ghestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
 const adminMiddleware = require("../middlewares/adminMiddleware")
 const uDetailMiddleware = require("../middlewares/uDetailMiddleware")
+const usersApiController = require('../api/usersApiController');
 
 const validateUserEdit = require("../middlewares/validateUserEditMiddleware")
 
@@ -30,9 +31,13 @@ router.post('/user-register', uploadFile.single('profilePhoto'),validateRegister
 
 ////edicion de usuarios
 router.get('/user-edit/:id',authMiddleware , usersController.userEdit);
-router.put('/user-edit/:id',uploadFile.single('profilePhoto'),usersController.userUpdate)
+router.put('/user-edit/:id',uploadFile.single('profilePhoto'),usersController.userUpdate);
 router.delete('/user-edit/:id',authMiddleware , usersController.userDelete);
 router.get("/ghestUser", usersController.ghest)
 router.get("/authUser", usersController.auth)
+
+//Rutas API
+router.get('/api/users',usersApiController.all);
+router.get('/api/users/:id',usersApiController.showUser);
 
 module.exports= router;

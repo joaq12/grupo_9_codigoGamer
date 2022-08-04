@@ -12,15 +12,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         photo1: {
             type: dataTypes.STRING,
-            default: '../images/1654344377821.jpeg'
+            default: '1654344377821.jpeg'
         },
         photo2: {
             type: dataTypes.STRING,
-            default: '../images/1654344377821.jpeg'
+            default: '1654344377821.jpeg'
         },
         photo3: {
             type: dataTypes.STRING,
-            default: '../images/1654344377821.jpeg'
+            default: '1654344377821.jpeg'
         },
        
         description: {

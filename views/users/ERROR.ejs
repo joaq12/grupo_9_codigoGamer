@@ -28,7 +28,22 @@
                     <div classs="userMiddleware-alert">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <h4><b>No tenés permisos de Administrador. No podes acceder a esta página</b></h4>
+
+                    <% if (locals && locals.noCatgError) { %>
+                        <h4><b><%=noCatgError%></b></h4>
+                    <%}%>
+
+                    <% if (locals && locals.noProdError) { %>
+                        <h4><b><%=noProdError%></b></h4>
+                    <%}%>
+
+                    <% if (locals && locals.noUserError) { %>
+                        <h4><b><%=noUserError%></b></h4>
+                    <%}%>
+
+
+
+
                     <span >
                         <p class="home-link"><a href="/home">Volver al Inicio</a></p>
                         <br>

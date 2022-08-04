@@ -576,6 +576,10 @@ article.product_item .store_product-edit-button:hover{
     display: none;
 }
 
+.nav-section_item-search#search-bar{
+    display: block;
+}
+
 .sidebar {
     display: none;
 }

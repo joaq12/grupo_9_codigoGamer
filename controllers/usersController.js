@@ -6,6 +6,7 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
 const db = require('../database/models');
+const session = require("express-session");
 
 var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
@@ -144,6 +145,7 @@ const usersController = {
       }}
     )
     .then(response =>{
+      req.session.usuarioLogged = undefined
       res.redirect("/home")
     })
     .catch((e) => {
@@ -191,6 +193,8 @@ const usersController = {
     }
   })
   .then(response =>{
+    req.session.usuarioLogged = req.session.usuarioLogged;
+    req.session.usuarioLogged.avatar = req.session.usuarioLogged.avatar
     let id = req.params.id 
     res.redirect(`/user-profile/${id}`)
   })
@@ -221,11 +225,15 @@ const usersController = {
   userDetails: (req, res) => {
     db.User.findByPk(req.params.id)    
     .then(user=>{
+      if( user ){
       res.render("user-profile",{user,
       session : req.session.usuarioLogged === undefined
           ? null
           : req.session.usuarioLogged,
-  })})
+        })}else{
+          res.render("ERROR", {noUserError : "El usuario no existe en la base de datos"})
+        }
+    })
   .catch((e) => 
     console.log(e)
   )}

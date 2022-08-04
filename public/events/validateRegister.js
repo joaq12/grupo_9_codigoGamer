@@ -51,7 +51,7 @@ let inputCheck = document.querySelectorAll("#fomr-ckeched")
         }
     });
 
-    avatar.addEventListener("change", () =>{
+    avatar.addEventListener("blur", () =>{
         acceptedExt = [".gif", ".jpg", ".jpeg", ".png"];            
             extention = (avatar.value.substring(avatar.value.lastIndexOf("."))).toLowerCase();
             let extFilter = acceptedExt.filter(file => file.includes(extention));
@@ -64,21 +64,10 @@ let inputCheck = document.querySelectorAll("#fomr-ckeched")
                 errors.pop(`Error en ${avatar.name}`) 
             } else {
                 avatarError.innerHTML = `Extensión de archivo inválida. \n  
-                Las extensiones permitidas son ${acceptedExt.join(' - ')}`
+                Las extensiones permitidas son ${acceptedExt.join(' , ')}`
                 avatar.style.border = "solid 2px #c61921"
                 errors.push(`Error en ${avatar.name}`) 
-            }
-            if(e.target.value == ""){
-                avatar.style.border = "solid 2px #c61921"
-                avatarError.innerHTML = "<li>Imagen requerida</li>" 
-                errors.push(`Error en ${avatar.name}`) 
-            }else{
-                avatar.style.border = "solid 1px #59359c"
-                avatarError.innerHTML = ""
-                avatar.style.outline = "none"
-                errors.pop(`Error en ${avatar.name}`) 
-            }
-    
+            }   
 
     })
     
@@ -175,17 +164,7 @@ let inputCheck = document.querySelectorAll("#fomr-ckeched")
                 };
             break;
 
-           case "profilePhoto":
-           if(e.target.value == ""){
-               avatar.style.border = "solid 2px #c61921"
-               avatarError.innerHTML = "<li>Imagen requerida</li>" 
-               errors.push(`Error en ${e.target.name}`) 
-           }else{
-               avatar.style.border = "solid 1px #59359c"
-               avatarError.innerHTML = ""
-               avatar.style.outline = "none"
-               errors.pop(`Error en ${e.target.name}`) 
-           }
+         
            break
             case "email1":
                if(email1.value == ""){
@@ -313,15 +292,13 @@ let inputCheck = document.querySelectorAll("#fomr-ckeched")
   
 
     document.addEventListener("submit", function(e){
-    if(errors.length >0){
-        for (let i = 0; i < errors.length; i++) {   
-            e.preventDefault();
-            console.log(errors[i]);
-        }
-        }else{
-            alert("El usuario se guardo satisfactoriamente")
+        if(errors.length >0){
+            for (let i = 0; i < errors.length; i++) {   
+               e.preventDefault();
+                console.log(errors[i]);
             }
-        })
+        }
+    })
 
   });
 
